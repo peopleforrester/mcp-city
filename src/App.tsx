@@ -5,6 +5,7 @@ import { Footer, Header } from "./components/Chrome";
 import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
 import { Map } from "./components/Map";
+import { Plugs } from "./components/Plugs";
 import { About, Resources, Talk } from "./components/Sections";
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <Hero />
         <Gates />
         <Map />
+        <Plugs />
         <Talk />
         <Resources />
         <About />

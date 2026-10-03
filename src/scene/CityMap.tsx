@@ -55,11 +55,6 @@ function Buildings({ selected, sayNo, onSelect }: Pick<Props, "selected" | "sayN
               <meshBasicMaterial color={color} />
             </mesh>
             {/* A window strip so each building reads as lit; audit goes dark when the city says no. */}
-            {!dim && (
-            <Html position={[0, n.height + 1.2, 0]} center distanceFactor={80} zIndexRange={[10, 0]} style={{ pointerEvents: "none" }}>
-              <span style={{ whiteSpace: "nowrap", fontSize: 11, fontWeight: 600, color: selected === n.id ? "#04c0da" : "#f8f8f2", textShadow: "0 0 6px #000, 0 0 2px #000" }}>{n.name}</span>
-            </Html>
-            )}
             <mesh position={[0, n.height / 2, 2.05]}>
               <planeGeometry args={[2.4, Math.max(0.6, n.height - 1.5)]} />
               <meshBasicMaterial color={audit && sayNo ? "#1b2535" : n.district === "bypass" ? "#ff3c64" : "#04c0da"} transparent opacity={audit && sayNo ? 0.4 : 0.55} />
@@ -67,6 +62,20 @@ function Buildings({ selected, sayNo, onSelect }: Pick<Props, "selected" | "sayN
           </group>
         );
       })}
+    </group>
+  );
+}
+
+function Labels({ selected, sayNo }: Pick<Props, "selected" | "sayNo">) {
+  return (
+    <group>
+      {/* drei drops the first Html child's transform on some frames; an empty one takes the hit. */}
+      <Html position={[0, -50, 0]} style={{ pointerEvents: "none" }}><span /></Html>
+      {NODES.filter((n) => n.district !== "bypass" || sayNo).map((n) => (
+        <Html key={n.id} position={[n.x, n.height + 1.2, n.z]} center distanceFactor={80} zIndexRange={[100, 50]} style={{ pointerEvents: "none" }}>
+          <span style={{ whiteSpace: "nowrap", fontSize: 11, fontWeight: 600, color: selected === n.id ? "#04c0da" : "#f8f8f2", textShadow: "0 0 6px #000, 0 0 2px #000" }}>{n.name}</span>
+        </Html>
+      ))}
     </group>
   );
 }
@@ -197,6 +206,7 @@ export default function CityMap({ sayNo, selected, tracerAt, onSelect }: Props) 
       <Traffic sayNo={sayNo} />
       <Buildings selected={selected} sayNo={sayNo} onSelect={onSelect} />
       <Tracer at={tracerAt} />
+      <Labels selected={selected} sayNo={sayNo} />
       <Rig selected={selected} tracerAt={tracerAt} />
       <EffectComposer multisampling={0}>
         <Bloom intensity={0.7} luminanceThreshold={0.55} luminanceSmoothing={0.3} mipmapBlur />
