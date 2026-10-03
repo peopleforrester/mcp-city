@@ -4,6 +4,7 @@
 import { Footer, Header } from "./components/Chrome";
 import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
+import { Map } from "./components/Map";
 import { About, Resources, Talk } from "./components/Sections";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <main id="main" className="flex-1">
         <Hero />
         <Gates />
+        <Map />
         <Talk />
         <Resources />
         <About />

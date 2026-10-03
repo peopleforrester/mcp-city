@@ -3,6 +3,7 @@
 
 const NAV = [
   { href: "#gates", label: "The gates" },
+  { href: "#map", label: "The city" },
   { href: "#talk", label: "The talk" },
   { href: "#resources", label: "Resources" },
   { href: "#about", label: "About" },
