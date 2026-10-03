@@ -6,7 +6,7 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 const errors = [];
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 page.on("pageerror", (e) => errors.push(String(e)));
-await page.goto("http://127.0.0.1:4173/");
+await page.goto("http://127.0.0.1:4173/?gpu=1");
 await page.waitForSelector("[data-testid=skyline] canvas", { timeout: 15000 });
 for (const [name, frac] of [["orbit", 0], ["mid", 0.5], ["desk", 1]]) {
   await page.evaluate((f) => window.scrollTo(0, (document.documentElement.scrollHeight * 0 + 1600) * f), frac);

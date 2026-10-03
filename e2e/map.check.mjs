@@ -6,7 +6,7 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 const errors = [];
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 page.on("pageerror", (e) => errors.push(String(e)));
-await page.goto("http://127.0.0.1:4173/#map");
+await page.goto("http://127.0.0.1:4173/?gpu=1#map");
 await page.waitForSelector("[data-testid=city-map] canvas", { timeout: 20000 });
 const shot = async (name) => {
   await page.getByTestId("city-map").scrollIntoViewIfNeeded();
