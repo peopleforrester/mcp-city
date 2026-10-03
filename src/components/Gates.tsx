@@ -4,6 +4,7 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useLiveScene } from "../lib/useLiveScene";
 import { GATES, GATE_COLORS, GATE_TEXT } from "../data/gates";
+import { PrintChecklist } from "./PrintChecklist";
 import { checklistMarkdown, currentGate, decodeWalk, emptyWalk, encodeWalk, shareUrl, summary, type Walk } from "../lib/walk";
 
 function readWalkFromUrl(): Walk {
@@ -140,11 +141,14 @@ export function Gates() {
           )}
           <div className="mt-6 flex flex-wrap gap-3">
             <button type="button" onClick={download} className="rounded-md bg-[color:var(--color-glow)] px-5 py-2 font-semibold text-black">Download the checklist (Markdown)</button>
+            <button type="button" onClick={() => window.print()} className="rounded-md border border-[color:var(--color-link)] px-5 py-2 font-semibold">Print or save as PDF</button>
             <button type="button" onClick={share} className="rounded-md border border-[color:var(--color-link)] px-5 py-2 font-semibold">{copied ? "Link copied" : "Copy a link to this walk"}</button>
             <button type="button" onClick={() => setWalk(emptyWalk())} className="rounded-md px-5 py-2 font-semibold underline underline-offset-4">Walk again</button>
           </div>
         </article>
       )}
+
+      <PrintChecklist walk={walk} />
 
       {lastFailed !== undefined && (
         <aside className="mt-6 grid gap-6 rounded-lg border border-[color:var(--gate-1)] p-6 md:grid-cols-[200px_1fr]" data-testid="alley">

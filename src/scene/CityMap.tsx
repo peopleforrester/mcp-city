@@ -55,9 +55,11 @@ function Buildings({ selected, sayNo, onSelect }: Pick<Props, "selected" | "sayN
               <meshBasicMaterial color={color} />
             </mesh>
             {/* A window strip so each building reads as lit; audit goes dark when the city says no. */}
-            <Html position={[0, n.height + 1.2, 0]} center distanceFactor={90} zIndexRange={[10, 0]} style={{ pointerEvents: "none" }}>
+            {!dim && (
+            <Html position={[0, n.height + 1.2, 0]} center distanceFactor={80} zIndexRange={[10, 0]} style={{ pointerEvents: "none" }}>
               <span style={{ whiteSpace: "nowrap", fontSize: 11, fontWeight: 600, color: selected === n.id ? "#04c0da" : "#f8f8f2", textShadow: "0 0 6px #000, 0 0 2px #000" }}>{n.name}</span>
             </Html>
+            )}
             <mesh position={[0, n.height / 2, 2.05]}>
               <planeGeometry args={[2.4, Math.max(0.6, n.height - 1.5)]} />
               <meshBasicMaterial color={audit && sayNo ? "#1b2535" : n.district === "bypass" ? "#ff3c64" : "#04c0da"} transparent opacity={audit && sayNo ? 0.4 : 0.55} />

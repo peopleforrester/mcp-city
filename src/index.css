@@ -63,3 +63,14 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; text-wrap: bala
 .sky {
   background: linear-gradient(180deg, var(--color-night) 0%, #0a2a52 55%, var(--color-glow) 100%);
 }
+
+/* Printing the walk: the checklist is the page, everything else stays on screen. */
+#print-root { display: none; }
+@media print {
+  #root { display: none !important; }
+  #print-root { display: block; }
+  #print-checklist { display: block !important; color: #000; background: #fff; font-size: 11pt; }
+  #print-checklist h1 { font-size: 18pt; }
+  #print-checklist h2 { font-size: 13pt; }
+  #print-checklist ul { padding-left: 1.2em; }
+}

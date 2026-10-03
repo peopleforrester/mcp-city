@@ -37,10 +37,10 @@ export const DISTRICTS: District[] = [
 ];
 
 export const NODES: CityNode[] = [
-  { id: "U", name: "End user", district: "device", x: -36, z: 8, height: 3, what: "The person. Everything starts with a question they ask an agent." },
-  { id: "A", name: "AI application / agent", district: "device", x: -26, z: 0, height: 6, what: "The MCP client. It asks the model for a plan and calls tools through the proxy." },
-  { id: "CP", name: "Client policy", district: "device", x: -36, z: -6, height: 3, what: "Which MCP servers the client may load: the allow list, fed from the registry." },
-  { id: "OSP", name: "OS and app policy", district: "device", x: -36, z: -14, height: 3, what: "Device policy that closes the side doors: Outlook's automation guard set to deny, the browser's remote debugging off." },
+  { id: "U", name: "End user", district: "device", x: -24, z: 14, height: 3, what: "The person. Everything starts with a question they ask an agent." },
+  { id: "A", name: "AI application / agent", district: "device", x: -26, z: -2, height: 6, what: "The MCP client. It asks the model for a plan and calls tools through the proxy." },
+  { id: "CP", name: "Client policy", district: "device", x: -40, z: 4, height: 3, what: "Which MCP servers the client may load: the allow list, fed from the registry." },
+  { id: "OSP", name: "OS and app policy", district: "device", x: -40, z: -12, height: 3, what: "Device policy that closes the side doors: Outlook's automation guard set to deny, the browser's remote debugging off." },
   { id: "P", name: "MCP proxy", district: "tool", x: -8, z: -12, height: 5, what: "How does the request reach the server? Routing, transport bridging, the first hop off the device." },
   { id: "G", name: "MCP gateway", district: "tool", x: 4, z: -12, height: 9, what: "Should this caller be allowed? Identity, authorization, policy and rate limits, enforced once instead of per server." },
   { id: "API", name: "Service boundary", district: "tool", x: 16, z: -12, height: 5, what: "Can traffic reach this backend? The network edge in front of the server." },
@@ -50,9 +50,9 @@ export const NODES: CityNode[] = [
   { id: "AG", name: "AI gateway", district: "model", x: -4, z: 14, height: 7, what: "Which model, which provider? Quotas and guardrails on the inference path." },
   { id: "LLM", name: "LLM providers", district: "model", x: 12, z: 14, height: 6, what: "The models behind the AI gateway." },
   { id: "R", name: "MCP registry", district: "control", x: 32, z: 2, height: 8, what: "What exists and who owns it. Source of the allow list and the gateway's routing table." },
-  { id: "MR", name: "Model registry", district: "control", x: 32, z: 12, height: 6, what: "Which models are approved, fed to the AI gateway." },
+  { id: "MR", name: "Model registry", district: "control", x: 30, z: 14, height: 6, what: "Which models are approved, fed to the AI gateway." },
   { id: "IDP", name: "Identity provider", district: "control", x: 44, z: 2, height: 6, what: "OIDC, OAuth, ID-JAG. SSO for the agent, token validation for the gateway." },
-  { id: "WI", name: "Workload identity", district: "control", x: 44, z: 12, height: 5, what: "Which agent is calling, so the gateway knows the workload and not just the user." },
+  { id: "WI", name: "Workload identity", district: "control", x: 46, z: 10, height: 5, what: "Which agent is calling, so the gateway knows the workload and not just the user." },
   { id: "GIT", name: "GitOps + admission control", district: "control", x: 38, z: 22, height: 5, what: "No unsanctioned server lands. Servers are deployed from the control plane, not by hand." },
   { id: "OBS", name: "Audit and traces", district: "audit", x: 10, z: 30, height: 4, what: "Every call logged and joined by traceparent. Dark along any path that bypasses the gateway." },
   { id: "OUT", name: "Outlook", district: "bypass", x: -14, z: 24, height: 3, what: "Reached by a script the agent wrote against the mail client's own automation interface, when the gate said no." },

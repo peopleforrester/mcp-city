@@ -34,3 +34,15 @@ describe("the gate walk", () => {
     expect(screen.getByText("Gate 5 of 6")).toBeInTheDocument();
   });
 });
+
+describe("the printable checklist", () => {
+  it("is in the page with all six gates and a print button at the end of the walk", () => {
+    render(<Gates />);
+    const print = document.getElementById("print-checklist");
+    expect(print).not.toBeNull();
+    expect(print?.querySelectorAll("article")).toHaveLength(6);
+    for (let i = 0; i < 6; i++) fireEvent.click(screen.getByRole("button", { name: /^Pass/ }));
+    expect(screen.getByRole("button", { name: "Print or save as PDF" })).toBeInTheDocument();
+    expect(print?.textContent).toContain("(PASS)");
+  });
+});
