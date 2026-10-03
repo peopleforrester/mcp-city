@@ -3,7 +3,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, type RefObject } from "react";
 import * as THREE from "three";
 
 const COUNT = 2600;
@@ -15,6 +15,27 @@ function seeded(seed: number) {
     s = (s * 16807) % 2147483647;
     return (s - 1) / 2147483646;
   };
+}
+
+/** The backlit screen: cyan at the horizon fading to navy overhead, so the canvas needs no transparency. */
+function SkyDome() {
+  const material = useMemo(
+    () =>
+      new THREE.ShaderMaterial({
+        side: THREE.BackSide,
+        depthWrite: false,
+        uniforms: { top: { value: new THREE.Color("#051932") }, horizon: { value: new THREE.Color("#04c0da") }, below: { value: new THREE.Color("#03101f") } },
+        vertexShader: `varying vec3 vPos; void main(){ vPos = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+        fragmentShader: `uniform vec3 top; uniform vec3 horizon; uniform vec3 below; varying vec3 vPos;
+          void main(){ float h = vPos.y / 500.0; vec3 c = h < 0.0 ? mix(horizon, below, clamp(-h * 2.5, 0.0, 1.0)) : mix(horizon, top, pow(clamp(h * 1.6, 0.0, 1.0), 0.6)); gl_FragColor = vec4(c, 1.0); }`,
+      }),
+    [],
+  );
+  return (
+    <mesh material={material} frustumCulled={false}>
+      <sphereGeometry args={[500, 64, 32]} />
+    </mesh>
+  );
 }
 
 function Buildings() {
@@ -68,18 +89,21 @@ function Windows() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[points, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#04c0da" size={0.35} sizeAttenuation transparent opacity={0.9} blending={THREE.AdditiveBlending} depthWrite={false} />
+      <pointsMaterial color="#04c0da" size={0.22} sizeAttenuation transparent opacity={0.9} blending={THREE.AdditiveBlending} depthWrite={false} />
     </points>
   );
 }
 
-function DeathStar() {
+function DeathStar({ progress }: { progress: RefObject<number> }) {
   const g = useRef<THREE.Group>(null);
   useFrame(({ clock }) => {
     if (!g.current) return;
     const t = clock.getElapsedTime();
-    g.current.position.set(-40 + (t * 0.6) % 110, 42 + Math.sin(t * 0.2) * 2, -70);
+    const p = progress.current ?? 0;
+    // In orbit it hangs above the city; as the camera descends it slides up and out of frame.
+    g.current.position.set(-40 + (t * 0.6) % 110, 42 + Math.sin(t * 0.2) * 2 + p * 260, -70);
     g.current.rotation.y = t * 0.05;
+    g.current.visible = p < 0.6;
   });
   return (
     <group ref={g}>
@@ -90,25 +114,36 @@ function DeathStar() {
   );
 }
 
-function Rig() {
+const ORBIT = new THREE.Vector3(0, 230, 150);
+const STREET = new THREE.Vector3(0, 5, 96);
+
+function Rig({ progress }: { progress: RefObject<number> }) {
   const target = useRef(new THREE.Vector3());
+  const look = useRef(new THREE.Vector3());
   useFrame(({ camera, pointer, clock }) => {
     const t = clock.getElapsedTime();
-    target.current.set(Math.sin(t * 0.05) * 30 + pointer.x * 10, 16 + pointer.y * 4, 70 + Math.cos(t * 0.05) * 10);
-    camera.position.lerp(target.current, 0.02);
-    camera.lookAt(0, 6, 0);
+    const p = progress.current ?? 0;
+    // Ease the descent so orbit lingers and the street arrives gently.
+    const e = p < 0.5 ? 4 * p * p * p : 1 - (-2 * p + 2) ** 3 / 2;
+    target.current.lerpVectors(ORBIT, STREET, e);
+    target.current.x += Math.sin(t * 0.05) * 20 * (1 - e) + pointer.x * 6;
+    target.current.y += pointer.y * 3 * (1 - e);
+    camera.position.lerp(target.current, 0.08);
+    look.current.set(0, 6 + e * 6, 0);
+    camera.lookAt(look.current);
   });
   return null;
 }
 
-export default function Skyline() {
+export default function Skyline({ progress }: { progress: RefObject<number> }) {
   return (
-    <Canvas dpr={[1, 1.5]} gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 16, 75], fov: 50, near: 0.5, far: 400 }}>
-      <fog attach="fog" args={["#07264a", 60, 220]} />
+    <Canvas dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 230, 150], fov: 50, near: 0.5, far: 600 }}>
+      <fog attach="fog" args={["#07264a", 80, 420]} />
+      <SkyDome />
       <Buildings />
       <Windows />
-      <DeathStar />
-      <Rig />
+      <DeathStar progress={progress} />
+      <Rig progress={progress} />
       <EffectComposer multisampling={0}>
         <Bloom intensity={0.9} luminanceThreshold={0.4} luminanceSmoothing={0.3} mipmapBlur />
       </EffectComposer>
