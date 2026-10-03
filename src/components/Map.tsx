@@ -2,6 +2,7 @@
 // ABOUTME: Two switches: "say no" shows the bypass alleys and darkens audit; "replay the attack" walks the CVE across the city.
 
 import { lazy, Suspense, useState } from "react";
+import { useInView } from "../lib/useInView";
 import { ATTACK, ATTACK_SOURCES, DISTRICTS, EDGES, EDGE_COLORS, NODES, nodeById } from "../data/city";
 import { useLiveScene } from "../lib/useLiveScene";
 
@@ -38,7 +39,8 @@ function FlatMap({ sayNo, selected, tracerAt, onSelect }: { sayNo: boolean; sele
 }
 
 export function Map() {
-  const live = useLiveScene(900);
+  const { live } = useLiveScene(900);
+  const [mapRef, mapInView] = useInView();
   const [sayNo, setSayNo] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [step, setStep] = useState<number>(-1);
@@ -67,11 +69,13 @@ export function Map() {
       <div className="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
         <div>
           {live ? (
-            <Suspense fallback={<FlatMap sayNo={sayNo} selected={selected} tracerAt={tracerAt} onSelect={setSelected} />}>
-              <div className="h-[28rem] overflow-hidden rounded-lg" data-testid="city-map">
-                <CityMap sayNo={sayNo} selected={selected} tracerAt={tracerAt} onSelect={setSelected} />
-              </div>
-            </Suspense>
+            <div ref={mapRef} className="h-[28rem] overflow-hidden rounded-lg bg-[color:var(--color-night)]" data-testid="city-map">
+              {mapInView && (
+                <Suspense fallback={null}>
+                  <CityMap sayNo={sayNo} selected={selected} tracerAt={tracerAt} onSelect={setSelected} />
+                </Suspense>
+              )}
+            </div>
           ) : (
             <FlatMap sayNo={sayNo} selected={selected} tracerAt={tracerAt} onSelect={setSelected} />
           )}

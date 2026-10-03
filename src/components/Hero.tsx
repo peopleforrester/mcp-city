@@ -3,6 +3,7 @@
 
 import { lazy, Suspense, useRef } from "react";
 import { TALK } from "../data/links";
+import { useInView } from "../lib/useInView";
 import { useLiveScene } from "../lib/useLiveScene";
 import { useScrollProgress } from "../lib/useScrollProgress";
 import { ShipHud } from "./ShipHud";
@@ -10,30 +11,38 @@ import { ShipHud } from "./ShipHud";
 const Skyline = lazy(() => import("../scene/Skyline"));
 
 export function Hero() {
-  const live = useLiveScene();
+  const { wants, live } = useLiveScene();
   const section = useRef<HTMLElement>(null);
+  const [viewRef, inView] = useInView("0px");
   const { progress, progressRef } = useScrollProgress(section);
+  const show = live && inView;
   return (
-    <section ref={section} className={live ? "relative h-[300vh]" : "relative"}>
-      <div className={`sky relative overflow-hidden flex items-end ${live ? "sticky top-0 h-screen" : "min-h-[85vh]"}`}>
+    <section
+      ref={(node) => {
+        section.current = node;
+        viewRef(node);
+      }}
+      className={wants ? "relative h-[300vh]" : "relative"}
+    >
+      <div className={`sky relative overflow-hidden flex items-end ${wants ? "sticky top-0 h-screen" : "min-h-[85vh]"}`}>
         <img
           src="/art/city-1024.webp"
           srcSet="/art/city-640.webp 640w, /art/city-1024.webp 1024w, /art/city-1600.webp 1600w"
           sizes="100vw"
           alt="A city skyline in black silhouette against a cyan and navy backlit sky"
           className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-          style={{ opacity: live ? 0 : 0.7 }}
+          style={{ opacity: show ? 0 : 0.7 }}
           fetchPriority="high"
           decoding="async"
         />
-        {live && (
+        {show && (
           <Suspense fallback={null}>
             <div className="absolute inset-0" data-testid="skyline">
               <Skyline progress={progressRef} />
             </div>
           </Suspense>
         )}
-        {live && <ShipHud progress={progress} />}
+        {wants && <ShipHud progress={progress} />}
         <div className="relative measure-wide pb-16 pt-32">
           <p className="text-sm font-semibold uppercase tracking-wide text-[color:var(--color-accent)]">
             <a href={TALK.eventUrl} className="underline underline-offset-4">{TALK.event}</a>, {TALK.when}
@@ -48,7 +57,7 @@ export function Hero() {
               The slides (PDF)
             </a>
           </div>
-          {live && (
+          {wants && (
             <p className="mt-8 text-sm text-[color:var(--color-ink-muted)]" aria-hidden="true">
               {progress < 0.95 ? "Scroll to descend from orbit to one desk." : "One person, one agent. Now walk the gates."}
             </p>

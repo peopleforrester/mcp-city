@@ -2,6 +2,7 @@
 // ABOUTME: A plain form underneath, so it works with a keyboard, a screen reader and no canvas.
 
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { useInView } from "../lib/useInView";
 import { useLiveScene } from "../lib/useLiveScene";
 import { chime } from "../lib/sound";
 import { GATES, GATE_COLORS, GATE_TEXT } from "../data/gates";
@@ -16,7 +17,8 @@ function readWalkFromUrl(): Walk {
 const GateRoad = lazy(() => import("../scene/GateRoad"));
 
 export function Gates() {
-  const live = useLiveScene(600);
+  const { live } = useLiveScene(600);
+  const [roadRef, roadInView] = useInView();
   const [walk, setWalk] = useState<Walk>(readWalkFromUrl);
   const [copied, setCopied] = useState(false);
   const gate = currentGate(walk);
@@ -65,11 +67,13 @@ export function Gates() {
       </p>
 
       {live && (
-        <Suspense fallback={null}>
-          <div className="mt-8 h-72 overflow-hidden rounded-lg" data-testid="gate-road" aria-hidden="true">
-            <GateRoad walk={walk} />
-          </div>
-        </Suspense>
+        <div ref={roadRef} className="mt-8 h-72 overflow-hidden rounded-lg bg-[color:var(--color-night)]" data-testid="gate-road" aria-hidden="true">
+          {roadInView && (
+            <Suspense fallback={null}>
+              <GateRoad walk={walk} />
+            </Suspense>
+          )}
+        </div>
       )}
 
       <ol className="mt-8 flex flex-wrap gap-2" aria-label="Progress through the gates">

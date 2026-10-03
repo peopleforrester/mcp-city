@@ -9,13 +9,13 @@ export interface Plug {
 }
 
 export const PLUGS: Plug[] = [
-  { name: "Parallel", year: 1981, image: "/art/cables/parallel.png", note: "IBM PC" },
-  { name: "Serial", year: 1984, image: "/art/cables/serial.png", note: "PC/AT, DE-9" },
-  { name: "PS/2", year: 1987, image: "/art/cables/ps2.png", note: "IBM PS/2" },
-  { name: "USB-A", year: 1996, image: "/art/cables/usb-a.png", note: "USB 1.0, 15 January 1996" },
-  { name: "Mini-USB", year: 2000, image: "/art/cables/mini-usb.png", note: "USB 2.0 era" },
-  { name: "Micro-USB", year: 2007, image: "/art/cables/micro-usb.png", note: "2007" },
-  { name: "USB-C", year: 2014, image: "/art/cables/usb-c.png", note: "USB Type-C 1.0, 11 August 2014" },
+  { name: "Parallel", year: 1981, image: "/art/cables/parallel.webp", note: "IBM PC" },
+  { name: "Serial", year: 1984, image: "/art/cables/serial.webp", note: "PC/AT, DE-9" },
+  { name: "PS/2", year: 1987, image: "/art/cables/ps2.webp", note: "IBM PS/2" },
+  { name: "USB-A", year: 1996, image: "/art/cables/usb-a.webp", note: "USB 1.0, 15 January 1996" },
+  { name: "Mini-USB", year: 2000, image: "/art/cables/mini-usb.webp", note: "USB 2.0 era" },
+  { name: "Micro-USB", year: 2007, image: "/art/cables/micro-usb.webp", note: "2007" },
+  { name: "USB-C", year: 2014, image: "/art/cables/usb-c.webp", note: "USB Type-C 1.0, 11 August 2014" },
 ];
 
 export const USB_YEARS = { from: 1996, to: 2014, span: 18 };
