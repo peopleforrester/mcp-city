@@ -1,24 +1,13 @@
 // ABOUTME: The top of the page: the city at night, the title, the thesis, and the two ways in.
 // ABOUTME: On a wide screen the hero is a scroll-driven descent from orbit to one desk; on a phone it is the poster.
 
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useRef } from "react";
 import { TALK } from "../data/links";
+import { useLiveScene } from "../lib/useLiveScene";
 import { useScrollProgress } from "../lib/useScrollProgress";
 import { ShipHud } from "./ShipHud";
 
 const Skyline = lazy(() => import("../scene/Skyline"));
-
-function useLiveScene(): boolean {
-  const [live, setLive] = useState(false);
-  useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const wide = window.matchMedia("(min-width: 48rem)").matches;
-    if (reduced || !wide) return;
-    const id = window.setTimeout(() => setLive(true), 300);
-    return () => window.clearTimeout(id);
-  }, []);
-  return live;
-}
 
 export function Hero() {
   const live = useLiveScene();

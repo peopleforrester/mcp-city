@@ -1,7 +1,8 @@
 // ABOUTME: The six gates as a walk: one gate at a time, pass or fail, the alley when a gate says no.
 // ABOUTME: A plain form underneath, so it works with a keyboard, a screen reader and no canvas.
 
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { useLiveScene } from "../lib/useLiveScene";
 import { GATES, GATE_COLORS, GATE_TEXT } from "../data/gates";
 import { checklistMarkdown, currentGate, decodeWalk, emptyWalk, encodeWalk, shareUrl, summary, type Walk } from "../lib/walk";
 
@@ -10,7 +11,10 @@ function readWalkFromUrl(): Walk {
   return decodeWalk(new URLSearchParams(window.location.search).get("g"));
 }
 
+const GateRoad = lazy(() => import("../scene/GateRoad"));
+
 export function Gates() {
+  const live = useLiveScene(600);
   const [walk, setWalk] = useState<Walk>(readWalkFromUrl);
   const [copied, setCopied] = useState(false);
   const gate = currentGate(walk);
@@ -56,6 +60,14 @@ export function Gates() {
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         A request to allow an MCP server passes through these in order. Bring a real server. Answer honestly. Where a gate says no, look at what the user builds instead.
       </p>
+
+      {live && (
+        <Suspense fallback={null}>
+          <div className="mt-8 h-72 overflow-hidden rounded-lg" data-testid="gate-road" aria-hidden="true">
+            <GateRoad walk={walk} />
+          </div>
+        </Suspense>
+      )}
 
       <ol className="mt-8 flex flex-wrap gap-2" aria-label="Progress through the gates">
         {GATES.map((g, i) => {

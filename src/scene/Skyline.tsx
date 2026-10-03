@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { useMemo, useRef, type RefObject } from "react";
 import * as THREE from "three";
+import { SkyDome } from "./SkyDome";
 
 const COUNT = 2600;
 const SPREAD = 160;
@@ -15,27 +16,6 @@ function seeded(seed: number) {
     s = (s * 16807) % 2147483647;
     return (s - 1) / 2147483646;
   };
-}
-
-/** The backlit screen: cyan at the horizon fading to navy overhead, so the canvas needs no transparency. */
-function SkyDome() {
-  const material = useMemo(
-    () =>
-      new THREE.ShaderMaterial({
-        side: THREE.BackSide,
-        depthWrite: false,
-        uniforms: { top: { value: new THREE.Color("#051932") }, horizon: { value: new THREE.Color("#04c0da") }, below: { value: new THREE.Color("#03101f") } },
-        vertexShader: `varying vec3 vPos; void main(){ vPos = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
-        fragmentShader: `uniform vec3 top; uniform vec3 horizon; uniform vec3 below; varying vec3 vPos;
-          void main(){ float h = vPos.y / 500.0; vec3 c = h < 0.0 ? mix(horizon, below, clamp(-h * 2.5, 0.0, 1.0)) : mix(horizon, top, pow(clamp(h * 1.6, 0.0, 1.0), 0.6)); gl_FragColor = vec4(c, 1.0); }`,
-      }),
-    [],
-  );
-  return (
-    <mesh material={material} frustumCulled={false}>
-      <sphereGeometry args={[500, 64, 32]} />
-    </mesh>
-  );
 }
 
 function Buildings() {
