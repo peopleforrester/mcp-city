@@ -3,6 +3,7 @@
 
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useLiveScene } from "../lib/useLiveScene";
+import { chime } from "../lib/sound";
 import { GATES, GATE_COLORS, GATE_TEXT } from "../data/gates";
 import { PrintChecklist } from "./PrintChecklist";
 import { checklistMarkdown, currentGate, decodeWalk, emptyWalk, encodeWalk, shareUrl, summary, type Walk } from "../lib/walk";
@@ -31,6 +32,7 @@ export function Gates() {
 
   const answer = (verdict: "pass" | "fail") => {
     if (!gate) return;
+    if (verdict === "pass") chime();
     setWalk((w) => w.map((v, i) => (i === gate.n - 1 ? verdict : v)));
   };
 

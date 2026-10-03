@@ -1,5 +1,8 @@
 // ABOUTME: Header and footer in the shape of michaelrishiforrester.com, pointing back to it.
-// ABOUTME: The city is a satellite of the main site, so the chrome says whose it is.
+// ABOUTME: The city is a satellite of the main site, so the chrome says whose it is. The footer holds the sound switch.
+
+import { useState } from "react";
+import { isHumming, setHum } from "../lib/sound";
 
 const NAV = [
   { href: "#gates", label: "The gates" },
@@ -32,13 +35,17 @@ export function Header() {
 }
 
 export function Footer() {
+  const [on, setOn] = useState(isHumming());
   return (
     <footer className="border-t border-[color:var(--color-rule)]">
       <div className="measure-wide flex flex-wrap items-center justify-between gap-4 py-8 text-sm text-[color:var(--color-ink-muted)]">
         <span>Every figure in the talk has a source; the ledger is in the repo.</span>
         <span className="flex items-center gap-4">
+          <button type="button" onClick={() => setOn(setHum(!on))} aria-pressed={on} className="hover:underline">
+            Sound: {on ? "on" : "off"}
+          </button>
           <a href="https://github.com/peopleforrester/mcp-city" className="hover:underline">Site source</a>
-          <img src="/art/spider.png" alt="" width="36" height="27" className="opacity-80" title="For Whitney" />
+          <img src="/art/spider.png" alt="" width="36" height="27" className="opacity-80" title="For Whitney. Up, up, down, down, left, right, left, right, B, A." />
         </span>
       </div>
     </footer>

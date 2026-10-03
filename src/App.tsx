@@ -6,6 +6,7 @@ import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
 import { Map } from "./components/Map";
 import { Plugs } from "./components/Plugs";
+import { Spiders } from "./components/Spiders";
 import { About, Resources, Talk } from "./components/Sections";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <About />
       </main>
       <Footer />
+      <Spiders />
     </div>
   );
 }
