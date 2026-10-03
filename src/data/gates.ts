@@ -167,4 +167,8 @@ export const GATES: Gate[] = [
   },
 ];
 
-export const GATE_COLORS = ["var(--gate-1)", "var(--gate-2)", "var(--gate-3)", "var(--gate-4)", "var(--gate-5)", "var(--gate-6)"];
+/** The zone colors from the deck, used as fills and borders. */
+export const GATE_COLORS = ["#ff3c64", "#ffc800", "#00c8bc", "#009eff", "#bc37de", "#ed561b"];
+/** The same hues lifted until they clear 4.5:1 on the tile, used wherever the color carries text. */
+export const GATE_TEXT = ["#ff8fa8", "#ffc800", "#00c8bc", "#4fb8ff", "#d98cf0", "#ff8a5c"];
+export const TILE = "#343746";

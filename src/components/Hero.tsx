@@ -23,10 +23,13 @@ export function Hero() {
   return (
     <section className="relative sky min-h-[85vh] overflow-hidden flex items-end">
       <img
-        src="/art/city.jpg"
+        src="/art/city-1024.webp"
+        srcSet="/art/city-640.webp 640w, /art/city-1024.webp 1024w, /art/city-1600.webp 1600w"
+        sizes="100vw"
         alt="A city skyline in black silhouette against a cyan and navy backlit sky"
         className="absolute inset-0 h-full w-full object-cover opacity-70"
         fetchPriority="high"
+        decoding="async"
       />
       {live && (
         <Suspense fallback={null}>

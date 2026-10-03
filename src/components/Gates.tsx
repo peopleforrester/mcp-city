@@ -2,7 +2,7 @@
 // ABOUTME: A plain form underneath, so it works with a keyboard, a screen reader and no canvas.
 
 import { useEffect, useMemo, useState } from "react";
-import { GATES, GATE_COLORS } from "../data/gates";
+import { GATES, GATE_COLORS, GATE_TEXT } from "../data/gates";
 import { checklistMarkdown, currentGate, decodeWalk, emptyWalk, encodeWalk, shareUrl, summary, type Walk } from "../lib/walk";
 
 function readWalkFromUrl(): Walk {
@@ -68,7 +68,7 @@ export function Gates() {
                 onClick={() => setWalk((w) => w.map((x, j) => (j >= i ? "open" : x)))}
                 aria-current={active ? "step" : undefined}
                 className={`rounded-full border px-3 py-1 text-sm font-semibold ${active ? "ring-2 ring-white" : ""}`}
-                style={{ borderColor: GATE_COLORS[i], color: v === "open" ? GATE_COLORS[i] : "#000", background: v === "open" ? "transparent" : GATE_COLORS[i] }}
+                style={{ borderColor: GATE_COLORS[i], color: v === "open" ? GATE_TEXT[i] : "#000", background: v === "open" ? "transparent" : GATE_COLORS[i] }}
                 title={v === "open" ? `Gate ${g.n}` : `Gate ${g.n}: ${v}. Click to walk again from here.`}
               >
                 {g.n} {v === "pass" ? "✓" : v === "fail" ? "✕" : ""}
@@ -81,7 +81,7 @@ export function Gates() {
       {gate ? (
         <article className="mt-8 grid gap-8 rounded-lg border-l-4 bg-[color:var(--color-tile)] p-6 md:grid-cols-2" style={{ borderColor: GATE_COLORS[gate.n - 1] }} aria-live="polite">
           <div className="md:col-span-2">
-            <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: GATE_COLORS[gate.n - 1] }}>Gate {gate.n} of 6</p>
+            <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: GATE_TEXT[gate.n - 1] }}>Gate {gate.n} of 6</p>
             <h3 className="mt-1 text-2xl font-semibold">{gate.title}</h3>
             <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Who answers: {gate.who}</p>
           </div>
@@ -111,7 +111,7 @@ export function Gates() {
             <button type="button" onClick={() => answer("pass")} className="rounded-md bg-[color:var(--color-glow)] px-5 py-2 font-semibold text-black">
               Pass: lift the barrier
             </button>
-            <button type="button" onClick={() => answer("fail")} className="rounded-md border border-[color:var(--gate-1)] px-5 py-2 font-semibold text-[color:var(--gate-1)]">
+            <button type="button" onClick={() => answer("fail")} className="rounded-md border px-5 py-2 font-semibold" style={{ borderColor: GATE_COLORS[0], color: GATE_TEXT[0] }}>
               Fail: the barrier stays down
             </button>
           </div>
@@ -138,7 +138,7 @@ export function Gates() {
         <aside className="mt-6 grid gap-6 rounded-lg border border-[color:var(--gate-1)] p-6 md:grid-cols-[200px_1fr]" data-testid="alley">
           <img src="/art/alley.jpg" alt="" className="h-32 w-full rounded object-cover md:h-full" />
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-[color:var(--gate-1)]">The side alley, gate {lastFailed + 1}</p>
+            <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: GATE_TEXT[0] }}>The side alley, gate {lastFailed + 1}</p>
             <p className="mt-2 text-lg">{GATES[lastFailed].alley}</p>
             <p className="mt-2 text-sm text-[color:var(--color-ink-muted)]">If you do not give them MCP servers, they build their own. The alley is not logged, not scoped and not revocable. Explain the no, or expect the alley.</p>
           </div>

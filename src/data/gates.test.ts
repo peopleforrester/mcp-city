@@ -20,3 +20,12 @@ describe("the six gates", () => {
     expect(GATES[4].verify.join(" ")).toContain("40.55 percent");
   });
 });
+
+import { contrast } from "../lib/contrast";
+import { GATE_TEXT, TILE } from "./gates";
+
+describe("gate text colors", () => {
+  it.each(GATE_TEXT.map((c, i) => [i + 1, c]))("gate %i text %s clears 4.5:1 on the tile", (_n, c) => {
+    expect(contrast(String(c), TILE)).toBeGreaterThanOrEqual(4.5);
+  });
+});
