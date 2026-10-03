@@ -15,7 +15,7 @@ export function Hero() {
   const section = useRef<HTMLElement>(null);
   const [viewRef, inView] = useInView("0px");
   const { progress, progressRef } = useScrollProgress(section);
-  const show = live && inView;
+  const show = live;
   return (
     <section
       ref={(node) => {
@@ -38,7 +38,7 @@ export function Hero() {
         {show && (
           <Suspense fallback={null}>
             <div className="absolute inset-0" data-testid="skyline">
-              <Skyline progress={progressRef} />
+              <Skyline progress={progressRef} active={inView} />
             </div>
           </Suspense>
         )}

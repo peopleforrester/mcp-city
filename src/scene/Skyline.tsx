@@ -115,9 +115,9 @@ function Rig({ progress }: { progress: RefObject<number> }) {
   return null;
 }
 
-export default function Skyline({ progress }: { progress: RefObject<number> }) {
+export default function Skyline({ progress, active = true }: { progress: RefObject<number>; active?: boolean }) {
   return (
-    <Canvas dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 230, 150], fov: 50, near: 0.5, far: 600 }}>
+    <Canvas frameloop={active ? "always" : "never"} dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 230, 150], fov: 50, near: 0.5, far: 600 }}>
       <fog attach="fog" args={["#07264a", 80, 420]} />
       <SkyDome />
       <Buildings />

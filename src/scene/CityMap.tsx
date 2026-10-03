@@ -10,6 +10,7 @@ import { DISTRICTS, EDGES, EDGE_COLORS, NODES, nodeById, type CityEdge } from ".
 import { SkyDome } from "./SkyDome";
 
 interface Props {
+  active?: boolean;
   sayNo: boolean;
   selected: string | null;
   tracerAt: string | null;
@@ -196,9 +197,9 @@ function Rig({ selected, tracerAt }: { selected: string | null; tracerAt: string
   return null;
 }
 
-export default function CityMap({ sayNo, selected, tracerAt, onSelect }: Props) {
+export default function CityMap({ active = true, sayNo, selected, tracerAt, onSelect }: Props) {
   return (
-    <Canvas dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 62, 70], fov: 45, near: 0.5, far: 500 }} onPointerMissed={() => onSelect(null)}>
+    <Canvas frameloop={active ? "always" : "never"} dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 62, 70], fov: 45, near: 0.5, far: 500 }} onPointerMissed={() => onSelect(null)}>
       <fog attach="fog" args={["#07264a", 120, 260]} />
       <SkyDome radius={300} sharpness={5} />
       <Plates />

@@ -1,7 +1,7 @@
 // ABOUTME: The living architecture map: the 3D city on a wide screen, the same data as an SVG everywhere, and the panel for a building.
 // ABOUTME: Two switches: "say no" shows the bypass alleys and darkens audit; "replay the attack" walks the CVE across the city.
 
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useInView } from "../lib/useInView";
 import { ATTACK, ATTACK_SOURCES, DISTRICTS, EDGES, EDGE_COLORS, NODES, nodeById } from "../data/city";
 import { useLiveScene } from "../lib/useLiveScene";
@@ -41,6 +41,10 @@ function FlatMap({ sayNo, selected, tracerAt, onSelect }: { sayNo: boolean; sele
 export function Map() {
   const { live } = useLiveScene(900);
   const [mapRef, mapInView] = useInView();
+  const [mapSeen, setMapSeen] = useState(false);
+  useEffect(() => {
+    if (mapInView) setMapSeen(true);
+  }, [mapInView]);
   const [sayNo, setSayNo] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [step, setStep] = useState<number>(-1);
@@ -70,9 +74,9 @@ export function Map() {
         <div>
           {live ? (
             <div ref={mapRef} className="h-[28rem] overflow-hidden rounded-lg bg-[color:var(--color-night)]" data-testid="city-map">
-              {mapInView && (
+              {mapSeen && (
                 <Suspense fallback={null}>
-                  <CityMap sayNo={sayNo} selected={selected} tracerAt={tracerAt} onSelect={setSelected} />
+                  <CityMap active={mapInView} sayNo={sayNo} selected={selected} tracerAt={tracerAt} onSelect={setSelected} />
                 </Suspense>
               )}
             </div>

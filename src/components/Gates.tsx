@@ -19,6 +19,10 @@ const GateRoad = lazy(() => import("../scene/GateRoad"));
 export function Gates() {
   const { live } = useLiveScene(600);
   const [roadRef, roadInView] = useInView();
+  const [roadSeen, setRoadSeen] = useState(false);
+  useEffect(() => {
+    if (roadInView) setRoadSeen(true);
+  }, [roadInView]);
   const [walk, setWalk] = useState<Walk>(readWalkFromUrl);
   const [copied, setCopied] = useState(false);
   const gate = currentGate(walk);
@@ -68,9 +72,9 @@ export function Gates() {
 
       {live && (
         <div ref={roadRef} className="mt-8 h-72 overflow-hidden rounded-lg bg-[color:var(--color-night)]" data-testid="gate-road" aria-hidden="true">
-          {roadInView && (
+          {roadSeen && (
             <Suspense fallback={null}>
-              <GateRoad walk={walk} />
+              <GateRoad walk={walk} active={roadInView} />
             </Suspense>
           )}
         </div>

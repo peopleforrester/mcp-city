@@ -176,10 +176,10 @@ function Rig({ walk }: { walk: Walk }) {
   return null;
 }
 
-export default function GateRoad({ walk }: { walk: Walk }) {
+export default function GateRoad({ walk, active = true }: { walk: Walk; active?: boolean }) {
   const admitted = walk.every((v) => v === "pass");
   return (
-    <Canvas dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 5.5, 14], fov: 45, near: 0.5, far: 400 }}>
+    <Canvas frameloop={active ? "always" : "never"} dpr={[1, 1.5]} gl={{ alpha: false, antialias: false, powerPreference: "high-performance" }} camera={{ position: [0, 5.5, 14], fov: 45, near: 0.5, far: 400 }}>
       <fog attach="fog" args={["#07264a", 30, 120]} />
       <SkyDome radius={200} sharpness={7} />
       <Road />
