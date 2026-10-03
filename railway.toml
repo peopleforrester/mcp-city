@@ -1,0 +1,5 @@
+# ABOUTME: Railway build config. Railpack builds the Vite app and serves dist/ with Caddy, SPA fallback included.
+# ABOUTME: A static site has no process of its own, so there is no start command and no Dockerfile.
+
+[build]
+builder = "RAILPACK"

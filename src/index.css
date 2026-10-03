@@ -1,0 +1,65 @@
+/* ABOUTME: Design tokens copied from michaelrishiforrester.com so the two sites read as one.
+   ABOUTME: The city is a night site, so the dark palette is the default and light is opt-in. */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
+
+/* The main site's dark set (Dracula family), plus the deck's zone colors. */
+:root {
+  --color-page: #282a36;
+  --color-ink: #f8f8f2;
+  --color-ink-muted: #b9bbc8;
+  --color-link: #8be9fd;
+  --color-link-muted: #7fb8d0;
+  --color-accent: #ffb86c;
+  --color-tile: #343746;
+  --color-codebg: #44475a;
+  --color-rule: #44475a;
+  --color-night: #051932;
+  --color-glow: #04c0da;
+  --gate-1: #ff3c64;
+  --gate-2: #ffc800;
+  --gate-3: #00c8bc;
+  --gate-4: #009eff;
+  --gate-5: #bc37de;
+  --gate-6: #ed561b;
+  --text-base: 18px;
+  --leading-body: 1.6;
+  --measure: 40em;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/bricolage-grotesque-variable.woff2") format("woff2-variations");
+}
+
+html { color-scheme: dark; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; text-wrap: balance; }
+
+@layer base { a { color: var(--color-link); } }
+
+.measure { max-width: var(--measure); margin-inline: auto; padding-inline: 1rem; }
+.measure-wide { max-width: 72rem; margin-inline: auto; padding-inline: 1rem; }
+
+/* The backlit screen behind the skyline: cyan at the horizon, navy above. */
+.sky {
+  background: linear-gradient(180deg, var(--color-night) 0%, #0a2a52 55%, var(--color-glow) 100%);
+}

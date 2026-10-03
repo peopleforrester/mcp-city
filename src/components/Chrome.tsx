@@ -1,0 +1,44 @@
+// ABOUTME: Header and footer in the shape of michaelrishiforrester.com, pointing back to it.
+// ABOUTME: The city is a satellite of the main site, so the chrome says whose it is.
+
+const NAV = [
+  { href: "#gates", label: "The gates" },
+  { href: "#talk", label: "The talk" },
+  { href: "#resources", label: "Resources" },
+  { href: "#about", label: "About" },
+  { href: "https://michaelrishiforrester.com/", label: "Main site" },
+];
+
+export function Header() {
+  return (
+    <header className="border-b border-[color:var(--color-rule)] bg-[color:var(--color-page)]/80 backdrop-blur sticky top-0 z-20">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-white focus:text-black">
+        Skip to content
+      </a>
+      <div className="measure-wide flex flex-wrap items-center gap-x-6 gap-y-2 py-4">
+        <a href="/" className="font-semibold tracking-tight">Michael Rishi Forrester</a>
+        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          {NAV.map((item) => (
+            <a key={item.href} href={item.href} className="inline-block py-1 text-[color:var(--color-link-muted)] hover:text-[color:var(--color-link)]">
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="border-t border-[color:var(--color-rule)]">
+      <div className="measure-wide flex flex-wrap items-center justify-between gap-4 py-8 text-sm text-[color:var(--color-ink-muted)]">
+        <span>Every figure in the talk has a source; the ledger is in the repo.</span>
+        <span className="flex items-center gap-4">
+          <a href="https://github.com/peopleforrester/mcp-city" className="hover:underline">Site source</a>
+          <img src="/art/spider.png" alt="" width="36" height="27" className="opacity-80" title="For Whitney" />
+        </span>
+      </div>
+    </footer>
+  );
+}
