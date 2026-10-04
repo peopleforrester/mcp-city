@@ -24,3 +24,12 @@ test("a shared walk resumes where it stopped", async ({ page }) => {
   await expect(page.getByText("Gate 4 of 6")).toBeVisible();
   await expect(page.getByTestId("alley")).toContainText("gate 3");
 });
+
+test("the film is on the page with a poster and a playable source", async ({ page }) => {
+  await page.goto("/#film");
+  const film = page.getByTestId("film");
+  await expect(film).toBeVisible();
+  await expect(film).toHaveAttribute("poster", "/film/poster.jpg");
+  const res = await page.request.head("/film/shadow-play-720.mp4");
+  expect(res.ok()).toBeTruthy();
+});

@@ -8,6 +8,7 @@ const NAV = [
   { href: "#gates", label: "The gates" },
   { href: "#map", label: "The city" },
   { href: "#plugs", label: "The plugs" },
+  { href: "#film", label: "The film" },
   { href: "#talk", label: "The talk" },
   { href: "#resources", label: "Resources" },
   { href: "#about", label: "About" },
