@@ -1,11 +1,11 @@
-// ABOUTME: The page, top to bottom: the city, the gates, the talk, the resources, the person.
-// ABOUTME: One route; everything is an anchor on this page.
+// ABOUTME: The home page: the descent, the gate walk, and a card for every other page.
+// ABOUTME: The old anchors still resolve so share links and the deck's QR codes keep working.
 
 import { lazy, Suspense, useEffect } from "react";
 import { Footer, Header } from "./components/Chrome";
 import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
-import { Resources, Talk } from "./components/Sections";
+import { PageCards } from "./components/PageCards";
 
 // Everything below the gates arrives after first paint; a phone on ballroom wifi gets the title and the walk first.
 const Map = lazy(() => import("./components/Map").then((m) => ({ default: m.Map })));
@@ -36,13 +36,12 @@ export default function App() {
       <main id="main" className="flex-1">
         <Hero />
         <Gates />
+        <PageCards />
         <Suspense fallback={null}>
           <Map />
           <Plugs />
           <Film />
         </Suspense>
-        <Talk />
-        <Resources />
       </main>
       <Footer />
       <Suspense fallback={null}>
