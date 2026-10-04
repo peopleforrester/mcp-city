@@ -10,7 +10,8 @@ export function Talk() {
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         Fifteen minutes on what happens when governance meets people who route around a no. {TALK.when}, {TALK.where}.
       </p>
-      <ul className="mt-6 grid gap-4 sm:grid-cols-3">
+      <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <li className="rounded-lg bg-[color:var(--color-tile)] p-5"><a href={TALK.film} className="font-semibold underline underline-offset-4">The shadow-play film</a><p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Two minutes, the whole story, cut paper on a backlit screen.</p></li>
         <li className="rounded-lg bg-[color:var(--color-tile)] p-5"><a href={TALK.slidesPdf} className="font-semibold underline underline-offset-4">The slides</a><p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">PDF, as delivered.</p></li>
         <li className="rounded-lg bg-[color:var(--color-tile)] p-5"><a href={TALK.script} className="font-semibold underline underline-offset-4">The spoken script</a><p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Every word, slide by slide.</p></li>
         <li className="rounded-lg bg-[color:var(--color-tile)] p-5"><span className="font-semibold">The recording</span><p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Linked here once the foundation posts it.</p></li>
