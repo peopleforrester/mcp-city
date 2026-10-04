@@ -14,7 +14,7 @@ export const TALK = {
   gatesDoc: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/gates/approval-gates.md",
   ledger: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/research/source-ledger.md",
   siteSource: "https://github.com/peopleforrester/mcp-city",
-  film: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.1",
+  film: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.2",
 };
 
 export const RESOURCES = [
