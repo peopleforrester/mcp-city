@@ -1,7 +1,7 @@
 # Project State: mcp-city
 
-Phase: 1.2 Plan (PRD 8, multi-page collateral site; PRD 12 phase 3 polish folds into it)
-Approved: 2026-10-03 by Michael (PRD 12 in peopleforrester/MCP_for_a_city, issue #12 there)
+Phase: 2.2 Implement (PRD 8 phase 0, current before the keynote)
+Approved: 2026-10-05 by Michael (PRD 8, prds/8-multi-page-collateral-site.md, issue #8)
 
 ## Lifecycle
 - [x] 1.1 Research
@@ -63,3 +63,4 @@ narrated cut the site plays at 720p).
 - 2026-10-04 film player, wrapping page, favicon; the keynote is 2026-10-06
 - 2026-10-05 handed to its own session; the keynote session stops writing here
 - 2026-10-05 Michael asked for a multi-page site carrying every piece of collateral, brought current with the restructured deck; PRD 8 drafted (issue #8), awaiting his approval
+- 2026-10-05 PRD 8 approved ("Start going"); ten page URLs live for the deck's QR codes; phase 0 in flight

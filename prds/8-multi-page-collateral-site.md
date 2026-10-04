@@ -5,7 +5,7 @@ ABOUTME: Draft until Michael approves; the research section records what was mea
 
 # PRD 8: a multi-page site that carries every piece of the talk's collateral, kept current with the deck
 
-Status: draft. Approved-by: pending. Issue #8.
+Status: active. Approved-by: Michael@2026-10-04T22:47:54Z ("Start going"). Plan checksum: sha256:a320fd99edda (body from '## What I measured' onward). Issue #8.
 
 Michael, 2026-10-05: the website is awesome, and it needs multiple pages, a lot
 more detail, every piece of collateral from the talk represented in its best
