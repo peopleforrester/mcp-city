@@ -33,3 +33,9 @@ test("the film is on the page with a poster and a playable source", async ({ pag
   const res = await page.request.head("/film/shadow-play-720.mp4");
   expect(res.ok()).toBeTruthy();
 });
+
+test("the wrapping page stands on its own", async ({ page }) => {
+  await page.goto("/wrapping/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("We wrapped MCP servers in MCP servers. So did you.");
+  await expect(page.getByText("The one test")).toBeVisible();
+});
