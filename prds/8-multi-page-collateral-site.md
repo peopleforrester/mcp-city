@@ -59,23 +59,32 @@ HTML for the research (not links into GitHub), a gallery for the art, a player
 with chapters for the film. The home page becomes shorter: the descent, one
 section per page with a teaser, and a real navigation.
 
-### Pages
+### Pages and names
 
-| Route | Carries | Format |
-|---|---|---|
-| `/` | The descent and the ship HUD; one teaser card per page below; the thesis | Scene plus cards; nothing waits on three.js |
-| `/talk/` | The talk as given: every shown slide as an image with Michael's notes beside it, in run order, with timings; the PDF, the PPTX, the film, the abstract, the event listing, the recording when posted | Reader; images lazy; notes are the page text |
-| `/gates/` | The six-gate walk, the alleys, the result card, Markdown export, print, share links; the checklist as a document; the criteria research rendered; the source ledger rendered claim by claim | Form first, scene on top |
-| `/architecture/` | The living map with say-no and the attack replay; the diagram PNG and Mermaid; a glossary of every building with its source; the component map and component research | Map plus rendered documents |
-| `/story/` | The CVE-2026-47250 tale in five scenes: plant, ask, run, token, replay, each with the deck's picture, the step text and the advisory source; the security-failures spike | Scroll story |
-| `/plugs/` | The connector history from 1981 to 2014 with the sketches and dates, the eighteen years, "MCP is the USB of AI tooling" and why we are not at USB-C yet, "Twenty years of no", and the wrapping section with USB-C closing around USB-A | Timeline; replaces the `/wrapping/` static page, which redirects |
-| `/wrapping/` | The six reasons, the tools, the one test, the research rendered | Keeps the QR URL from the deck; becomes a page of the app |
-| `/ships/` | The scale ladder: every ship, its crew and source, the headcount it stands for; the fan-art note | Ladder with the outlines |
-| `/research/` | Index of every public spike and the ledger, each rendered as HTML with its read dates; a link to the Markdown in the collateral repo | Rendered Markdown |
-| `/articles/` | The three-part series once published, the abstract now | Rendered Markdown |
-| `/film/` | The narrated film with chapter marks per scene, captions, the 1080p download | Player |
-| `/art/` | Every scene, ship, cable and attack image with its caption and the generated-fan-art note | Gallery |
-| `/about/` | The person, speaking, contact, newsletter, the three MCP repos | Plain |
+Michael, 2026-10-05: "the gates, the city, the plugs, the film, the talk" as
+names is horrible. Pages are named for what they are, in plain words, and
+those names are the nav, the page titles and the home cards. "Plugs" is gone
+as a word; the connector history keeps its page under a plain name. The person
+belongs on michaelrishiforrester.com, so there is no about page here, only a
+footer line that links there.
+
+| Route | Name | Carries | Format |
+|---|---|---|---|
+| `/` | Governing MCP for a Workforce the Size of a City | The descent and the ship HUD; one card per page below; the thesis | Scene plus cards; nothing waits on three.js |
+| `/approval-gates/` | MCP approval gates | The six-gate walk, the alleys, the result card, Markdown export, print, share links; the checklist as a document; the criteria research rendered; the source ledger rendered claim by claim | Form first, scene on top |
+| `/architecture/` | The architecture | The living map with say-no and the attack replay; the diagram PNG and Mermaid; a glossary of every building with its source; the component map and component research | Map plus rendered documents |
+| `/the-attack/` | The attack | CVE-2026-47250 in five scenes: plant, ask, run, token, replay, each with the deck's picture, the step text and the advisory source; the security-failures spike | Scroll story |
+| `/usb/` | Eighteen years of USB | The connector history from 1981 to 2014 with the sketches and dates, "MCP is the USB of AI tooling" and why we are not at USB-C yet, "Twenty years of no" | Timeline |
+| `/wrapping/` | Wrapping MCP servers in MCP servers | The six reasons, the tools, the one test, USB-C closing around USB-A, the research rendered | Keeps the QR URL from the deck; becomes a page of the app |
+| `/scale/` | A workforce the size of a city | The scale ladder: every ship, its crew and source, the headcount it stands for; the fan-art note | Ladder with the outlines |
+| `/presentation/` | The presentation | Every shown slide as an image with the speaker notes beside it, in run order, with timings; the PDF, the PPTX, the abstract, the event listing | Reader; images lazy; notes are the page text |
+| `/presentation/video/` | A video of the presentation | The recording when the foundation posts it; until then the page says when to expect it | Player |
+| `/film/` | The film | The narrated film with chapter marks per scene, captions, the 1080p download | Player |
+| `/resources/` | Resources | Index of every public spike and the ledger rendered as HTML, the articles, the art with its captions and the fan-art note, the three public MCP repos, the collateral repo, the site source | Rendered Markdown and a gallery, in sections |
+
+The footer on every page: Michael Rishi Forrester, linking to
+michaelrishiforrester.com, speaking, and contact. Nothing more about the person
+here.
 
 ### How it stays current
 
@@ -84,8 +93,8 @@ Content is data, generated from the two sources of truth rather than retyped:
 - **The deck.** A script in this repo (`scripts/pull-deck.ts`) reads the Slides
   presentation through the API: shown slides in order, each slide's text and
   notes, and a PNG per slide via the thumbnail endpoint. It writes
-  `content/talk/*.json` and `public/slides/*.png` with the deck revision id and
-  the read date. Re-run it whenever the deck changes; the talk page, the gate
+  `content/presentation/*.json` and `public/slides/*.png` with the deck revision id and
+  the read date. Re-run it whenever the deck changes; the presentation page, the gate
   titles and the spoken script regenerate from it. The collateral repo's
   `script/keynote-spoken.md` and PDF are regenerated in the same run.
 - **The collateral repo.** `mcp-for-a-city` is vendored as a git submodule at
@@ -94,7 +103,7 @@ Content is data, generated from the two sources of truth rather than retyped:
   existing direction stays: `gates.ts` here generates the collateral repo's
   checklist, so gates flow out, and everything else flows in.
 - A Vitest check fails the build when the deck revision recorded in
-  `content/talk/` is older than the one the API reports, so stale cannot ship
+  `content/presentation/` is older than the one the API reports, so stale cannot ship
   silently.
 
 ### Technique
@@ -111,7 +120,7 @@ Content is data, generated from the two sources of truth rather than retyped:
 - The three.js scenes stay lazy and in-view only, as today; each page mounts
   only its own scene.
 - Tests: every page builds, has a title and one `h1`, and every internal link
-  resolves (Vitest over `dist/`); every slide in `content/talk/` has an image
+  resolves (Vitest over `dist/`); every slide in `content/presentation/` has an image
   and notes; every research file in the submodule that is marked public is
   rendered; Playwright walks the nav on desktop and phone and checks the gates
   still work with keyboard only; Lighthouse mobile stays at or above today's
@@ -130,10 +139,10 @@ one slide's note carries a headcount figure he has not settled.
 
 | Phase | Ships | Done when |
 |---|---|---|
-| **0. Current before the keynote** (2026-10-05, tonight) | Time fixed to 10:15; gate titles follow slide 13 if Michael says so (decision 1); header nav with a link to every section including the plugs; deck re-exported to PDF and the spoken script regenerated from the current notes into the collateral repo; `/wrapping/` checked against slide 20's six reasons | Live, e2e green against the URL, QR pages unchanged |
-| **1. The shell** (week of 2026-10-06) | Multi-page build, chrome, nav, sitemap, redirects from the anchors; gates, architecture, plugs, film and about on their own pages; home trimmed to the descent and the cards | Every page builds and links resolve; Lighthouse mobile not below 84 |
-| **2. The talk and the story** | `pull-deck.ts`, the talk reader with slides and notes, the story page, the ships page, the staleness check | Notes match the live deck revision; recording link slot ready |
-| **3. Research, articles, art** | Submodule, Markdown rendering, the research index and ledger pages, the gallery, the articles page | Every allowlisted file rendered; no private file present in `dist/` (a test greps for it) |
+| **0. Current before the keynote** (2026-10-05, tonight) | Time fixed to 10:15; gate titles follow slide 13 if Michael says so (decision 1); header nav with a link to every section including the USB history; deck re-exported to PDF and the spoken script regenerated from the current notes into the collateral repo; `/wrapping/` checked against slide 20's six reasons | Live, e2e green against the URL, QR pages unchanged |
+| **1. The shell** (week of 2026-10-06) | Multi-page build, chrome, nav, sitemap, redirects from the anchors; the approval gates, the architecture, USB, the film and resources on their own pages; home trimmed to the descent and the cards | Every page builds and links resolve; Lighthouse mobile not below 84 |
+| **2. The talk and the story** | `pull-deck.ts`, the presentation reader with slides and notes, the attack page, the scale page, the staleness check | Notes match the live deck revision; recording link slot ready |
+| **3. Research, articles, art** | Submodule, Markdown rendering, the resources page with the rendered spikes, the ledger, the gallery and the articles | Every allowlisted file rendered; no private file present in `dist/` (a test greps for it) |
 | **4. Polish** | Prerender audit against #3, Railway IaC (#2), Open Graph images per page, the shader pass from #6, Awwwards worth considering | Issues #2, #3 and #6 closed |
 
 Phase 0 is what tomorrow's audience sees. Phases 1 to 4 land in place on the
@@ -147,7 +156,7 @@ same URL.
 2. **Speaker notes public.** The talk page publishes your notes as the spoken
    script, verbatim. Yes, or edited by you first? And the headcount line on
    slide 1: about 750,000 (your note) or about 814,000 (the fact anchors)?
-3. **Articles.** Publish the three-part series on `/articles/` as they stand,
+3. **Articles.** Publish the three-part series under Resources as they stand,
    hold them for michaelrishiforrester.com, or both with the main site
    canonical?
 4. **Phase 0 scope tonight.** The nav, the time, the regenerated script and PDF
