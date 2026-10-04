@@ -38,7 +38,7 @@ const MINTMCP = {
 export const GATES: Gate[] = [
   {
     n: 1,
-    title: "Do we know the vendor?",
+    title: "Do we have a relationship with the vendor?",
     who: "Procurement and security",
     ask: [
       "Is this the vendor's own server, or a community fork?",
@@ -56,7 +56,7 @@ export const GATES: Gate[] = [
   },
   {
     n: 2,
-    title: "Do we need it, and is it core?",
+    title: "Is there a real business need?",
     who: "The business owner",
     ask: [
       "What job does this do, and who asked for it?",
@@ -77,7 +77,7 @@ export const GATES: Gate[] = [
   },
   {
     n: 3,
-    title: "How well is it built, and does it need wrapping?",
+    title: "Is it well built, and wrapped where we needed?",
     who: "The platform team",
     ask: [
       "One risk level per tool: read and write are separate tools",
@@ -123,7 +123,7 @@ export const GATES: Gate[] = [
   },
   {
     n: 5,
-    title: "Does it carry authorization?",
+    title: "Does it meet our security standards?",
     who: "The platform team",
     ask: [
       "OAuth 2.0, not static keys, not open access",
@@ -148,7 +148,7 @@ export const GATES: Gate[] = [
   },
   {
     n: 6,
-    title: "Is the vendor itself compliant?",
+    title: "Is the vendor certified? SOC 2, ISO 27001",
     who: "Procurement and security",
     ask: [
       "SOC 2 Type II report, not a badge on a website",

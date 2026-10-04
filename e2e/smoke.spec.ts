@@ -39,3 +39,13 @@ test("the wrapping page stands on its own", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("We wrapped MCP servers in MCP servers. So did you.");
   await expect(page.getByText("The one test")).toBeVisible();
 });
+
+test("the gates and architecture pages stand on their own", async ({ page }) => {
+  await page.goto("/gates/");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("six gates");
+  await expect(page.getByRole("heading", { name: /Gate 6/ })).toBeVisible();
+  await page.goto("/architecture/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("The architecture, done properly");
+  const img = await page.request.head("/architecture/architecture.png");
+  expect(img.ok()).toBeTruthy();
+});
