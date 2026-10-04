@@ -38,7 +38,7 @@ function FlatMap({ sayNo, selected, tracerAt, onSelect }: { sayNo: boolean; sele
   );
 }
 
-export function Map() {
+export function Map({ standalone = false }: { standalone?: boolean } = {}) {
   const { live } = useLiveScene(900);
   const [mapRef, mapInView] = useInView();
   const [mapSeen, setMapSeen] = useState(false);
@@ -53,8 +53,8 @@ export function Map() {
   const edgesOf = selected ? EDGES.filter((e) => e.from === selected || e.to === selected) : [];
 
   return (
-    <section id="map" className="measure-wide py-16 border-t border-[color:var(--color-rule)]" aria-labelledby="map-h">
-      <h2 id="map-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The architecture</h2>
+    <section id="map" className={standalone ? "measure-wide pb-16" : "measure-wide py-16 border-t border-[color:var(--color-rule)]"} aria-labelledby="map-h">
+      {!standalone && <h2 id="map-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The architecture</h2>}
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         A person, an agent, one gate every call goes through, the tools. Everything else is that gate done properly. Click a building. Then say no, and watch where the traffic goes.
       </p>

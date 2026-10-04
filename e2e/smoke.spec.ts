@@ -45,7 +45,7 @@ test("the gates and architecture pages stand on their own", async ({ page }) => 
   await expect(page.getByRole("heading", { level: 1 })).toContainText("six gates");
   await expect(page.getByRole("heading", { name: /Gate 6/ })).toBeVisible();
   await page.goto("/architecture/");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("The architecture, done properly");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("The architecture");
   const img = await page.request.head("/architecture/architecture.png");
   expect(img.ok()).toBeTruthy();
 });
