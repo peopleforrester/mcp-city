@@ -1,9 +1,10 @@
+/// <reference types="node" />
 // ABOUTME: Every route in the Vite page list has its HTML entry, its entry module, a title and a description.
 // ABOUTME: Catches a page added to one place and not the others before the build silently drops it.
 
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { PAGES } from "../../vite.config";
+import { PAGES } from "../../routes";
 
 describe("pages", () => {
   it("lists the home page and at least the planned routes", () => {

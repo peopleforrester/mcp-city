@@ -8,7 +8,7 @@ export function Film({ standalone = false }: { standalone?: boolean } = {}) {
     <section id="film" className={standalone ? "measure-wide pb-16" : "measure-wide py-16 border-t border-[color:var(--color-rule)]"} aria-labelledby="film-h">
       {!standalone && <h2 id="film-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The film</h2>}
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
-        The whole talk as a shadow play: cut paper on a backlit screen, narrated, with captions. Rendered from the same art as the deck. The voice is synthetic.
+        The whole talk as a shadow play: cut paper on a backlit screen, narrated, with captions. Re-cut to the deck as presented. Rendered from the same art as the deck; the voice is synthetic.
       </p>
       <video
         className="mt-6 w-full rounded-lg bg-black"

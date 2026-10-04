@@ -74,3 +74,16 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; text-wrap: bala
   #print-checklist h2 { font-size: 13pt; }
   #print-checklist ul { padding-left: 1.2em; }
 }
+
+/* Rendered collateral documents: readable Markdown in the site's palette. */
+.prose-doc { max-width: 46rem; }
+.prose-doc h2 { font-size: 1.6rem; margin-top: 2.2rem; }
+.prose-doc h3 { font-size: 1.2rem; margin-top: 1.6rem; }
+.prose-doc p, .prose-doc li { margin-top: 0.6rem; }
+.prose-doc ul, .prose-doc ol { padding-left: 1.4rem; }
+.prose-doc a { text-decoration: underline; text-underline-offset: 4px; }
+.prose-doc table { display: block; overflow-x: auto; margin-top: 1rem; border-collapse: collapse; font-size: 0.95rem; }
+.prose-doc th, .prose-doc td { border: 1px solid var(--color-rule); padding: 0.4rem 0.6rem; vertical-align: top; text-align: left; }
+.prose-doc code { background: var(--color-codebg); padding: 0.1em 0.3em; border-radius: 4px; font-size: 0.9em; }
+.prose-doc pre { background: var(--color-codebg); padding: 1rem; border-radius: 6px; overflow-x: auto; }
+.prose-doc blockquote { border-left: 4px solid var(--color-accent); padding-left: 1rem; color: var(--color-ink-muted); }

@@ -1,6 +1,6 @@
 # Project State: mcp-city
 
-Phase: 2.2 Implement (PRD 8 phase 0, current before the keynote)
+Phase: 2.2 Implement (PRD 8 phases 1 to 3 in flight; phase 0 shipped)
 Approved: 2026-10-05 by Michael (PRD 8, prds/8-multi-page-collateral-site.md, issue #8)
 
 ## Lifecycle
@@ -64,3 +64,4 @@ narrated cut the site plays at 720p).
 - 2026-10-05 handed to its own session; the keynote session stops writing here
 - 2026-10-05 Michael asked for a multi-page site carrying every piece of collateral, brought current with the restructured deck; PRD 8 drafted (issue #8), awaiting his approval
 - 2026-10-05 PRD 8 approved ("Start going"); ten page URLs live for the deck's QR codes; phase 0 in flight
+- 2026-10-05 PRD 8 phase 0 shipped (nav, 10:15, gate titles, plain names, collateral refreshed); multi-page build live with usb, scale, the-attack, architecture, film, presentation (39 slides with notes), resources and five rendered documents; film v0.3 on the page

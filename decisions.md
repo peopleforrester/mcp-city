@@ -15,3 +15,12 @@ architecture", "The presentation", "A video of the presentation", "The film",
 "Resources"); "plugs" is retired as a word; no about page, the person lives on
 michaelrishiforrester.com. The important collateral sits in the top nav, not
 buried under Resources.
+
+## 2026-10-05T23:00:00Z · 2.2 · PRD 8 deviation: the collateral is vendored by an allowlist script, not a submodule
+
+The plan named a git submodule for peopleforrester/mcp-for-a-city. It shipped as
+scripts/sync-collateral.ts, which copies only the allowlisted documents into
+content/collateral with the source commit in a manifest. A submodule would pull
+the whole repo, including art and the PDF, into every Railway build and would
+make the allowlist a convention rather than the mechanism. Revisit if the
+number of documents makes the manual sync a chore.

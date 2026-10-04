@@ -9,15 +9,27 @@ The collateral (slides, script, research, source ledger) lives in
 [peopleforrester/mcp-for-a-city](https://github.com/peopleforrester/mcp-for-a-city).
 This repo is the site only.
 
-## What is on the page
+## The pages
 
-- **The descent**: on a wide screen the hero is a scroll-driven descent from orbit to one desk, with the ship ladder as a HUD. Phones and `prefers-reduced-motion` get the poster.
-- **The six gates**: walk an MCP server through the approval gates; a fail lights the side alley; the result card exports Markdown, prints to PDF, and carries a share link (`?g=PPFUUU`).
-- **The city, done properly**: the architecture as four districts with roads and traffic. "Say no" shows the bypass alleys; "Replay the attack" walks CVE-2026-47250 across the map. An SVG of the same data serves everywhere else.
-- **Remember these?**: seven connectors, eighteen years, USB-C closing around USB-A, and why we wrapped MCP servers in MCP servers.
-- The talk, the resources, the person. The footer has a sound switch, and the Konami code does something.
+| Route | What |
+|---|---|
+| `/` | The descent from orbit to one desk, the gate walk, and a card for every page |
+| `/gates/` | MCP approval gates: the six-gate checklist, printable; `/#gates` walks a real server through them |
+| `/architecture/` | The architecture diagram, and the same architecture as a living map with "say no" and the attack replay |
+| `/the-attack/` | CVE-2026-47250 in five scenes |
+| `/usb/` | Eighteen years of USB: the connector history and why MCP is not at USB-C yet |
+| `/wrapping/` | Wrapping MCP servers in MCP servers: six reasons, the tools, the one test |
+| `/scale/` | A workforce the size of a city: the ship ladder with sources |
+| `/presentation/` | Every shown slide with the words spoken over it; the PDF and the script; `/presentation/video/` holds the recording |
+| `/film/` | The narrated shadow-play film |
+| `/resources/` | The research and the source ledger rendered as pages, plus the repos |
 
-Every canvas is lazy, renders only while in view, and has a DOM equivalent.
+Each route is its own Vite entry (`routes.ts`) mounted into one shell, so every
+page is real HTML with its own title. The slides and notes in
+`content/presentation/` are pulled from the deck; the documents in
+`content/collateral/` are copied from the collateral repo by
+`scripts/sync-collateral.ts`, allowlist only. Every canvas is lazy, renders only
+while in view, and has a DOM equivalent.
 
 ## Stack
 

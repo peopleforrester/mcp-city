@@ -1,0 +1,32 @@
+{
+ "repo": "peopleforrester/mcp-for-a-city",
+ "commit": "ffad535",
+ "synced": "2026-10-04",
+ "documents": [
+  {
+   "src": "research/approval-process-criteria.md",
+   "slug": "approval-process-criteria",
+   "title": "What an enterprise MCP approval process evaluates"
+  },
+  {
+   "src": "research/wrapping-mcp-servers.md",
+   "slug": "wrapping-mcp-servers",
+   "title": "Wrapping an MCP server inside an MCP server"
+  },
+  {
+   "src": "research/source-ledger.md",
+   "slug": "source-ledger",
+   "title": "The claim-by-claim source ledger"
+  },
+  {
+   "src": "sources/sources.md",
+   "slug": "sources",
+   "title": "The sources slide"
+  },
+  {
+   "src": "gates/approval-gates.md",
+   "slug": "approval-gates",
+   "title": "The six approval gates as a checklist"
+  }
+ ]
+}
