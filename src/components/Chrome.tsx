@@ -5,14 +5,15 @@ import { useState } from "react";
 import { isHumming, setHum } from "../lib/sound";
 
 const NAV = [
-  { href: "#gates", label: "The gates" },
-  { href: "#map", label: "The city" },
-  { href: "#plugs", label: "The plugs" },
-  { href: "#film", label: "The film" },
-  { href: "#talk", label: "The talk" },
-  { href: "#resources", label: "Resources" },
-  { href: "#about", label: "About" },
-  { href: "https://michaelrishiforrester.com/", label: "Main site" },
+  { href: "/gates/", label: "MCP approval gates" },
+  { href: "/architecture/", label: "The architecture" },
+  { href: "/the-attack/", label: "The attack" },
+  { href: "/usb/", label: "Eighteen years of USB" },
+  { href: "/wrapping/", label: "Wrapping" },
+  { href: "/scale/", label: "A workforce the size of a city" },
+  { href: "/presentation/", label: "The presentation" },
+  { href: "/film/", label: "The film" },
+  { href: "/resources/", label: "Resources" },
 ];
 
 export function Header() {
@@ -40,7 +41,7 @@ export function Footer() {
   return (
     <footer className="border-t border-[color:var(--color-rule)]">
       <div className="measure-wide flex flex-wrap items-center justify-between gap-4 py-8 text-sm text-[color:var(--color-ink-muted)]">
-        <span>Every figure in the talk has a source; the ledger is in the repo.</span>
+        <span><a href="https://michaelrishiforrester.com/" className="hover:underline">Michael Rishi Forrester</a> · <a href="https://michaelrishiforrester.com/speaking/" className="hover:underline">Speaking</a> · <a href="https://michaelrishiforrester.com/contact/" className="hover:underline">Contact</a></span>
         <span className="flex items-center gap-4">
           <button type="button" onClick={() => setOn(setHum(!on))} aria-pressed={on} className="hover:underline">
             Sound: {on ? "on" : "off"}

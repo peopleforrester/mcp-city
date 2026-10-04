@@ -12,7 +12,7 @@ export function Plugs() {
   const usbC = PLUGS.find((p) => p.name === "USB-C")!;
   return (
     <section id="plugs" className="measure-wide py-16 border-t border-[color:var(--color-rule)]" aria-labelledby="plugs-h">
-      <h2 id="plugs-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">Remember these?</h2>
+      <h2 id="plugs-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">Eighteen years of USB</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         "MCP is the USB of AI tooling." Fine. But does anyone remember the early days of USB? Is that A? Is that Mini? Is that Micro? Which way up does it go?
       </p>

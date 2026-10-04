@@ -5,7 +5,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Footer, Header } from "./components/Chrome";
 import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
-import { About, Resources, Talk } from "./components/Sections";
+import { Resources, Talk } from "./components/Sections";
 
 // Everything below the gates arrives after first paint; a phone on ballroom wifi gets the title and the walk first.
 const Map = lazy(() => import("./components/Map").then((m) => ({ default: m.Map })));
@@ -43,7 +43,6 @@ export default function App() {
         </Suspense>
         <Talk />
         <Resources />
-        <About />
       </main>
       <Footer />
       <Suspense fallback={null}>

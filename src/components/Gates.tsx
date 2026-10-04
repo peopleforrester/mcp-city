@@ -65,7 +65,7 @@ export function Gates() {
 
   return (
     <section id="gates" className="measure-wide py-16" aria-labelledby="gates-h">
-      <h2 id="gates-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">Six gates before yes</h2>
+      <h2 id="gates-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">MCP approval gates</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         A request to allow an MCP server passes through these in order. Bring a real server. Answer honestly. Where a gate says no, look at what the user builds instead.
       </p>

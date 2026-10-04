@@ -6,7 +6,7 @@ import { TALK } from "../data/links";
 export function Film() {
   return (
     <section id="film" className="measure-wide py-16 border-t border-[color:var(--color-rule)]" aria-labelledby="film-h">
-      <h2 id="film-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The story in six minutes</h2>
+      <h2 id="film-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The film</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         The whole talk as a shadow play: cut paper on a backlit screen, narrated, with captions. Rendered from the same art as the deck. The voice is synthetic.
       </p>

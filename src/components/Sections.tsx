@@ -6,7 +6,7 @@ import { PERSON, RESOURCES, TALK } from "../data/links";
 export function Talk() {
   return (
     <section id="talk" className="measure-wide py-16 border-t border-[color:var(--color-rule)]" aria-labelledby="talk-h">
-      <h2 id="talk-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The talk</h2>
+      <h2 id="talk-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The presentation</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         Fifteen minutes on what happens when governance meets people who route around a no. {TALK.when}, {TALK.where}.
       </p>
@@ -23,7 +23,7 @@ export function Talk() {
 export function Resources() {
   return (
     <section id="resources" className="measure-wide py-16 border-t border-[color:var(--color-rule)]" aria-labelledby="res-h">
-      <h2 id="res-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The resources</h2>
+      <h2 id="res-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">Resources</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         Everything the QR code promised lives in <a href={TALK.repo} className="underline underline-offset-4">peopleforrester/mcp-for-a-city</a>.
       </p>
