@@ -12,6 +12,10 @@ export function ResourcesPage() {
       <section className="measure-wide pb-12" aria-labelledby="docs-h">
         <h2 id="docs-h" className="text-2xl font-semibold">The documents, readable here</h2>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+          <li className="rounded-lg bg-[color:var(--color-tile)] p-5">
+            <a href="/resources/art/" className="font-semibold underline underline-offset-4">The art</a>
+            <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Every picture made for the talk, with captions.</p>
+          </li>
           {manifest.documents.map((d) => (
             <li key={d.slug} className="rounded-lg bg-[color:var(--color-tile)] p-5">
               <a href={`/resources/${d.slug}/`} className="font-semibold underline underline-offset-4">{d.title}</a>

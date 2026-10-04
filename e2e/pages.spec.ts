@@ -12,6 +12,7 @@ const PAGES: [string, string][] = [
   ["/presentation/", "The presentation"],
   ["/resources/", "Resources"],
   ["/resources/source-ledger/", "ledger"],
+  ["/resources/art/", "The art"],
 ];
 
 for (const [path, name] of PAGES) {
