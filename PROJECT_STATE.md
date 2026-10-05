@@ -53,9 +53,12 @@ beat-synced cut the site plays at 720p).
 ## Branch & Tests
 - Branch: staging (main matches)
 - Working tree: clean
-- Tests: Vitest 94 passing; Playwright 10 passing (desktop and mobile), also
-  run against the live URL with `E2E_BASE_URL=https://mcp.michaelrishiforrester.com`
-- Measured 2026-10-03: Lighthouse desktop 99/100/100/100, mobile 84/100/100/100
+- Tests: Vitest 161 passing; Playwright 36 passing (desktop and mobile), also green
+  against the live URL with `E2E_BASE_URL=https://mcp.michaelrishiforrester.com`
+- Measured 2026-10-05, Lighthouse 13.5.0 mobile on the live site: home 97,
+  presentation 99, architecture 100, usb 93; desktop 100 on all four
+- Open here: #2 (Railway IaC migration, deferred past the keynote, due 2026-12-01),
+  #6 (shader pass, recording link once posted), #8 (this PRD)
 
 ## Phase History
 - 2026-10-03 phase 0 (QR works) shipped; domain, certificate, collateral repo
@@ -65,3 +68,4 @@ beat-synced cut the site plays at 720p).
 - 2026-10-05 Michael asked for a multi-page site carrying every piece of collateral, brought current with the restructured deck; PRD 8 drafted (issue #8), awaiting his approval
 - 2026-10-05 PRD 8 approved ("Start going"); ten page URLs live for the deck's QR codes; phase 0 in flight
 - 2026-10-05 PRD 8 phase 0 shipped (nav, 10:15, gate titles, plain names, collateral refreshed); multi-page build live with usb, scale, the-attack, architecture, film, presentation (39 slides with notes), resources and five rendered documents; film v0.3 on the page
+- 2026-10-05 #7 and #9 closed (site matches the deck as presented; film v0.3 beat-synced cut); #3 closed (Caddyfile cache headers, React split from three.js, WebP diagram); articles corrected against their reviews
