@@ -9,6 +9,13 @@ test("loads with the title and the thesis", async ({ page }) => {
   await expect(page.getByRole("main").getByText("If you do not give them MCP servers, they build their own.", { exact: true })).toBeVisible();
 });
 
+test("the first screen names the GitHub repo the talk points at", async ({ page }) => {
+  await page.goto("/");
+  const repo = page.getByRole("link", { name: "The GitHub repo" });
+  await expect(repo).toBeVisible();
+  await expect(repo).toHaveAttribute("href", "https://github.com/peopleforrester/mcp-for-a-city");
+});
+
 test("walks the gates by keyboard and reaches a result", async ({ page }) => {
   await page.goto("/#gates");
   for (let i = 1; i <= 6; i++) {

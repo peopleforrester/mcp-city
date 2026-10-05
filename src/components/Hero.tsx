@@ -56,6 +56,9 @@ export function Hero() {
             <a href={TALK.slidesPdf} className="rounded-md border border-[color:var(--color-link)] px-5 py-3 font-semibold">
               The slides (PDF)
             </a>
+            <a href={TALK.repo} className="rounded-md border border-[color:var(--color-link)] px-5 py-3 font-semibold">
+              The GitHub repo
+            </a>
           </div>
           {wants && (
             <p className="mt-8 text-sm text-[color:var(--color-ink-muted)]" aria-hidden="true">
