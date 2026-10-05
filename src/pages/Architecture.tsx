@@ -16,7 +16,7 @@ export function ArchitecturePage() {
       <section className="measure-wide pb-12" aria-labelledby="diagram-h">
         <h2 id="diagram-h" className="text-2xl font-semibold">Here is the architecture diagram</h2>
         <p className="mt-2 max-w-2xl text-[color:var(--color-ink-muted)]">Four zones: the managed device, tool traffic through the tool gateway, model traffic through the model gateway, and the control plane of identity, registry, audit and device policy.</p>
-        <a href="/architecture/architecture.png"><img src="/architecture/architecture.png" alt="Enterprise MCP architecture: developer district, tool gateway and servers, model gateway and providers, and the control plane of identity, registry, audit and device policy" className="mt-4 w-full rounded-lg bg-white" width="1600" height="1000" /></a>
+        <a href="/architecture/architecture.png"><img src="/architecture/architecture-1600.webp" srcSet="/architecture/architecture-800.webp 800w, /architecture/architecture-1600.webp 1600w, /architecture/architecture-2400.webp 2400w" sizes="(min-width: 72rem) 70rem, 100vw" fetchPriority="high" alt="Enterprise MCP architecture: developer district, tool gateway and servers, model gateway and providers, and the control plane of identity, registry, audit and device policy" className="mt-4 w-full h-auto rounded-lg bg-white" width="1600" height="556" /></a>
         <p className="mt-2 text-sm text-[color:var(--color-ink-muted)]"><a href="/architecture/architecture.mmd" className="underline underline-offset-4">Mermaid source</a> · <a href="/architecture/architecture.png" className="underline underline-offset-4">Full-size PNG</a></p>
       </section>
       <section className="measure-wide pb-4" aria-labelledby="map-h">
