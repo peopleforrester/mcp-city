@@ -17,6 +17,7 @@ export function PresentationPage() {
           <li><a href="/presentation/video/" className="font-semibold underline underline-offset-4">A video of the presentation</a></li>
           <li><a href="/film/" className="font-semibold underline underline-offset-4">The film</a></li>
         </ul>
+        <p className="mt-6 max-w-2xl text-lg">The question it answers: what was the most effective lever for MCP adoption? A relationship with the users who consume your MCP servers.</p>
         <p className="mt-4 text-sm text-[color:var(--color-ink-muted)]">{deck.slides.length} slides shown, about {words.toLocaleString("en-US")} spoken words. Pulled from the deck on {deck.read}.</p>
       </PageIntro>
       <section className="measure-wide pb-16" aria-label="The slides with the speaker notes">

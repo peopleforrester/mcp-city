@@ -105,7 +105,7 @@ export const ATTACK: AttackStep[] = [
   { at: "A", title: "An operator asks the agent to read the logs", said: "Later, an operator asks an agent to look at the logs. The agent reads the file, and it reads the planted instruction along with everything else." },
   { at: "SRV", title: "The agent runs kubectl against the attacker's server", said: "The agent does what the line says. It runs kubectl against a server the attacker controls, with TLS verification switched off. Those two flags are the whole attack." },
   { at: "T", title: "kubectl sends the operator's bearer token", said: "kubectl does exactly what it is told. It sends the operator's bearer token along as the authorization header. One planted line, and the agent hands over the token." },
-  { at: "OBS", title: "The attacker replays the token. Every call was authorized.", said: "No model was jailbroken. No policy was violated. Every call in that chain was authorized. CVE-2026-47250, mcp-server-kubernetes, fixed in 3.7.0." },
+  { at: "OBS", title: "The attacker now holds a token for a cluster they could not reach", said: "They may still not be able to get in. But an attacker plays a long game: gather everything now, and the day the cluster is exposed, or someone drops that token somewhere public, they have one more piece. CVE-2026-47250, mcp-server-kubernetes, fixed in 3.7.0." },
 ];
 
 export const ATTACK_SOURCES = [

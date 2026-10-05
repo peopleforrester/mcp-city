@@ -26,7 +26,7 @@ export function ScalePage() {
           ))}
         </ol>
         <p className="mt-8 max-w-2xl text-[color:var(--color-ink-muted)]">
-          Beyond the Death Star the ladder runs out, and the workforce in the talk is still bigger. The ship outlines are generated fan art for a scale comparison; the designs belong to their studios.
+          The workforce in the talk lands at about two-thirds of a Death Star, using MCP every day. The exact number is not ours to publish. The ship outlines are generated fan art for a scale comparison; the designs belong to their studios.
         </p>
       </section>
     </>

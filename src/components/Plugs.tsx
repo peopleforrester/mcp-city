@@ -64,12 +64,13 @@ export function Plugs({ standalone = false }: { standalone?: boolean } = {}) {
         </div>
       </div>
 
-      <h3 className="mt-14 text-2xl font-semibold">Why we wrapped them</h3>
+      <h3 className="mt-14 text-2xl font-semibold">Things we thought were unusual: why we wrapped them</h3>
       <ol className="mt-4 grid gap-3 md:grid-cols-2">
         {WRAP_REASONS.map((r, i) => (
-          <li key={r} className="rounded-lg bg-[color:var(--color-tile)] p-4">
+          <li key={r.signpost} className="rounded-lg bg-[color:var(--color-tile)] p-4">
             <span className="font-mono text-sm text-[color:var(--color-glow)]">{i + 1}</span>
-            <p className="mt-1">{r}</p>
+            <p className="mt-1 font-semibold">{r.signpost}</p>
+            <p className="mt-1 text-[color:var(--color-ink-muted)]">{r.detail}</p>
           </li>
         ))}
       </ol>

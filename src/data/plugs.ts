@@ -20,13 +20,14 @@ export const PLUGS: Plug[] = [
 
 export const USB_YEARS = { from: 1996, to: 2014, span: 18 };
 
-export const WRAP_REASONS: string[] = [
-  "The server carries no authorization, so the wrapper validates the token and decides per tool",
-  "The server needs a credential the client must never hold, so the wrapper holds it",
-  "The server exposes a hundred tools and the model should see nine, so the wrapper filters the list",
-  "The server speaks stdio and the clients speak HTTP, or the other way round, so the wrapper bridges the transport",
-  "Every call logged, rate limited and traced",
-  "A tool does both reads and writes, so the same server is wrapped twice: one wrapper for the reads, one for the writes. Two risk levels, two approvals",
+/** The six signposts from the deck's "Things we thought were unusual" slide, in its order, each with what the wrapper does. */
+export const WRAP_REASONS: { signpost: string; detail: string }[] = [
+  { signpost: "The server does not meet our security standards", detail: "It carries no authorization, so the wrapper validates the token and decides, per tool, whether this caller may use it." },
+  { signpost: "Credentials must not cross from client to server", detail: "The server needs a credential the client must never hold, so the wrapper holds it." },
+  { signpost: "A hundred tools offered; nine presented", detail: "The wrapper filters the list so the model sees what it needs." },
+  { signpost: "Reads and writes split into separate servers", detail: "A tool that does both is wrapped twice: one wrapper exposes only the reads, one only the writes. Two risk levels, two approvals." },
+  { signpost: "The wrong transport", detail: "The server speaks stdio and the clients speak HTTP, or the other way round, so the wrapper bridges it." },
+  { signpost: "Every call logged, rate limited and traced", detail: "The wrapper is the one place every call passes, so it is where the audit trail starts." },
 ];
 
 export const WRAP_TOOLS = [

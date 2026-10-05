@@ -18,12 +18,12 @@ describe("the living map, flat", () => {
     expect(screen.getByRole("button", { name: "Outlook" })).toBeInTheDocument();
     expect(screen.getByTestId("map-panel")).toHaveTextContent("goes dark");
   });
-  it("replays the attack in five steps and ends on the replay", () => {
+  it("replays the attack in five steps and ends on the stolen token", () => {
     render(<Map />);
     fireEvent.click(screen.getByRole("button", { name: "Replay the attack" }));
     expect(screen.getByTestId("map-panel")).toHaveTextContent("step 1 of 5");
     for (let i = 0; i < 4; i++) fireEvent.click(screen.getByRole("button", { name: /^Next/ }));
-    expect(screen.getByTestId("map-panel")).toHaveTextContent("Every call was authorized");
+    expect(screen.getByTestId("map-panel")).toHaveTextContent("a token for a cluster they could not reach");
     expect(screen.getByTestId("map-panel")).toHaveTextContent("CVE-2026-47250");
   });
 });

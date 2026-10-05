@@ -55,7 +55,7 @@ export const ART: ArtSet[] = [
       { src: "/art/attack/2-ask.jpg", caption: "An operator asks the agent to read the logs" },
       { src: "/art/attack/3-run.jpg", caption: "The agent runs kubectl against the attacker's server" },
       { src: "/art/attack/4-token.jpg", caption: "kubectl sends the operator's bearer token" },
-      { src: "/art/attack/5-replay.jpg", caption: "The attacker replays the token. Every call was authorized." },
+      { src: "/art/attack/5-replay.jpg", caption: "The attacker now holds a token for a cluster they could not reach" },
     ],
   },
   {

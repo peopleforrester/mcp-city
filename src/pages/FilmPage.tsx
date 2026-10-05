@@ -7,7 +7,7 @@ import { PageIntro } from "./Page";
 export function FilmPage() {
   return (
     <>
-      <PageIntro title="The film" lede="The whole talk as a shadow play: cut paper on a backlit screen, narrated, with captions. Six and a half minutes." />
+      <PageIntro title="The film" lede="The whole talk as a shadow play: cut paper on a backlit screen, narrated, with captions. About five minutes." />
       <Film standalone />
     </>
   );

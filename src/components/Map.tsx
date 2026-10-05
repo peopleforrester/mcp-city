@@ -56,7 +56,7 @@ export function Map({ standalone = false }: { standalone?: boolean } = {}) {
     <section id="map" className={standalone ? "measure-wide pb-16" : "measure-wide py-16 border-t border-[color:var(--color-rule)]"} aria-labelledby="map-h">
       {!standalone && <h2 id="map-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The architecture</h2>}
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
-        A person, an agent, one gate every call goes through, the tools. Everything else is that gate done properly. Click a building. Then say no, and watch where the traffic goes.
+        A person, a device, an agent, one gate every call goes through, the tools. Everything else is that gate done properly. Click a building. Then say no, and watch where the traffic goes.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <button type="button" onClick={() => setSayNo((v) => !v)} aria-pressed={sayNo} className="rounded-md border px-4 py-2 font-semibold" style={{ borderColor: "#ff3c64", color: sayNo ? "#000" : "#ff8fa8", background: sayNo ? "#ff3c64" : "transparent" }}>
