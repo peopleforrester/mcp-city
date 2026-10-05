@@ -23,6 +23,15 @@ def runs(node, acc, skip_notes):
             runs(value, acc, skip_notes)
 
 
+# The employer is not named on the site (PRD 8, Michael 2026-10-05): any sentence naming it is dropped from the site copy.
+EMPLOYER = re.compile(r"accenture", re.I)
+
+
+def strip_employer(text: str) -> str:
+    kept = [s for s in re.split(r"(?<=[.!?])\s+", text) if not EMPLOYER.search(s)]
+    return " ".join(kept).strip()
+
+
 def main() -> int:
     dump, pdf = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
     data = json.loads(dump.read_text())
@@ -43,6 +52,7 @@ def main() -> int:
         notes: list[str] = []
         runs(slide.get("slideProperties", {}).get("notesPage", {}), notes, False)
         note = re.sub(r"[ \t]+", " ", "".join(notes)).strip()
+        note = strip_employer(note)
         stem = out_dir / f"{shown:02d}"
         subprocess.run(["pdftoppm", "-png", "-f", str(position), "-l", str(position), "-scale-to", "1280", "-singlefile", str(pdf), str(stem)], check=True)
         subprocess.run(["cwebp", "-quiet", "-q", "80", f"{stem}.png", "-o", f"{stem}.webp"], check=True)
