@@ -16,13 +16,26 @@ export function ResourcesPage() {
             <a href="/resources/art/" className="font-semibold underline underline-offset-4">The art</a>
             <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Every picture made for the talk, with captions.</p>
           </li>
-          {manifest.documents.map((d) => (
+          {manifest.documents.filter((d) => !d.slug.startsWith("articles/")).map((d) => (
             <li key={d.slug} className="rounded-lg bg-[color:var(--color-tile)] p-5">
               <a href={`/resources/${d.slug}/`} className="font-semibold underline underline-offset-4">{d.title}</a>
               <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">{d.src}</p>
             </li>
           ))}
         </ul>
+      </section>
+      <section className="measure-wide pb-12" aria-labelledby="articles-h">
+        <h2 id="articles-h" className="text-2xl font-semibold">Operating MCP at Scale, the articles</h2>
+        <p className="mt-2 max-w-2xl text-[color:var(--color-ink-muted)]">The operational depth the fifteen-minute talk cut. Published as drafts so the sources can be checked in the open; corrections are welcome as issues on the collateral repo.</p>
+        <ol className="mt-4 grid gap-4 sm:grid-cols-3">
+          {manifest.documents.filter((d) => d.slug.startsWith("articles/")).map((d) => (
+            <li key={d.slug} className="rounded-lg bg-[color:var(--color-tile)] p-5">
+              <a href={`/resources/${d.slug}/`} className="font-semibold underline underline-offset-4">{d.title}</a>
+              <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">{"series" in d ? d.series : ""}</p>
+              {"status" in d && <p className="mt-2 inline-block rounded bg-[color:var(--color-accent)] px-2 py-0.5 text-xs font-semibold text-black">{d.status}</p>}
+            </li>
+          ))}
+        </ol>
       </section>
       <section className="measure-wide pb-16" aria-labelledby="links-h">
         <h2 id="links-h" className="text-2xl font-semibold">On GitHub</h2>
