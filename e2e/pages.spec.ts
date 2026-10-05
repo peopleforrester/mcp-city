@@ -37,3 +37,11 @@ test("the home page carries a card for every page", async ({ page }) => {
     await expect(page.getByRole("link", { name, exact: true }).first()).toBeVisible();
   }
 });
+
+test("the USB history lives only on its own page, and old links follow it", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator("#plugs")).toHaveCount(0);
+  await page.goto("/#plugs");
+  await expect(page).toHaveURL(/\/usb\/$/);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Eighteen years of USB");
+});

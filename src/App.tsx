@@ -9,7 +9,6 @@ import { PageCards } from "./components/PageCards";
 
 // Everything below the gates arrives after first paint; a phone on ballroom wifi gets the title and the walk first.
 const Map = lazy(() => import("./components/Map").then((m) => ({ default: m.Map })));
-const Plugs = lazy(() => import("./components/Plugs").then((m) => ({ default: m.Plugs })));
 const Film = lazy(() => import("./components/Film").then((m) => ({ default: m.Film })));
 const Spiders = lazy(() => import("./components/Spiders").then((m) => ({ default: m.Spiders })));
 
@@ -18,6 +17,11 @@ export default function App() {
   useEffect(() => {
     const id = window.location.hash.slice(1);
     if (!id) return;
+    // The USB history moved to its own page; old links to the home page section follow it there.
+    if (id === "plugs") {
+      window.location.replace("/usb/");
+      return;
+    }
     // The lower sections load lazily, so the target may appear a moment after mount; look for it for a few seconds.
     let tries = 0;
     const timer = window.setInterval(() => {
@@ -39,7 +43,6 @@ export default function App() {
         <PageCards />
         <Suspense fallback={null}>
           <Map />
-          <Plugs />
           <Film />
         </Suspense>
       </main>
