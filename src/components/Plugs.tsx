@@ -8,6 +8,8 @@ import { PLUGS, USB_YEARS, WRAP_REASONS, WRAP_SOURCES, WRAP_TEST, WRAP_TOOLS } f
 export function Plugs({ standalone = false }: { standalone?: boolean } = {}) {
   const reduced = useReducedMotion();
   const [wrapped, setWrapped] = useState(false);
+  // On its own page the section has no h2 of its own, so its subheadings move up a level to keep the outline unbroken.
+  const Sub = standalone ? "h2" : "h3";
   const usbA = PLUGS.find((p) => p.name === "USB-A")!;
   const usbC = PLUGS.find((p) => p.name === "USB-C")!;
   return (
@@ -64,7 +66,7 @@ export function Plugs({ standalone = false }: { standalone?: boolean } = {}) {
         </div>
       </div>
 
-      <h3 className="mt-14 text-2xl font-semibold">Things we thought were unusual: why we wrapped them</h3>
+      <Sub className="mt-14 text-2xl font-semibold">Things we thought were unusual: why we wrapped them</Sub>
       <ol className="mt-4 grid gap-3 md:grid-cols-2">
         {WRAP_REASONS.map((r, i) => (
           <li key={r.signpost} className="rounded-lg bg-[color:var(--color-tile)] p-4">
@@ -77,7 +79,7 @@ export function Plugs({ standalone = false }: { standalone?: boolean } = {}) {
       <p className="mt-6 rounded-md border-l-4 border-[color:var(--color-accent)] bg-[color:var(--color-tile)] p-4 text-lg">
         The one test: {WRAP_TEST}
       </p>
-      <h3 className="mt-10 text-xl font-semibold">Tools that do it</h3>
+      <Sub className="mt-10 text-xl font-semibold">Tools that do it</Sub>
       <ul className="mt-3 grid gap-2 sm:grid-cols-2">
         {WRAP_TOOLS.map((t) => (
           <li key={t.name}><a href={t.url} className="font-semibold underline underline-offset-4">{t.name}</a> <span className="text-[color:var(--color-ink-muted)]">{t.what}</span></li>
