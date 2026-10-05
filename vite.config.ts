@@ -16,7 +16,9 @@ export default defineConfig({
       // One HTML entry per page; each is real static HTML served by Caddy.
       input: Object.fromEntries(PAGES.map((p: string) => [p || "index", resolve(__dirname, p ? `${p}/index.html` : "index.html")])),
       output: {
-        manualChunks: (id: string) => (/node_modules\/(three|@react-three|postprocessing)/.test(id) ? "three" : undefined),
+        // React gets its own chunk; without it the bundler folds React into "three" and every page downloads the 3D library.
+        manualChunks: (id: string) =>
+          /node_modules\/(react|react-dom|scheduler)\//.test(id) ? "react" : /node_modules\/(three|@react-three|postprocessing)/.test(id) ? "three" : undefined,
       },
     },
   },
