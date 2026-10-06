@@ -42,3 +42,10 @@ export const PERSON = {
     { label: "Contact and newsletter", url: "https://michaelrishiforrester.com/contact/" },
   ],
 };
+
+/** Self-hosted Umami in the mrf-website Railway project: cookieless, no personal data, counts only on the live domain. */
+export const ANALYTICS = {
+  script: "https://umami-production-34fd.up.railway.app/script.js",
+  websiteId: "f6184170-5d26-40df-9438-ec0ccdf26c01",
+  domain: "mcp.michaelrishiforrester.com",
+};

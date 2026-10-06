@@ -85,6 +85,7 @@ export function Footer() {
             Sound: {on ? "on" : "off"}
           </button>
           <a href="https://github.com/peopleforrester/mcp-city" className="hover:underline">Site source</a>
+          <span title="Self-hosted Umami: no cookies, no personal data, nothing shared.">Visits counted without cookies</span>
           <img src="/art/spider.png" alt="" width="36" height="27" className="opacity-80" title="For Whitney. Up, up, down, down, left, right, left, right, B, A." />
         </span>
       </div>

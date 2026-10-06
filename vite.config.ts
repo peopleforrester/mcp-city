@@ -8,6 +8,7 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { PAGES } from "./routes.js";
+import { ANALYTICS } from "./src/data/links.js";
 
 
 const SITE = "https://mcp.michaelrishiforrester.com";
@@ -27,8 +28,23 @@ function sitemap(): Plugin {
   };
 }
 
+/** Adds the visit counter to every built page; data-domains keeps previews and tests from counting. */
+function analytics(): Plugin {
+  return {
+    name: "analytics",
+    apply: "build",
+    transformIndexHtml: () => [
+      {
+        tag: "script",
+        attrs: { defer: true, src: ANALYTICS.script, "data-website-id": ANALYTICS.websiteId, "data-domains": ANALYTICS.domain },
+        injectTo: "head",
+      },
+    ],
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), sitemap()],
+  plugins: [react(), tailwindcss(), sitemap(), analytics()],
   build: {
     rollupOptions: {
       // One HTML entry per page; each is real static HTML served by Caddy.

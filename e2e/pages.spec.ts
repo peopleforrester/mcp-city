@@ -102,3 +102,13 @@ test("search finds a slide, a gate and a document, and the query is a link", asy
   await expect(page.getByRole("link", { name: /Gate 6/ })).toBeVisible();
   await expect(page).toHaveURL(/q=SOC\+2\+Type\+II|q=SOC%202%20Type%20II/);
 });
+
+test("every page carries the cookieless visit counter, limited to the live domain", async ({ page }) => {
+  for (const path of ["/", "/presentation/", "/gates/", "/resources/articles/part-1-operational-excellence/"]) {
+    await page.goto(path);
+    const tag = page.locator("script[data-website-id]");
+    await expect(tag).toHaveCount(1);
+    await expect(tag).toHaveAttribute("data-domains", "mcp.michaelrishiforrester.com");
+  }
+  expect((await page.context().cookies()).length).toBe(0);
+});
