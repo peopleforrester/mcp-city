@@ -5,7 +5,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Footer, Header } from "./components/Chrome";
 import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
-import { PageCards } from "./components/PageCards";
+import { NewsletterSection, PageCards } from "./components/PageCards";
 import { subscribed } from "./lib/newsletter";
 
 // Everything below the gates arrives after first paint; a phone on ballroom wifi gets the title and the walk first.
@@ -49,12 +49,13 @@ export default function App() {
       <Header />
       <main id="main" className="flex-1">
         <Hero />
-        <Gates />
         <PageCards />
+        <Gates />
         <Suspense fallback={null}>
           <Map />
           <Film />
         </Suspense>
+        <NewsletterSection />
       </main>
       <Footer />
       <Suspense fallback={null}>

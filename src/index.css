@@ -41,6 +41,8 @@
 }
 
 html { color-scheme: dark; scroll-behavior: smooth; }
+/* Anchored sections land below the sticky header on wide screens instead of under it. */
+[id] { scroll-margin-top: 5.5rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {

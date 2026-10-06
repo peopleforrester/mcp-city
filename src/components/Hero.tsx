@@ -6,7 +6,6 @@ import { TALK } from "../data/links";
 import { useInView } from "../lib/useInView";
 import { useLiveScene } from "../lib/useLiveScene";
 import { useScrollProgress } from "../lib/useScrollProgress";
-import { ShipHud } from "./ShipHud";
 
 const Skyline = lazy(() => import("../scene/Skyline"));
 
@@ -46,20 +45,6 @@ export function Hero() {
           // A soft shade behind the words, so the title reads over the station and the city.
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#051932]/80 via-[#051932]/35 to-transparent" aria-hidden="true" />
         )}
-        {wants && <ShipHud progress={progress} />}
-        {wants && (
-          // The statement the descent opens on: the city is built on a Death Star, and the workforce is two-thirds of one.
-          <div
-            className="pointer-events-none absolute left-0 right-0 top-24 measure-wide transition-opacity duration-500"
-            style={{ opacity: Math.max(0, 1 - progress * 6) }}
-            data-testid="death-star-statement"
-          >
-            <p className="font-[family-name:var(--font-display)] text-3xl font-semibold text-[#ffc800] sm:text-4xl">Two-thirds of a Death Star.</p>
-            <p className="mt-2 max-w-xl text-lg text-[color:var(--color-ink)]">
-              Approximately 814,000 people at Accenture. A Death Star carries about 1.2 million. <a href="/scale/" className="pointer-events-auto underline underline-offset-4">The ladder</a>
-            </p>
-          </div>
-        )}
         <div className="relative measure-wide pb-16 pt-32">
           <p className="text-sm font-semibold uppercase tracking-wide text-[color:var(--color-accent)]">
             <a href={TALK.eventUrl} className="underline underline-offset-4">{TALK.event}</a>, {TALK.when}
@@ -67,19 +52,22 @@ export function Hero() {
           <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight sm:text-6xl">{TALK.title}</h1>
           <p className="mt-6 max-w-2xl text-xl text-[color:var(--color-ink)]">{TALK.thesis}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#gates" className="rounded-md bg-[color:var(--color-glow)] px-5 py-3 font-semibold text-black hover:opacity-90">
-              Walk a server through the six gates
+            <a href="/gates/" className="rounded-md bg-[color:var(--color-glow)] px-5 py-3 font-semibold text-black hover:opacity-90">
+              The MCP acceptance process
             </a>
-            <a href={TALK.slidesPdf} className="rounded-md border border-[color:var(--color-link)] px-5 py-3 font-semibold">
-              The slides (PDF)
+            <a href="/architecture/" className="rounded-md border border-[color:var(--color-link)] px-5 py-3 font-semibold">
+              The architecture
+            </a>
+            <a href="/presentation/" className="rounded-md border border-[color:var(--color-link)] px-5 py-3 font-semibold">
+              The presentation
             </a>
             <a href={TALK.repo} className="rounded-md border border-[color:var(--color-link)] px-5 py-3 font-semibold">
-              The GitHub repo
+              The repo
             </a>
           </div>
           {wants && (
             <p className="mt-8 text-sm text-[color:var(--color-ink-muted)]" aria-hidden="true">
-              {progress < 0.95 ? "Scroll to descend from orbit to one desk." : "One person, one agent. Now walk the gates."}
+              {progress < 0.95 ? "Scroll to descend from orbit to one desk." : "One person, one agent. Start with the acceptance process."}
             </p>
           )}
         </div>

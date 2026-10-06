@@ -1,19 +1,24 @@
-// ABOUTME: The page a phone in the ballroom gets: it loads, the title is there, the gates walk by keyboard.
+// ABOUTME: The page a phone in the ballroom gets: it loads, the title leads, the four destinations are named, the gates walk by keyboard.
 // ABOUTME: Points at E2E_BASE_URL when set, otherwise the local preview.
 
 import { expect, test } from "@playwright/test";
 
-test("loads with the title and the thesis", async ({ page }) => {
+test("loads with the title and the talk's conclusion, and nothing above the event line", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Governing MCP for a Workforce the Size of a City");
-  await expect(page.getByRole("main").getByText("If you do not give them MCP servers, they build their own.", { exact: true })).toBeVisible();
+  await expect(page.getByRole("main").getByText(/relationship with the users who consume your MCP servers/).first()).toBeVisible();
+  // Michael, 2026-10-06: the talk's event line and title open the page; no line goes above them.
+  const firstText = await page.getByRole("main").evaluate((m) => (m as HTMLElement).innerText.trim().split("\n")[0]);
+  expect(firstText).toMatch(/^MCP DEV SUMMIT TORONTO 2026|^MCP Dev Summit Toronto 2026/i);
 });
 
-test("the first screen names the GitHub repo the talk points at", async ({ page }) => {
+test("the first screen names its four destinations in order, the repo last", async ({ page }) => {
   await page.goto("/");
-  const repo = page.getByRole("link", { name: "The GitHub repo" });
-  await expect(repo).toBeVisible();
-  await expect(repo).toHaveAttribute("href", "https://github.com/peopleforrester/mcp-for-a-city");
+  const hero = page.getByRole("main").locator("section").first();
+  const labels = await hero.getByRole("link").allInnerTexts();
+  const buttons = labels.filter((l) => /acceptance process|architecture|presentation|repo/i.test(l));
+  expect(buttons).toEqual(["The MCP acceptance process", "The architecture", "The presentation", "The repo"]);
+  await expect(hero.getByRole("link", { name: "The repo" })).toHaveAttribute("href", "https://github.com/peopleforrester/mcp-for-a-city");
 });
 
 test("walks the gates by keyboard and reaches a result", async ({ page }) => {

@@ -37,7 +37,7 @@ test("the presentation shows every slide with its notes", async ({ page }) => {
 
 test("the home page carries a card for every page", async ({ page }) => {
   await page.goto("/");
-  for (const name of ["MCP approval gates", "The architecture", "How the MCP spec evolves", "The presentation", "Resources"]) {
+  for (const name of ["The MCP acceptance process", "The architecture", "How the MCP spec evolves", "The presentation", "Resources"]) {
     await expect(page.getByRole("link", { name, exact: true }).first()).toBeVisible();
   }
 });
@@ -118,13 +118,6 @@ test("the hero gives the keynote's scheduled slot", async ({ page }) => {
   await expect(page.getByText("Tuesday, October 6, 2026, 9:59 EDT")).toBeVisible();
 });
 
-test("the descent opens on the Death Star statement", async ({ page }) => {
-  test.skip((page.viewportSize()?.width ?? 0) < 768, "phones get the poster, not the descent");
-  await page.goto("/?gpu=1");
-  const statement = page.getByTestId("death-star-statement");
-  await expect(statement).toContainText("Two-thirds of a Death Star.");
-  await expect(statement).toContainText("814,000");
-});
 
 test("the gates page walks by keyboard and its share links reopen the walk there", async ({ page }) => {
   await page.goto("/gates/");

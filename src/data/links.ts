@@ -7,7 +7,8 @@ export const TALK = {
   eventUrl: "https://events.linuxfoundation.org/mcp-dev-summit-toronto/program/schedule/?id=1287425",
   when: "Tuesday, October 6, 2026, 9:59 EDT",
   where: "Ballroom East/Center, The Conference Centre at the University of Toronto",
-  thesis: "If you do not give them MCP servers, they build their own.",
+  /** The talk's conclusion, from its closing slides. */
+  thesis: "The most effective lever for governing MCP at this scale is a relationship with the users who consume your MCP servers. Talk to your users.",
   repo: "https://github.com/peopleforrester/mcp-for-a-city",
   slidesPdf: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/01-keynote-slides/governing-mcp-toronto-2026.pdf",
   script: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/02-spoken-script/keynote-spoken.md",

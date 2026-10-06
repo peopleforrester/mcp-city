@@ -65,9 +65,14 @@ export function Gates({ standalone = false }: { standalone?: boolean } = {}) {
 
   return (
     <section id="gates" className={standalone ? "measure-wide pb-12" : "measure-wide py-16"} aria-labelledby="gates-h">
-      <h2 id="gates-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">{standalone ? "Walk a server through the gates" : "MCP approval gates"}</h2>
+      <h2 id="gates-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">{standalone ? "Walk a server through the six gates" : "The MCP acceptance process"}</h2>
+      {!standalone && (
+        <p className="mt-3 max-w-2xl text-lg">
+          Six areas we evaluate an MCP server on before it comes online: the relationship with the vendor, a real business need, how well it is built, whether it speaks the current spec, our security standards, and the vendor's certification.
+        </p>
+      )}
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
-        A request to allow an MCP server passes through these in order. Bring a real server. Answer honestly. Where a gate says no, look at what the user builds instead.
+        {standalone ? "" : "Would you like to walk a server through the six gates? "}Bring a real server and answer honestly. Where a gate says no, look at what the user builds instead.
       </p>
 
       {live && (

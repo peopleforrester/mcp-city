@@ -13,7 +13,7 @@ function Group({ item, wide }: { item: Extract<NavItem, { links: unknown }>; wid
   return (
     <details className={wide ? "group relative" : "group"} data-nav-group={item.label}>
       <summary className="cursor-pointer list-none py-1 text-[color:var(--color-link-muted)] hover:text-[color:var(--color-link)] [&::-webkit-details-marker]:hidden">
-        {item.label} <span aria-hidden="true" className="inline-block transition-transform group-open:rotate-180">▾</span>
+        {item.label}
       </summary>
       <ul className={wide ? "absolute left-0 top-full z-30 mt-2 min-w-64 rounded-md border border-[color:var(--color-rule)] bg-[color:var(--color-page)] p-3 shadow-lg" : "mb-2 ml-4 border-l border-[color:var(--color-rule)] pl-3"}>
         {item.links.map((l) => (
@@ -79,7 +79,7 @@ export function Header() {
         Skip to content
       </a>
       <nav aria-label="Site" className="measure-wide flex items-center justify-between gap-x-6 py-4">
-        <a href="/" className="font-semibold tracking-tight">Michael Rishi Forrester</a>
+        <a href="https://michaelrishiforrester.com/" className="font-semibold tracking-tight">Michael Rishi Forrester's website</a>
         <NavList wide />
         <button type="button" className="md:hidden rounded-md border border-[color:var(--color-rule)] px-3 py-1 text-sm" aria-expanded={open} aria-controls="phone-menu" onClick={() => setOpen((v) => !v)}>
           {open ? "Close" : "Menu"}

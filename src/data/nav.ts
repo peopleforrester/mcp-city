@@ -6,7 +6,8 @@ export interface NavGroup { label: string; links: NavLink[] }
 export type NavItem = NavLink | NavGroup;
 
 export const NAV: NavItem[] = [
-  { href: "/gates/", label: "MCP approval gates" },
+  { href: "/", label: "Home" },
+  { href: "/gates/", label: "MCP acceptance process" },
   { href: "/architecture/", label: "The architecture" },
   {
     label: "The presentation",

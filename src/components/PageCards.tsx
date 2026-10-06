@@ -1,10 +1,10 @@
 // ABOUTME: One card per page of the site, under the descent on the home page.
-// ABOUTME: Names match the nav; the order is the order of the talk. The newsletter signup closes the section.
+// ABOUTME: Names match the nav; the order is the order of the talk. The newsletter signup closes the home page.
 
 import { Newsletter } from "./Newsletter";
 
 const CARDS = [
-  { href: "/gates/", title: "MCP approval gates", text: "Six gates before an MCP server comes online. Walk a real server through them and take the checklist with you." },
+  { href: "/gates/", title: "The MCP acceptance process", text: "The six areas we evaluate an MCP server on before it comes online. Then walk a real server through them and take the checklist with you." },
   { href: "/architecture/", title: "The architecture", text: "The diagram, and the same architecture as a living map: say no and watch where the traffic goes." },
   { href: "/the-attack/", title: "The attack", text: "One line in a log file ends with the attacker holding a token for a cluster they could not reach." },
   { href: "/spec/", title: "How the MCP spec evolves", text: "Five revisions since launch, each one asking something of you. USB took eighteen years to get to one plug." },
@@ -15,9 +15,22 @@ const CARDS = [
   { href: "/resources/", title: "Resources", text: "The research, the claim-by-claim source ledger, and the repos." },
 ];
 
+/** The newsletter signup, at the end of the home page. */
+export function NewsletterSection() {
+  return (
+    <section className="measure-wide pb-16" aria-labelledby="newsletter-h">
+      <div id="newsletter" className="rounded-lg bg-[color:var(--color-tile)] p-6">
+        <h2 id="newsletter-h" className="text-2xl font-semibold">Hear about the next one</h2>
+        <p className="mt-2 mb-4 max-w-2xl text-[color:var(--color-ink-muted)]">New articles in the series, corrections, and the next talk. One list, from michaelrishiforrester.com.</p>
+        <Newsletter />
+      </div>
+    </section>
+  );
+}
+
 export function PageCards() {
   return (
-    <section className="measure-wide py-16 border-t border-[color:var(--color-rule)]" aria-labelledby="pages-h">
+    <section className="measure-wide py-16" aria-labelledby="pages-h">
       <h2 id="pages-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">What is here</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">The talk asks one question: what was the most effective lever for MCP adoption? The answer is a relationship with the users who consume your MCP servers. Everything below is the detail behind it.</p>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -28,11 +41,6 @@ export function PageCards() {
           </li>
         ))}
       </ul>
-      <div id="newsletter" className="mt-12 rounded-lg bg-[color:var(--color-tile)] p-6">
-        <h2 className="text-2xl font-semibold">Hear about the next one</h2>
-        <p className="mt-2 mb-4 max-w-2xl text-[color:var(--color-ink-muted)]">New articles in the series, corrections, and the next talk. One list, from michaelrishiforrester.com.</p>
-        <Newsletter />
-      </div>
     </section>
   );
 }

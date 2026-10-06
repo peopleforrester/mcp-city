@@ -35,7 +35,6 @@ export function PresentationPage() {
             </li>
           ))}
         </ol>
-        <p className="mt-12 max-w-2xl text-[color:var(--color-ink-muted)]">The thesis fits in one line: {TALK.thesis}</p>
       </section>
     </>
   );

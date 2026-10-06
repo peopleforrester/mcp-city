@@ -10,7 +10,7 @@ export function GatesPage() {
     <>
       <PageIntro
         title="The acceptance process: six gates before an MCP server comes online"
-        lede="Walk a real server through them, then take the checklist with you. Every verify step names its source."
+        lede="The six areas we evaluate an MCP server on before it comes online: the relationship with the vendor, a real business need, how well it is built, whether it speaks the current spec, our security standards, and the vendor's certification. Walk a real server through them below, then take the checklist with you; every verify step names its source."
       />
       <Gates standalone />
       <section className="measure-wide pb-16" aria-labelledby="checklist-h">
@@ -39,7 +39,7 @@ export function GatesPage() {
             </li>
           ))}
         </ol>
-        <p className="mt-8 max-w-3xl"><strong>The one rule behind all six:</strong> if you do not give them MCP servers, they build their own. Explain the no, or expect the alley.</p>
+        <p className="mt-8 max-w-3xl"><strong>Behind all six:</strong> say no when you must, and explain why. A no with no reason and no path is how users end up building their own.</p>
       </section>
     </>
   );
