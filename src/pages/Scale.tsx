@@ -26,7 +26,7 @@ export function ScalePage() {
           ))}
         </ol>
         <p className="mt-8 max-w-2xl text-[color:var(--color-ink-muted)]">
-          The workforce in the talk lands at about two-thirds of a Death Star, using MCP every day. The exact number is not ours to publish. The ship outlines are generated fan art for a scale comparison; the designs belong to their studios.
+          The workforce in the talk lands at about two-thirds of a Death Star. Accenture reports approximately 814,000 people, which is 0.67 to 0.68 of the Death Star's 1.19 to 1.21 million crew (<a href="https://www.sec.gov/Archives/edgar/data/1467373/000146737326000037/q4fy26earnings8-kexhibit.htm" className="underline underline-offset-4">Accenture fourth-quarter fiscal 2026 results</a>, read 2026-10-06). The ship outlines are generated fan art for a scale comparison; the designs belong to their studios.
         </p>
       </section>
     </>

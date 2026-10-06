@@ -1,14 +1,14 @@
 {
  "presentationId": "1kPEQ80oGdeE74VrZbXx5qHeyak8R3EuSB0hfF2RsDvg",
- "revisionId": "xrPrNngkosInqw",
- "read": "2026-10-05",
+ "revisionId": "HUZszD_Rw4D2cA",
+ "read": "2026-10-06",
  "slides": [
   {
    "n": 1,
    "slide": 1,
    "objectId": "p1",
    "title": "Governing MCP for a Workforce the Size of a City",
-   "notes": "When you show up for a talk called Governing MCP for a Workforce the Size of a City, you might have a few questions. What is this guy going to talk about? The who, what, when, where, how and why? And what does he mean by a workforce the size of a city?",
+   "notes": "When you show up for a talk called Governing MCP for a Workforce the Size of a City, you might have a few questions. What is this guy going to talk about? The who, what, when, where, how and why? And what does he mean by a workforce the size of a city? Let us start with the number, because as of October 2026 it is easy for me to say that Accenture has about seven hundred and fifty thousand people worldwide.",
    "image": "/slides/01.webp"
   },
   {
@@ -80,7 +80,7 @@
    "slide": 10,
    "objectId": "p2",
    "title": "How many people are using MCP in this workforce?",
-   "notes": "I am not supposed to say the exact number, but it is about two-thirds of a Death Star, actively using MCP every single day, and somewhere north of there. And you probably expect me to talk about the architecture.",
+   "notes": "I am not supposed to say the exact number, but it is about two-thirds of a Death Star, actively using MCP every single day, and somewhere north of there. I work for Accenture; I cannot always say what the numbers are. And you probably expect me to talk about the architecture.",
    "image": "/slides/10.webp"
   },
   {
@@ -280,14 +280,14 @@
    "slide": 35,
    "objectId": "p14",
    "title": "So what was the biggest lever?",
-   "notes": "So what was the biggest lever? Was it the policy? The architecture? The proxies, the registries? None of that alone. Do not get me wrong, nothing happens without the technology in place. But we had to win the hearts and minds of users, because for the first time an internal team, three levels of internal, is now a SaaS company. Our biggest threat is our own end users. If we do not get their buy-in, send the right signals and provide the features they want, they ask the agent to do it. That, my friends, is how you get shadow IT. Here is what winning them looks like. That is the relationship you need with your people when you offer MCP tools. Why is there no Outlook server? Because we have to solve the identity problem, and the attribution problem, in ways we have never had to before.",
+   "notes": "So what was the biggest lever? Was it the policy? The architecture? The proxies, the registries? None of that alone. Do not get me wrong, nothing happens without the technology in place. But we had to win the hearts and minds of users, because for the first time an internal team, three levels of internal, is now a SaaS company. Our biggest threat is our own end users. If we do not get their buy-in, send the right signals and provide the features they want, they ask the agent to do it. That, my friends, is how you get shadow IT. Here is what winning them looks like. When I walk into an Accenture office and go to the Solution Center, our walk-up internal support, those people are top-notch: friendly, proactive, in partnership. That is the relationship you need with your people when you offer MCP tools. Why is there no Outlook server? Because we have to solve the identity problem, and the attribution problem, in ways we have never had to before.",
    "image": "/slides/35.webp"
   },
   {
    "n": 36,
    "slide": 36,
    "objectId": "p24",
-   "title": "Here is what you need to do",
+   "title": "Connect with your users as much as you connect the technology",
    "notes": "Here is what you need to do. Love your users. Figure out what they need. Say no when you must, and explain why. Then figure out how to get them to yes. The worst thing you can do is say no with no reason and no path. You will never scale to the number of users you have, so win their hearts and minds, so they come to you and say: I found an opening. You would be shocked how many people are willing to help. And trust me, you will never run the permutations of creativity a non-engineer will run.",
    "image": "/slides/36.webp"
   },
@@ -312,7 +312,7 @@
    "slide": 39,
    "objectId": "p34",
    "title": "Talk to your users.",
-   "notes": "Talk to your users. Questions, concerns: email me, or find me on LinkedIn. Thanks for listening. I hope to see you in the sessions.",
+   "notes": "Talk to your users. The first QR code is the landing page, mcp.michaelrishiforrester.com, and it links to the repo and to my website; the second is Accenture's page. Questions, concerns: email me, or find me on LinkedIn. Thanks for listening. I hope to see you in the sessions.",
    "image": "/slides/39.webp"
   }
  ]

@@ -54,3 +54,13 @@ Vetted for publication: seven research files stay private (employer figures,
 event positioning, talk craft, the internal component plan). The approval
 source ledger duplicate was dropped. Publication notes flag stale claims
 rather than rewriting the research.
+
+## 2026-10-06T04:00:00Z · 2.2 · The employer may be named on the site
+
+Michael, 2026-10-06: "since it's my website I don't really give a shit about
+Accenture's numbers and limitations... I'm telling you it's okay." This
+reverses the PRD 12 risk line that kept the employer off the site and the
+2026-10-05 change that stripped four sentences from the speaker notes. The
+pull script no longer filters them, the test that forbade the name is gone,
+and /scale/ states approximately 814,000 people, read from the Q4 FY26 8-K
+exhibit on SEC EDGAR on 2026-10-06.
