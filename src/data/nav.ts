@@ -35,6 +35,7 @@ export const NAV: NavItem[] = [
       { href: "/resources/changes/", label: "What changed" },
     ],
   },
+  { href: "/search/", label: "Search" },
 ];
 
 export const isGroup = (item: NavItem): item is NavGroup => "links" in item;

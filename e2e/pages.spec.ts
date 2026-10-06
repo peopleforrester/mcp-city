@@ -91,3 +91,14 @@ test("the film carries captions and a chapter list that seeks the video", async 
   expect(caps.ok()).toBeTruthy();
   expect(await caps.text()).toContain("WEBVTT");
 });
+
+test("search finds a slide, a gate and a document, and the query is a link", async ({ page }) => {
+  await page.goto("/search/?q=passthrough");
+  await expect(page.getByRole("searchbox")).toHaveValue("passthrough");
+  const results = page.getByRole("region", { name: "Results" }).getByRole("link");
+  await expect(results.first()).toBeVisible();
+  expect(await results.count()).toBeGreaterThan(2);
+  await page.getByRole("searchbox").fill("SOC 2 Type II");
+  await expect(page.getByRole("link", { name: /Gate 6/ })).toBeVisible();
+  await expect(page).toHaveURL(/q=SOC\+2\+Type\+II|q=SOC%202%20Type%20II/);
+});
