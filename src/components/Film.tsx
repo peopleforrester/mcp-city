@@ -19,9 +19,7 @@ export function Film({ standalone = false }: { standalone?: boolean } = {}) {
   return (
     <section id="film" className={standalone ? "measure-wide pb-16" : "measure-wide py-16 border-t border-[color:var(--color-rule)]"} aria-labelledby="film-h">
       {!standalone && <h2 id="film-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">The film</h2>}
-      <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
-        The whole talk as a shadow play: cut paper on a backlit screen, narrated, with captions. Re-cut to the deck as presented. Rendered from the same art as the deck; the voice is synthetic.
-      </p>
+      <p className="mt-3 max-w-2xl text-lg">Watch the short shadow-play version of the talk ({TALK.filmRuntime}).</p>
       <video
         ref={video}
         className="mt-6 w-full rounded-lg bg-black"
@@ -48,7 +46,7 @@ export function Film({ standalone = false }: { standalone?: boolean } = {}) {
         ))}
       </ol>
       <p className="mt-3 text-sm text-[color:var(--color-ink-muted)]">
-        <a href={TALK.film} className="underline underline-offset-4">The 1080p cut and the source</a>, on GitHub.
+        <a href={TALK.film} className="underline underline-offset-4">Download the 1080p cut</a> · <a href={TALK.filmRepo} className="underline underline-offset-4">The film's source on GitHub</a>
       </p>
     </section>
   );

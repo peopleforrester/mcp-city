@@ -16,6 +16,9 @@ export const TALK = {
   ledger: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/06-research-and-source-ledger/source-ledger.md",
   siteSource: "https://github.com/peopleforrester/mcp-city",
   film: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.3",
+  filmRepo: "https://github.com/peopleforrester/mcp-city-film",
+  /** The served 720p file's length, measured with ffprobe on 2026-10-06: 317.13 seconds. */
+  filmRuntime: "5 min 17 s",
   /** The Linux Foundation's recording, as a YouTube video id, once it is posted; the video page embeds it as soon as this is set. */
   recordingYouTubeId: null as string | null,
   /** Michael's own recording from the room, as a file under public/ or a YouTube id; shown beside the official one. */
