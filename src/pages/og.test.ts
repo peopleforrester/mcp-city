@@ -6,7 +6,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { PAGES } from "../../routes";
 
-const files = [...PAGES.filter((p) => p && p !== "404").map((p) => `${p}/index.html`), "public/gates/index.html", "public/wrapping/index.html", "public/presentation/video/index.html"];
+const files = [...PAGES.filter((p) => p && p !== "404").map((p) => `${p}/index.html`), "public/gates/index.html", "public/wrapping/index.html"];
 
 describe("social preview cards", () => {
   it.each(files)("%s has its own card", (file) => {

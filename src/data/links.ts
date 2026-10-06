@@ -15,6 +15,8 @@ export const TALK = {
   ledger: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/06-research-and-source-ledger/source-ledger.md",
   siteSource: "https://github.com/peopleforrester/mcp-city",
   film: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.3",
+  /** The recording's YouTube video id, once the Linux Foundation posts it; the video page embeds it as soon as this is set. */
+  recordingYouTubeId: null as string | null,
 };
 
 export const RESOURCES = [

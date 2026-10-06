@@ -12,7 +12,7 @@ import { PAGES } from "./routes.js";
 
 const SITE = "https://mcp.michaelrishiforrester.com";
 /** Pages served from public/ rather than built by Vite. */
-const STATIC_PAGES = ["gates", "wrapping", "presentation/video"];
+const STATIC_PAGES = ["gates", "wrapping"];
 
 /** Writes dist/sitemap.xml from the page list once the build closes, so a new page is listed without editing XML. */
 function sitemap(): Plugin {
