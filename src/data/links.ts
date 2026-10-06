@@ -5,7 +5,7 @@ export const TALK = {
   title: "Governing MCP for a Workforce the Size of a City",
   event: "MCP Dev Summit Toronto 2026",
   eventUrl: "https://events.linuxfoundation.org/mcp-dev-summit-toronto/program/schedule/?id=1287425",
-  when: "Tuesday 6 October 2026, 10:15 EDT",
+  when: "Tuesday, October 6, 2026, 9:59 EDT",
   where: "Ballroom East/Center, The Conference Centre at the University of Toronto",
   thesis: "If you do not give them MCP servers, they build their own.",
   repo: "https://github.com/peopleforrester/mcp-for-a-city",

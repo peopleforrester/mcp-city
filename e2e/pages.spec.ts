@@ -112,3 +112,8 @@ test("every page carries the cookieless visit counter, limited to the live domai
   }
   expect((await page.context().cookies()).length).toBe(0);
 });
+
+test("the hero gives the keynote's scheduled slot", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByText("Tuesday, October 6, 2026, 9:59 EDT")).toBeVisible();
+});

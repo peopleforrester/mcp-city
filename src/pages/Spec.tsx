@@ -54,7 +54,7 @@ export function SpecPage() {
                 <Cited items={r.changes} />
                 {r.removed.length > 0 && (
                   <>
-                    <h4 className="mt-4 font-semibold text-[color:var(--gate-1)]">Deprecated or removed</h4>
+                    <h4 className="mt-4 font-semibold text-[#ff8fa8]">Deprecated or removed</h4>
                     <Cited items={r.removed} />
                   </>
                 )}
