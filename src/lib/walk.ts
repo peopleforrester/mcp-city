@@ -21,8 +21,9 @@ export function decodeWalk(code: string | null): Walk {
   return walk.every(Boolean) ? walk : emptyWalk();
 }
 
-export function shareUrl(walk: Walk, base = "https://mcp.michaelrishiforrester.com/"): string {
-  return `${base}?g=${encodeWalk(walk)}#gates`;
+/** A link to this walk on the gates page; the home page's old ?g=...#gates links still open the same walk there. */
+export function shareUrl(walk: Walk, base = "https://mcp.michaelrishiforrester.com/gates/"): string {
+  return `${base}?g=${encodeWalk(walk)}`;
 }
 
 /** The first gate still open, or null when the walk is finished. */

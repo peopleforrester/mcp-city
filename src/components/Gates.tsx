@@ -16,7 +16,7 @@ function readWalkFromUrl(): Walk {
 
 const GateRoad = lazy(() => import("../scene/GateRoad"));
 
-export function Gates() {
+export function Gates({ standalone = false }: { standalone?: boolean } = {}) {
   const { live } = useLiveScene(600);
   const [roadRef, roadInView] = useInView();
   const [roadSeen, setRoadSeen] = useState(false);
@@ -53,7 +53,7 @@ export function Gates() {
 
   const share = async () => {
     try {
-      await navigator.clipboard.writeText(shareUrl(walk, `${window.location.origin}/`));
+      await navigator.clipboard.writeText(shareUrl(walk, `${window.location.origin}/gates/`));
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -64,8 +64,8 @@ export function Gates() {
   const lastFailed = [...walk].map((v, i) => (v === "fail" ? i : -1)).filter((i) => i >= 0).at(-1);
 
   return (
-    <section id="gates" className="measure-wide py-16" aria-labelledby="gates-h">
-      <h2 id="gates-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">MCP approval gates</h2>
+    <section id="gates" className={standalone ? "measure-wide pb-12" : "measure-wide py-16"} aria-labelledby="gates-h">
+      <h2 id="gates-h" className="text-3xl font-semibold tracking-tight sm:text-4xl">{standalone ? "Walk a server through the gates" : "MCP approval gates"}</h2>
       <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">
         A request to allow an MCP server passes through these in order. Bring a real server. Answer honestly. Where a gate says no, look at what the user builds instead.
       </p>

@@ -125,3 +125,18 @@ test("the descent opens on the Death Star statement", async ({ page }) => {
   await expect(statement).toContainText("Two-thirds of a Death Star.");
   await expect(statement).toContainText("814,000");
 });
+
+test("the gates page walks by keyboard and its share links reopen the walk there", async ({ page }) => {
+  await page.goto("/gates/");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("six gates");
+  for (let i = 0; i < 6; i++) {
+    const pass = page.getByRole("button", { name: /Pass: lift the barrier/ });
+    await pass.focus();
+    await page.keyboard.press("Enter");
+  }
+  await expect(page.getByTestId("result")).toContainText("Admitted");
+  await expect(page).toHaveURL(/\/gates\/\?g=PPPPPP$/);
+  await page.goto("/gates/?g=PFUUUU");
+  await expect(page.getByTestId("alley")).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Gate 6:/ }).first()).toBeVisible();
+});

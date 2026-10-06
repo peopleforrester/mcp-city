@@ -16,7 +16,7 @@ describe("share code", () => {
     expect(decodeWalk(null)).toEqual(emptyWalk());
   });
   it("builds a share URL on the site origin", () => {
-    expect(shareUrl(["pass", "fail", "open", "open", "open", "open"])).toBe("https://mcp.michaelrishiforrester.com/?g=PFUUUU#gates");
+    expect(shareUrl(["pass", "fail", "open", "open", "open", "open"])).toBe("https://mcp.michaelrishiforrester.com/gates/?g=PFUUUU");
   });
 });
 
