@@ -39,7 +39,7 @@ export function GatesPage() {
             </li>
           ))}
         </ol>
-        <p className="mt-8 max-w-3xl"><strong>Behind all six:</strong> say no when you must, and explain why. A no with no reason and no path is how users end up building their own.</p>
+        <p className="mt-8 max-w-3xl"><strong>Behind all six:</strong> say no when you must, and explain why. The worst thing you can do is say no with no reason and no path.</p>
       </section>
     </>
   );

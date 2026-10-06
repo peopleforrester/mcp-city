@@ -29,7 +29,7 @@ export function PrintChecklist({ walk }: { walk: Walk }) {
       ))}
       <h2>Result</h2>
       <p>{admitted ? "Admitted: every gate passed." : `${passed} passed, ${failed} failed, ${GATES.length - passed - failed} open.`}</p>
-      <p>If you do not give them MCP servers, they build their own. Explain the no, or expect the alley.</p>
+      <p>Say no when you must, and explain why. The worst thing you can do is say no with no reason and no path.</p>
     </section>,
     host,
   );

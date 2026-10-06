@@ -190,3 +190,10 @@ test("contact lists the Packt video course with Sanjeev", async ({ page }) => {
   await page.goto("/contact/");
   await expect(page.getByRole("link", { name: /AWS Cloud Practitioner - A Prep Course/ })).toHaveAttribute("href", "https://www.packtpub.com/en-br/product/aws-cloud-practitioner-a-prep-course-9781806380510");
 });
+
+test("the old premise line appears nowhere on the gates, the walk or the checklist", async ({ page }) => {
+  for (const path of ["/", "/gates/", "/gates/?g=FUUUUU", "/resources/approval-gates/"]) {
+    await page.goto(path);
+    await expect(page.getByRole("main")).not.toContainText("they build their own");
+  }
+});

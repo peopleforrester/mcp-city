@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "bc8e9d2",
+ "commit": "56f790f",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -86,6 +86,11 @@
    "slug": "approval-gates",
    "title": "The six approval gates as a checklist",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "56f790f",
+     "subject": "Drop the old premise line from the gates checklist"
+    },
     {
      "date": "2026-10-06",
      "sha": "7b70c17",

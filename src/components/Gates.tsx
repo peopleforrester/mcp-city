@@ -171,7 +171,7 @@ export function Gates({ standalone = false }: { standalone?: boolean } = {}) {
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: GATE_TEXT[0] }}>The side alley, gate {lastFailed + 1}</p>
             <p className="mt-2 text-lg">{GATES[lastFailed].alley}</p>
-            <p className="mt-2 text-sm text-[color:var(--color-ink-muted)]">If you do not give them MCP servers, they build their own. The alley is not logged, not scoped and not revocable. Explain the no, or expect the alley.</p>
+            <p className="mt-2 text-sm text-[color:var(--color-ink-muted)]">The alley is not logged, not scoped and not revocable. Say no when you must, and explain why.</p>
           </div>
         </aside>
       )}

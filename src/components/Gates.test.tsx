@@ -21,7 +21,7 @@ describe("the gate walk", () => {
     fireEvent.click(screen.getByRole("button", { name: /^Pass/ }));
     fireEvent.click(screen.getByRole("button", { name: /^Fail/ }));
     expect(screen.getByTestId("alley")).toHaveTextContent("gate 3");
-    expect(screen.getByTestId("alley")).toHaveTextContent("they build their own");
+    expect(screen.getByTestId("alley")).toHaveTextContent("not logged, not scoped and not revocable");
   });
   it("admits a server that passes all six", () => {
     render(<Gates />);

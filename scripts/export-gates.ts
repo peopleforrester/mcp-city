@@ -23,5 +23,5 @@ for (const g of GATES) {
   g.sources.forEach((s) => lines.push(`- [${s.label}](${s.url})`));
   lines.push("");
 }
-lines.push("## The one rule behind all six", "", "If you do not give them MCP servers, they build their own. Explain the no, or expect the alley.", "");
+lines.push("## Behind all six", "", "Say no when you must, and explain why. The worst thing you can do is say no with no reason and no path.", "");
 process.stdout.write(lines.join("\n"));
