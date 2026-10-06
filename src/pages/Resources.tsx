@@ -42,7 +42,7 @@ export function ResourcesPage() {
       </section>
       <section className="measure-wide pb-12" aria-labelledby="articles-h">
         <h2 id="articles-h" className="text-2xl font-semibold">Operating MCP at Scale, the articles</h2>
-        <p className="mt-2 max-w-2xl text-[color:var(--color-ink-muted)]">The operational depth the fifteen-minute talk cut. Published as drafts so the sources can be checked in the open; corrections are welcome as issues on the collateral repo.</p>
+        <p className="mt-2 max-w-2xl text-[color:var(--color-ink-muted)]">The operational depth the fifteen-minute talk cut. Published as drafts so the sources can be checked in the open; corrections are welcome as issues on the collateral repo. New parts and corrections arrive in <a href="/feed.xml" className="underline underline-offset-4">the feed</a>.</p>
         <ol className="mt-4 grid gap-4 sm:grid-cols-3">
           {manifest.documents.filter((d) => d.slug.startsWith("articles/")).map((d) => (
             <li key={d.slug} className="rounded-lg bg-[color:var(--color-tile)] p-5">

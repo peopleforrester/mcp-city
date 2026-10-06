@@ -140,3 +140,11 @@ test("the gates page walks by keyboard and its share links reopen the walk there
   await expect(page.getByTestId("alley")).toBeVisible();
   await expect(page.getByRole("heading", { name: /Gate 6:/ }).first()).toBeVisible();
 });
+
+test("the feed is served and every page points at it", async ({ page }) => {
+  const res = await page.request.get("/feed.xml");
+  expect(res.ok()).toBeTruthy();
+  expect(await res.text()).toContain('<feed xmlns="http://www.w3.org/2005/Atom">');
+  await page.goto("/resources/");
+  await expect(page.locator('link[rel="alternate"][type="application/atom+xml"]')).toHaveAttribute("href", "/feed.xml");
+});

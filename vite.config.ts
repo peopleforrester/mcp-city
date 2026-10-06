@@ -2,11 +2,12 @@
 // ABOUTME: Vitest runs in jsdom with the testing-library matchers.
 
 /// <reference types="vitest/config" />
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { atomFeed, type FeedDoc } from "./feed.js";
 import { PAGES } from "./routes.js";
 import { ANALYTICS } from "./src/data/links.js";
 
@@ -43,8 +44,23 @@ function analytics(): Plugin {
   };
 }
 
+/** Writes dist/feed.xml from the change history and points every page's head at it. */
+function feed(): Plugin {
+  return {
+    name: "feed",
+    apply: "build",
+    transformIndexHtml: () => [
+      { tag: "link", attrs: { rel: "alternate", type: "application/atom+xml", title: "What changed", href: "/feed.xml" }, injectTo: "head" },
+    ],
+    closeBundle() {
+      const manifest = JSON.parse(readFileSync(resolve(__dirname, "content/collateral/manifest.json"), "utf8")) as { repo: string; documents: FeedDoc[] };
+      writeFileSync(resolve(__dirname, "dist/feed.xml"), atomFeed(manifest.documents, manifest.repo));
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), sitemap(), analytics()],
+  plugins: [react(), tailwindcss(), sitemap(), analytics(), feed()],
   build: {
     rollupOptions: {
       // One HTML entry per page; each is real static HTML served by Caddy.

@@ -11,7 +11,7 @@ const rows = manifest.documents
 export function ChangesPage() {
   return (
     <>
-      <PageIntro title="What changed" lede={<>Every figure on this site has a source, and sources move. This is every change to every published document, newest first, each linked to its commit in <a href={`https://github.com/${manifest.repo}`} className="underline underline-offset-4">{manifest.repo}</a>.</>} />
+      <PageIntro title="What changed" lede={<>Every figure on this site has a source, and sources move. This is every change to every published document, newest first, each linked to its commit in <a href={`https://github.com/${manifest.repo}`} className="underline underline-offset-4">{manifest.repo}</a>. Follow it in a feed reader: <a href="/feed.xml" className="underline underline-offset-4">/feed.xml</a>.</>} />
       <section className="measure-wide pb-16" aria-label="Changes">
         <ol className="space-y-3">
           {rows.map((r) => (
