@@ -14,7 +14,7 @@ const PAGES: [string, string][] = [
   ["/resources/", "Resources"],
   ["/resources/source-ledger/", "ledger"],
   ["/resources/art/", "The art"],
-  ["/resources/articles/part-2-security/", "Nobody Vets MCP Servers"],
+  ["/resources/articles/part-2-security/", "Everyone Vets MCP Servers Alone"],
 ];
 
 for (const [path, name] of PAGES) {
@@ -116,4 +116,12 @@ test("every page carries the cookieless visit counter, limited to the live domai
 test("the hero gives the keynote's scheduled slot", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText("Tuesday, October 6, 2026, 9:59 EDT")).toBeVisible();
+});
+
+test("the descent opens on the Death Star statement", async ({ page }) => {
+  test.skip((page.viewportSize()?.width ?? 0) < 768, "phones get the poster, not the descent");
+  await page.goto("/?gpu=1");
+  const statement = page.getByTestId("death-star-statement");
+  await expect(statement).toContainText("Two-thirds of a Death Star.");
+  await expect(statement).toContainText("814,000");
 });

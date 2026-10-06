@@ -42,7 +42,24 @@ export function Hero() {
             </div>
           </Suspense>
         )}
+        {show && (
+          // A soft shade behind the words, so the title reads over the station and the city.
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#051932]/80 via-[#051932]/35 to-transparent" aria-hidden="true" />
+        )}
         {wants && <ShipHud progress={progress} />}
+        {wants && (
+          // The statement the descent opens on: the city is built on a Death Star, and the workforce is two-thirds of one.
+          <div
+            className="pointer-events-none absolute left-0 right-0 top-24 measure-wide transition-opacity duration-500"
+            style={{ opacity: Math.max(0, 1 - progress * 6) }}
+            data-testid="death-star-statement"
+          >
+            <p className="font-[family-name:var(--font-display)] text-3xl font-semibold text-[#ffc800] sm:text-4xl">Two-thirds of a Death Star.</p>
+            <p className="mt-2 max-w-xl text-lg text-[color:var(--color-ink)]">
+              Approximately 814,000 people at Accenture. A Death Star carries about 1.2 million. <a href="/scale/" className="pointer-events-auto underline underline-offset-4">The ladder</a>
+            </p>
+          </div>
+        )}
         <div className="relative measure-wide pb-16 pt-32">
           <p className="text-sm font-semibold uppercase tracking-wide text-[color:var(--color-accent)]">
             <a href={TALK.eventUrl} className="underline underline-offset-4">{TALK.event}</a>, {TALK.when}

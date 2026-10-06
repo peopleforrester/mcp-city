@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "cbd6e9c",
+ "commit": "64f8f25",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -508,7 +508,7 @@
   {
    "src": "10-operating-mcp-at-scale-series/part-2-security.md",
    "slug": "articles/part-2-security",
-   "title": "Nobody Vets MCP Servers, and Everyone Is Right About Why",
+   "title": "Everyone Vets MCP Servers Alone",
    "series": "Operating MCP at Scale, part 2: security",
    "status": "draft, under review",
    "history": [
