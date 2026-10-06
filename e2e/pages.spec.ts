@@ -168,3 +168,15 @@ test("contact lists both emails, the book, the course with Sanjeev, and the soci
   await expect(page.getByRole("link", { name: /with Sanjeev Thiyagarajan/ })).toHaveAttribute("href", "https://kodekloud.com/courses/aws-cloud-practitioner");
   for (const s of ["LinkedIn", "Bluesky", "GitHub"]) await expect(page.getByRole("main").getByRole("link", { name: s, exact: true })).toBeVisible();
 });
+
+test("resources is an index; research has its own page, and documents link to their neighbours", async ({ page }) => {
+  await page.goto("/resources/");
+  await page.getByRole("link", { name: "The research", exact: true }).first().click();
+  await expect(page).toHaveURL(/\/resources\/research\/$/);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("The research");
+  await page.getByRole("link", { name: "Vetting MCP Servers" }).click();
+  await expect(page.getByRole("navigation", { name: "In The research" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Previous and next" }).getByRole("link").first()).toBeVisible();
+  await page.goto("/resources/articles/");
+  await expect(page.getByRole("region", { name: "The series" }).getByRole("link").first()).toHaveText(/enterprise checklist/);
+});

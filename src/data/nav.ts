@@ -30,8 +30,8 @@ export const NAV: NavItem[] = [
     label: "Resources",
     links: [
       { href: "/resources/", label: "All resources" },
-      { href: "/resources/#research-h", label: "The research" },
-      { href: "/resources/#articles-h", label: "The articles" },
+      { href: "/resources/research/", label: "The research" },
+      { href: "/resources/articles/", label: "The articles" },
       { href: "/resources/art/", label: "The art" },
       { href: "/resources/changes/", label: "What changed" },
     ],
