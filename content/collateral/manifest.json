@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "f35cff9",
+ "commit": "cbd6e9c",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -129,6 +129,11 @@
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "cbd6e9c",
+     "subject": "Carry the revised part two, the client-allowlist checklist item, and three research corrections"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "f35cff9",
      "subject": "Fix three links in the research: two copied as site-relative paths, one to a removed post"
     },
@@ -206,6 +211,11 @@
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "cbd6e9c",
+     "subject": "Carry the revised part two, the client-allowlist checklist item, and three research corrections"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "7b70c17",
      "subject": "Descriptive numbered folders, a README front door, and the full series"
     },
@@ -222,6 +232,11 @@
    "title": "MCP Security Failures Catalogue",
    "topic": "Security and vetting",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "cbd6e9c",
+     "subject": "Carry the revised part two, the client-allowlist checklist item, and three research corrections"
+    },
     {
      "date": "2026-10-06",
      "sha": "7b70c17",
@@ -263,6 +278,11 @@
    "title": "MCP Token Economics",
    "topic": "Cost, performance and reliability",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "cbd6e9c",
+     "subject": "Carry the revised part two, the client-allowlist checklist item, and three research corrections"
+    },
     {
      "date": "2026-10-06",
      "sha": "7b70c17",
@@ -451,6 +471,11 @@
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "cbd6e9c",
+     "subject": "Carry the revised part two, the client-allowlist checklist item, and three research corrections"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "7b70c17",
      "subject": "Descriptive numbered folders, a README front door, and the full series"
     }
@@ -487,6 +512,11 @@
    "series": "Operating MCP at Scale, part 2: security",
    "status": "draft, under review",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "cbd6e9c",
+     "subject": "Carry the revised part two, the client-allowlist checklist item, and three research corrections"
+    },
     {
      "date": "2026-10-06",
      "sha": "7b70c17",
