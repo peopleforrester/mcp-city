@@ -1,7 +1,7 @@
 // ABOUTME: The architecture diagram made interactive: the same Mermaid layout as the static picture, with every part and connection explained.
 // ABOUTME: Click or tab to a part; "What a no does" lights the side paths; the attack walks CVE-2026-47250 across the real diagram, step by step.
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { ATTACK, ATTACK_SOURCES, DISTRICTS, EDGES, NODES, nodeById } from "../data/city";
 
 type Focus = { nodes: string[]; edges: [string, string][] };
@@ -61,31 +61,25 @@ export function Diagram() {
     };
   }, []);
 
-  // Clicks and keys on the injected SVG pick a part.
-  useEffect(() => {
-    const root = host.current;
-    if (!root || !ready) return;
-    const pick = (e: Event) => {
-      const g = (e.target as Element).closest<SVGGElement>("[data-node]");
-      if (!g) return;
-      if (e instanceof KeyboardEvent && e.key !== "Enter" && e.key !== " ") return;
-      e.preventDefault();
-      setSayNo(false);
-      setStep(-1);
-      setSelected((s) => (s === g.dataset.node ? null : g.dataset.node!));
-    };
-    root.addEventListener("click", pick);
-    root.addEventListener("keydown", pick);
-    return () => {
-      root.removeEventListener("click", pick);
-      root.removeEventListener("keydown", pick);
-    };
-  }, [ready]);
+  // Clicks and keys on the injected SVG pick a part; handled on the container, so they work from the first render.
+  const pick = (e: MouseEvent | KeyboardEvent) => {
+    const g = (e.target as Element).closest<SVGGElement>("[data-node]");
+    if (!g) return;
+    if ("key" in e && e.key !== "Enter" && e.key !== " ") return;
+    e.preventDefault();
+    setSayNo(false);
+    setStep(-1);
+    setSelected((s) => (s === g.dataset.node ? null : g.dataset.node!));
+  };
 
   // Whatever is in focus stays bright; everything else dims.
-  const focus: Focus | null = step >= 0 ? ATTACK_FOCUS[step] : sayNo ? SAY_NO : selected
+  const focus = useMemo<Focus | null>(
+    () =>
+      step >= 0 ? ATTACK_FOCUS[step] : sayNo ? SAY_NO : selected
     ? { nodes: [selected, ...EDGES.filter((e) => e.from === selected || e.to === selected).map((e) => (e.from === selected ? e.to : e.from))], edges: EDGES.filter((e) => e.from === selected || e.to === selected).map((e) => [e.from, e.to] as [string, string]) }
-    : null;
+    : null,
+    [step, sayNo, selected],
+  );
   useEffect(() => {
     const root = host.current;
     if (!root || !ready) return;
@@ -144,7 +138,7 @@ export function Diagram() {
           )}
         </aside>
         <div className="overflow-x-auto rounded-lg bg-white p-2">
-          <div ref={host} className="diagram min-w-[64rem]" data-testid="diagram" aria-label="The architecture diagram; each part is a button" />
+          <div ref={host} onClick={pick} onKeyDown={pick} className="diagram min-w-[64rem]" data-testid="diagram" aria-label="The architecture diagram; each part is a button" />
           {!ready && <p className="p-6 text-black">Loading the diagram</p>}
         </div>
       </div>
