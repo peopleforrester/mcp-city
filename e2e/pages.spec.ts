@@ -74,3 +74,9 @@ test("the header groups the pages, and on a phone it is a menu that does not sti
     await expect(page).toHaveURL(/\/resources\/changes\/$/);
   }
 });
+
+test("an unknown address gets the not-found page with every page listed", async ({ page }) => {
+  await page.goto("/404/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Not found");
+  await expect(page.getByRole("link", { name: "Slides and speaker notes" }).last()).toBeVisible();
+});

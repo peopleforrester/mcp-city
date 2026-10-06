@@ -10,7 +10,7 @@ describe("pages", () => {
   it("lists the home page and at least the planned routes", () => {
     for (const p of ["", "usb", "scale", "the-attack", "architecture", "film", "presentation", "resources"]) expect(PAGES).toContain(p);
   });
-  it.each(PAGES.filter(Boolean))("/%s/ has an entry, a title, a description and a canonical", (p) => {
+  it.each(PAGES.filter((p) => p && p !== "404"))("/%s/ has an entry, a title, a description and a canonical", (p) => {
     const html = readFileSync(`${p}/index.html`, "utf8");
     expect(existsSync(`src/entries/${p}.tsx`)).toBe(true);
     expect(html).toMatch(/<title>[^<]+<\/title>/);

@@ -40,7 +40,9 @@ function writeEntry(c: Collateral) {
     <title>${c.title}</title>
     <meta name="description" content="${desc}" />
     <meta property="og:title" content="${c.title}" />
-    <meta property="og:image" content="https://mcp.michaelrishiforrester.com/art/og.jpg" />
+    <meta property="og:image" content="https://mcp.michaelrishiforrester.com/og/${route.replace(/\//g, "-")}.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://mcp.michaelrishiforrester.com/og/${route.replace(/\//g, "-")}.jpg" />
     <meta property="og:url" content="https://mcp.michaelrishiforrester.com/${route}/" />
     <link rel="canonical" href="https://mcp.michaelrishiforrester.com/${route}/" />
     <meta name="theme-color" content="#051932" />
