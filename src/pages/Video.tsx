@@ -20,6 +20,7 @@ export function VideoPage() {
       <PageIntro title="A video of the presentation" lede={<>{TALK.title}, {TALK.event}, {TALK.when}.</>} />
       <section className="measure-wide pb-16" aria-label="The recording">
         {id && <YouTube id={id} title={`${TALK.title}, the recording`} />}
+        {id && TALK.recordingNote && <p className="mt-3 max-w-2xl text-[color:var(--color-ink-muted)]">{TALK.recordingNote}</p>}
         {phone && (
           <div className={id ? "mt-10" : ""}>
             <h2 className="text-2xl font-semibold">From the room</h2>

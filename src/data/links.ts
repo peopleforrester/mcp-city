@@ -20,7 +20,9 @@ export const TALK = {
   /** The served 720p file's length, measured with ffprobe on 2026-10-06: 386.17 seconds (v0.5). */
   filmRuntime: "6 min 26 s",
   /** The Linux Foundation's recording, as a YouTube video id, once it is posted; the video page embeds it as soon as this is set. */
-  recordingYouTubeId: null as string | null,
+  recordingYouTubeId: "a8p-Pz1k5l0" as string | null,
+  /** Shown under the official recording; the stream covers the whole keynote block, so it says where this talk falls. */
+  recordingNote: "The Agentic AI Foundation's livestream of the Tuesday keynotes. This talk is scheduled at 9:59 EDT, about 44 minutes into the stream." as string | null,
   /** Michael's own recording from the room, as a file under public/ or a YouTube id; shown beside the official one. */
   phoneRecording: null as null | { kind: "file"; src: string; poster?: string } | { kind: "youtube"; id: string },
 };

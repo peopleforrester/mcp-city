@@ -2,13 +2,17 @@
 // ABOUTME: Both states render from src/data/links.ts, so the test flips that one value.
 
 import { render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { TALK } from "../data/links";
 import { VideoPage } from "./Video";
 
 describe("video page", () => {
-  afterEach(() => {
+  const official = TALK.recordingYouTubeId;
+  beforeEach(() => {
     TALK.recordingYouTubeId = null;
+  });
+  afterEach(() => {
+    TALK.recordingYouTubeId = official;
     TALK.phoneRecording = null;
   });
   it("says where to go until the recording exists", () => {
