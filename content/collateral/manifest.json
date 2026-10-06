@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "7b70c17",
+ "commit": "f35cff9",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -129,6 +129,11 @@
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "f35cff9",
+     "subject": "Fix three links in the research: two copied as site-relative paths, one to a removed post"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "7b70c17",
      "subject": "Descriptive numbered folders, a README front door, and the full series"
     },
@@ -235,6 +240,11 @@
    "title": "Microsoft's MCP Governance Stack",
    "topic": "Security and vetting",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "f35cff9",
+     "subject": "Fix three links in the research: two copied as site-relative paths, one to a removed post"
+    },
     {
      "date": "2026-10-06",
      "sha": "7b70c17",
@@ -379,6 +389,11 @@
    "title": "MCP Specification, September 2026",
    "topic": "The specification and the numbers",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "f35cff9",
+     "subject": "Fix three links in the research: two copied as site-relative paths, one to a removed post"
+    },
     {
      "date": "2026-10-06",
      "sha": "7b70c17",

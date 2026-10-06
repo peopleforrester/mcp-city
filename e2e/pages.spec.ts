@@ -81,3 +81,13 @@ test("an unknown address gets the not-found page with every page listed", async 
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Not found");
   await expect(page.getByRole("link", { name: "Slides and speaker notes" }).last()).toBeVisible();
 });
+
+test("the film carries captions and a chapter list that seeks the video", async ({ page }) => {
+  await page.goto("/film/");
+  await expect(page.locator('video track[kind="captions"]')).toHaveAttribute("src", "/film/captions.en.vtt");
+  const scenes = page.getByRole("list", { name: "Scenes" }).getByRole("button");
+  await expect(scenes).toHaveCount(11);
+  const caps = await page.request.get("/film/captions.en.vtt");
+  expect(caps.ok()).toBeTruthy();
+  expect(await caps.text()).toContain("WEBVTT");
+});
