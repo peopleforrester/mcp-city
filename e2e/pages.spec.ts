@@ -14,7 +14,7 @@ const PAGES: [string, string][] = [
   ["/resources/", "Resources"],
   ["/resources/source-ledger/", "ledger"],
   ["/resources/art/", "The art"],
-  ["/resources/articles/part-2-security/", "Everyone Vets MCP Servers Alone"],
+  ["/resources/articles/part-2-security/", "Something Peculiar in the Logs"],
 ];
 
 for (const [path, name] of PAGES) {

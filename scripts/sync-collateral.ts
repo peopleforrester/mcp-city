@@ -113,12 +113,14 @@ function frontMatter(md: string, key: string): string | undefined {
   return head.match(new RegExp(`^${key}:\\s*"?([^"\\n]*)"?\\s*$`, "m"))?.[1]?.trim() || undefined;
 }
 
-// The document is the authority on its own status and prefix: a draft shows the badge, a final does not.
+// The document is the authority on its own title, status and prefix: a draft shows the badge, a final does not.
 for (const c of COLLATERAL) {
   const dest = `content/collateral/${c.slug}.md`;
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(resolve(repo, c.src), dest);
   const md = readFileSync(dest, "utf8");
+  const title = frontMatter(md, "title");
+  if (title) c.title = title;
   const status = frontMatter(md, "status");
   if (status) c.status = status === "draft" ? "draft, under review" : undefined;
   const prefix = frontMatter(md, "prefix");

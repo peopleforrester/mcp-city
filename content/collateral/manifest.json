@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "915cf75",
+ "commit": "54e54aa",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -106,7 +106,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-gateway-and-registry-operations.md",
    "slug": "research/mcp-gateway-and-registry-operations",
-   "title": "Operating MCP Gateways and Registries",
+   "title": "Operating an MCP Gateway and an MCP Registry at Enterprise Scale",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -125,7 +125,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-server-deployment-and-migration.md",
    "slug": "research/mcp-server-deployment-and-migration",
-   "title": "Deploying MCP After 2026-07-28",
+   "title": "Deploying and Operating MCP Servers: the 2026-07-28 Migration and What Best Practice Actually Says",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -154,7 +154,7 @@
   {
    "src": "06-research-and-source-ledger/ops/mcp-operations-at-scale-2026-09.md",
    "slug": "research/mcp-operations-at-scale-2026-09",
-   "title": "What Breaks at MCP Scale",
+   "title": "MCP Operations at Scale: What Actually Breaks",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -173,7 +173,7 @@
   {
    "src": "06-research-and-source-ledger/scale/mcp-at-scale-architecture-2026-09.md",
    "slug": "research/mcp-at-scale-architecture-2026-09",
-   "title": "MCP Enterprise Architecture Survey",
+   "title": "Running MCP at Enterprise Scale, Architecture and Tooling",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -192,7 +192,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/VERIFIED-transport-and-quote-audit.md",
    "slug": "research/VERIFIED-transport-and-quote-audit",
-   "title": "MCP Routing Headers Verified",
+   "title": "Parent session verification: transport headers, and one quote that did not survive",
    "topic": "Operating MCP",
    "history": [
     {
@@ -210,7 +210,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-server-vetting-and-supply-chain.md",
    "slug": "research/mcp-server-vetting-and-supply-chain",
-   "title": "Vetting MCP Servers",
+   "title": "Vetting and Approving MCP Servers: What Is Published, What Is Enforced, What Does Not Exist",
    "topic": "Security and vetting",
    "status": "draft, under review",
    "history": [
@@ -234,7 +234,7 @@
   {
    "src": "06-research-and-source-ledger/security/mcp-security-failures-2026-09.md",
    "slug": "research/mcp-security-failures-2026-09",
-   "title": "MCP Security Failures Catalogue",
+   "title": "MCP Security Failures: Verified Catalogue",
    "topic": "Security and vetting",
    "status": "draft, under review",
    "history": [
@@ -258,7 +258,7 @@
   {
    "src": "06-research-and-source-ledger/ecosystem/microsoft-mcp-control-plane.md",
    "slug": "research/microsoft-mcp-control-plane",
-   "title": "Microsoft's MCP Governance Stack",
+   "title": "The Microsoft Stack for Governing MCP at Enterprise Scale",
    "topic": "Security and vetting",
    "status": "draft, under review",
    "history": [
@@ -282,7 +282,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-token-economics-and-tool-consolidation.md",
    "slug": "research/mcp-token-economics-and-tool-consolidation",
-   "title": "MCP Token Economics",
+   "title": "MCP Token Economics and the Arc to Fewer Tools",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -306,7 +306,7 @@
   {
    "src": "06-research-and-source-ledger/pillars/cost.md",
    "slug": "research/cost",
-   "title": "The Total Cost of MCP",
+   "title": "Cost: the total cost of operating MCP at enterprise scale",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -325,7 +325,7 @@
   {
    "src": "06-research-and-source-ledger/pillars/performance.md",
    "slug": "research/performance",
-   "title": "MCP Latency and Throughput",
+   "title": "Performance of MCP at enterprise scale: the latency budget, the ceiling, and what 2026-07-28 actually bought",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -344,7 +344,7 @@
   {
    "src": "06-research-and-source-ledger/pillars/reliability.md",
    "slug": "research/reliability",
-   "title": "MCP Reliability at Scale",
+   "title": "Reliability of MCP at enterprise scale",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -363,7 +363,7 @@
   {
    "src": "06-research-and-source-ledger/components/inference-gateways.md",
    "slug": "research/inference-gateways",
-   "title": "AI Gateways on the Inference Path",
+   "title": "The inference path: AI gateways as an enterprise control layer",
    "topic": "The layers around MCP",
    "status": "draft, under review",
    "history": [
@@ -382,7 +382,7 @@
   {
    "src": "06-research-and-source-ledger/components/artifact-registries.md",
    "slug": "research/artifact-registries",
-   "title": "Model, Prompt and Agent Registries",
+   "title": "The artifact layers: model registries, prompt registries, and agent registries",
    "topic": "The layers around MCP",
    "status": "draft, under review",
    "history": [
@@ -401,7 +401,7 @@
   {
    "src": "06-research-and-source-ledger/components/supporting-layers.md",
    "slug": "research/supporting-layers",
-   "title": "Observability, Secrets and Sandboxing",
+   "title": "The supporting layers: evaluation and observability, secrets brokering, execution sandboxing",
    "topic": "The layers around MCP",
    "status": "draft, under review",
    "history": [
@@ -420,7 +420,7 @@
   {
    "src": "06-research-and-source-ledger/spec/mcp-specification-state-2026-09.md",
    "slug": "research/mcp-specification-state-2026-09",
-   "title": "MCP Specification, September 2026",
+   "title": "State of the MCP Specification, September 2026",
    "topic": "The specification and the numbers",
    "status": "draft, under review",
    "history": [
@@ -444,7 +444,7 @@
   {
    "src": "06-research-and-source-ledger/ecosystem/registry-count-verification.md",
    "slug": "research/registry-count-verification",
-   "title": "Counting the MCP Ecosystem",
+   "title": "Registry count verification, three published MCP ecosystem counts",
    "topic": "The specification and the numbers",
    "status": "draft, under review",
    "history": [
@@ -501,11 +501,16 @@
   {
    "src": "10-operating-mcp-at-scale-series/part-1-operational-excellence.md",
    "slug": "articles/part-1-operational-excellence",
-   "title": "Research: The Protocol Moved Under You and Nobody Migrates You",
+   "title": "Research: Nothing Pages You: Which Side Moves First When an MCP Fleet Upgrades to 2026-07-28",
    "series": "Operating MCP at Scale, part 1: operational excellence",
    "status": "draft, under review",
    "prefix": "Research",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "54e54aa",
+     "subject": "Replace all five series parts with the 2026-10-06 narrative rewrite"
+    },
     {
      "date": "2026-10-06",
      "sha": "915cf75",
@@ -531,10 +536,16 @@
   {
    "src": "10-operating-mcp-at-scale-series/part-2-security.md",
    "slug": "articles/part-2-security",
-   "title": "Research: Everyone Vets MCP Servers Alone",
+   "title": "Research: Something Peculiar in the Logs: How CVE-2026-47250 Turned an MCP Server Against Its Operator",
    "series": "Operating MCP at Scale, part 2: security",
+   "status": "draft, under review",
    "prefix": "Research",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "54e54aa",
+     "subject": "Replace all five series parts with the 2026-10-06 narrative rewrite"
+    },
     {
      "date": "2026-10-06",
      "sha": "cbd6e9c",
@@ -560,11 +571,16 @@
   {
    "src": "10-operating-mcp-at-scale-series/part-3-reliability.md",
    "slug": "articles/part-3-reliability",
-   "title": "Research: Your Health Check Is Speaking a Different Protocol Version",
+   "title": "Research: The Server Was Fine: Why MCP Health Checks Keep Marking Working Servers Down",
    "series": "Operating MCP at Scale, part 3: reliability",
    "status": "draft, under review",
    "prefix": "Research",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "54e54aa",
+     "subject": "Replace all five series parts with the 2026-10-06 narrative rewrite"
+    },
     {
      "date": "2026-10-06",
      "sha": "915cf75",
@@ -590,11 +606,16 @@
   {
    "src": "10-operating-mcp-at-scale-series/part-4-performance.md",
    "slug": "articles/part-4-performance",
-   "title": "Research: Where an MCP Call Spends Its Time",
+   "title": "Research: The Tool List Costs More Time Than the Gateway",
    "series": "Operating MCP at Scale, part 4: performance",
    "status": "draft, under review",
    "prefix": "Research",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "54e54aa",
+     "subject": "Replace all five series parts with the 2026-10-06 narrative rewrite"
+    },
     {
      "date": "2026-10-06",
      "sha": "915cf75",
@@ -610,11 +631,16 @@
   {
    "src": "10-operating-mcp-at-scale-series/part-5-cost.md",
    "slug": "articles/part-5-cost",
-   "title": "Research: The MCP Bill Is Hiding in the Token Bill",
+   "title": "Research: The MCP Cost Nobody Invoices: Tool Definitions Resent on Every Call",
    "series": "Operating MCP at Scale, part 5: cost",
    "status": "draft, under review",
    "prefix": "Research",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "54e54aa",
+     "subject": "Replace all five series parts with the 2026-10-06 narrative rewrite"
+    },
     {
      "date": "2026-10-06",
      "sha": "915cf75",
