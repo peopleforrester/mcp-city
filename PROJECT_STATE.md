@@ -60,8 +60,8 @@ beat-synced cut the site plays at 720p).
 - Railway services this repo owns: `mcp-city` (the site) and `umami` with its own
   `Postgres-wmvi` (visit counts; credentials in ~/secrets/projects/mcp-city.env)
 - Open here: #2 (Railway IaC migration, deferred past the keynote, due 2026-12-01),
-  #6 (recording and AAIF session page, both not yet posted), #8 (this PRD: questions
-  from the room after the talk, recording segments linked to slides)
+  #6 (recording and AAIF session page, both not yet posted), #8 (this PRD: the two recordings
+  once shared, the Linux Foundation's and Michael's phone recording)
 
 ## Phase History
 - 2026-10-03 phase 0 (QR works) shipped; domain, certificate, collateral repo

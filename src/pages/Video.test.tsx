@@ -9,6 +9,7 @@ import { VideoPage } from "./Video";
 describe("video page", () => {
   afterEach(() => {
     TALK.recordingYouTubeId = null;
+    TALK.phoneRecording = null;
   });
   it("says where to go until the recording exists", () => {
     render(<VideoPage />);
@@ -19,5 +20,12 @@ describe("video page", () => {
     TALK.recordingYouTubeId = "abc123";
     render(<VideoPage />);
     expect(document.querySelector("iframe")?.getAttribute("src")).toBe("https://www.youtube-nocookie.com/embed/abc123");
+  });
+  it("shows the phone recording on its own, before the official one exists", () => {
+    TALK.phoneRecording = { kind: "file", src: "/video/room.mp4" };
+    render(<VideoPage />);
+    expect(screen.getByRole("heading", { name: "From the room" })).toBeInTheDocument();
+    expect(document.querySelector("video")?.getAttribute("src")).toBe("/video/room.mp4");
+    expect(screen.queryByText(/once the Linux Foundation posts it/)).toBeNull();
   });
 });

@@ -15,8 +15,10 @@ export const TALK = {
   ledger: "https://github.com/peopleforrester/mcp-for-a-city/blob/main/06-research-and-source-ledger/source-ledger.md",
   siteSource: "https://github.com/peopleforrester/mcp-city",
   film: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.3",
-  /** The recording's YouTube video id, once the Linux Foundation posts it; the video page embeds it as soon as this is set. */
+  /** The Linux Foundation's recording, as a YouTube video id, once it is posted; the video page embeds it as soon as this is set. */
   recordingYouTubeId: null as string | null,
+  /** Michael's own recording from the room, as a file under public/ or a YouTube id; shown beside the official one. */
+  phoneRecording: null as null | { kind: "file"; src: string; poster?: string } | { kind: "youtube"; id: string },
 };
 
 export const RESOURCES = [
