@@ -53,12 +53,15 @@ beat-synced cut the site plays at 720p).
 ## Branch & Tests
 - Branch: staging (main matches)
 - Working tree: clean
-- Tests: Vitest 161 passing; Playwright 36 passing (desktop and mobile), also green
+- Tests: Vitest 275 passing; Playwright 54 passing (desktop and mobile), also green
   against the live URL with `E2E_BASE_URL=https://mcp.michaelrishiforrester.com`
-- Measured 2026-10-05, Lighthouse 13.5.0 mobile on the live site: home 97,
-  presentation 99, architecture 100, usb 93; desktop 100 on all four
+- Measured 2026-10-06, Lighthouse 13.5.0 mobile on the live site: home 95, spec 100,
+  film 94, search 96, presentation 99, architecture 100
+- Railway services this repo owns: `mcp-city` (the site) and `umami` with its own
+  `Postgres-wmvi` (visit counts; credentials in ~/secrets/projects/mcp-city.env)
 - Open here: #2 (Railway IaC migration, deferred past the keynote, due 2026-12-01),
-  #6 (shader pass, recording link once posted), #8 (this PRD)
+  #6 (recording and AAIF session page, both not yet posted), #8 (this PRD: questions
+  from the room after the talk, recording segments linked to slides)
 
 ## Phase History
 - 2026-10-03 phase 0 (QR works) shipped; domain, certificate, collateral repo
@@ -69,3 +72,4 @@ beat-synced cut the site plays at 720p).
 - 2026-10-05 PRD 8 approved ("Start going"); ten page URLs live for the deck's QR codes; phase 0 in flight
 - 2026-10-05 PRD 8 phase 0 shipped (nav, 10:15, gate titles, plain names, collateral refreshed); multi-page build live with usb, scale, the-attack, architecture, film, presentation (39 slides with notes), resources and five rendered documents; film v0.3 on the page
 - 2026-10-05 #7 and #9 closed (site matches the deck as presented; film v0.3 beat-synced cut); #3 closed (Caddyfile cache headers, React split from three.js, WebP diagram); articles corrected against their reviews
+- 2026-10-06 polish (change log, newsletter, silhouette shader), today fixes (phone header, social cards, sitemap, 404), value (18 research documents, spec evolution page, film captions and chapters, video page, search, Umami); #11, #12, #13 closed
