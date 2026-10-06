@@ -42,7 +42,7 @@ const html = `<!doctype html>
 <p>A request to allow an MCP server passes through these in order. Print this page, or <a href="/#gates">walk a real server through it</a> and take the result with you.</p>
 ${gates}
 <p><strong>The one rule behind all six:</strong> if you do not give them MCP servers, they build their own. Explain the no, or expect the alley.</p>
-<p class="muted">Every source above was read on the date recorded in the <a href="https://github.com/peopleforrester/mcp-for-a-city/blob/main/research/source-ledger.md">source ledger</a>.</p>
+<p class="muted">Every source above was read on the date recorded in the <a href="https://github.com/peopleforrester/mcp-for-a-city/blob/main/06-research-and-source-ledger/source-ledger.md">source ledger</a>.</p>
 </main></body></html>
 `;
 writeFileSync("public/gates/index.html", html);

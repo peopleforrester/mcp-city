@@ -1,14 +1,19 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "4061e7f",
+ "commit": "7b70c17",
  "synced": "2026-10-06",
  "documents": [
   {
-   "src": "research/approval-process-criteria.md",
+   "src": "06-research-and-source-ledger/approval-process-criteria.md",
    "slug": "approval-process-criteria",
    "title": "What an enterprise MCP approval process evaluates",
    "history": [
     {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
      "date": "2026-10-03",
      "sha": "b5450c2",
      "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
@@ -16,22 +21,15 @@
    ]
   },
   {
-   "src": "research/wrapping-mcp-servers.md",
+   "src": "06-research-and-source-ledger/wrapping-mcp-servers.md",
    "slug": "wrapping-mcp-servers",
    "title": "Wrapping an MCP server inside an MCP server",
    "history": [
     {
-     "date": "2026-10-03",
-     "sha": "b5450c2",
-     "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
-    }
-   ]
-  },
-  {
-   "src": "research/source-ledger.md",
-   "slug": "source-ledger",
-   "title": "The claim-by-claim source ledger",
-   "history": [
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
     {
      "date": "2026-10-03",
      "sha": "b5450c2",
@@ -40,10 +38,32 @@
    ]
   },
   {
-   "src": "sources/sources.md",
+   "src": "06-research-and-source-ledger/source-ledger.md",
+   "slug": "source-ledger",
+   "title": "The claim-by-claim source ledger",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-03",
+     "sha": "b5450c2",
+     "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
+    }
+   ]
+  },
+  {
+   "src": "07-sources-slide/sources.md",
    "slug": "sources",
    "title": "The sources slide",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
     {
      "date": "2026-10-04",
      "sha": "048a658",
@@ -62,10 +82,15 @@
    ]
   },
   {
-   "src": "gates/approval-gates.md",
+   "src": "04-approval-gates-checklist/approval-gates.md",
    "slug": "approval-gates",
    "title": "The six approval gates as a checklist",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
     {
      "date": "2026-10-05",
      "sha": "eb525f7",
@@ -79,232 +104,304 @@
    ]
   },
   {
-   "src": "research/bestpractice/mcp-gateway-and-registry-operations.md",
+   "src": "06-research-and-source-ledger/bestpractice/mcp-gateway-and-registry-operations.md",
    "slug": "research/mcp-gateway-and-registry-operations",
    "title": "Operating MCP Gateways and Registries",
    "topic": "Operating MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/bestpractice/mcp-server-deployment-and-migration.md",
+   "src": "06-research-and-source-ledger/bestpractice/mcp-server-deployment-and-migration.md",
    "slug": "research/mcp-server-deployment-and-migration",
    "title": "Deploying MCP After 2026-07-28",
    "topic": "Operating MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/ops/mcp-operations-at-scale-2026-09.md",
+   "src": "06-research-and-source-ledger/ops/mcp-operations-at-scale-2026-09.md",
    "slug": "research/mcp-operations-at-scale-2026-09",
    "title": "What Breaks at MCP Scale",
    "topic": "Operating MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/scale/mcp-at-scale-architecture-2026-09.md",
+   "src": "06-research-and-source-ledger/scale/mcp-at-scale-architecture-2026-09.md",
    "slug": "research/mcp-at-scale-architecture-2026-09",
    "title": "MCP Enterprise Architecture Survey",
    "topic": "Operating MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/bestpractice/VERIFIED-transport-and-quote-audit.md",
+   "src": "06-research-and-source-ledger/bestpractice/VERIFIED-transport-and-quote-audit.md",
    "slug": "research/VERIFIED-transport-and-quote-audit",
    "title": "MCP Routing Headers Verified",
    "topic": "Operating MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/bestpractice/mcp-server-vetting-and-supply-chain.md",
+   "src": "06-research-and-source-ledger/bestpractice/mcp-server-vetting-and-supply-chain.md",
    "slug": "research/mcp-server-vetting-and-supply-chain",
    "title": "Vetting MCP Servers",
    "topic": "Security and vetting",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/security/mcp-security-failures-2026-09.md",
+   "src": "06-research-and-source-ledger/security/mcp-security-failures-2026-09.md",
    "slug": "research/mcp-security-failures-2026-09",
    "title": "MCP Security Failures Catalogue",
    "topic": "Security and vetting",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/ecosystem/microsoft-mcp-control-plane.md",
+   "src": "06-research-and-source-ledger/ecosystem/microsoft-mcp-control-plane.md",
    "slug": "research/microsoft-mcp-control-plane",
    "title": "Microsoft's MCP Governance Stack",
    "topic": "Security and vetting",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/bestpractice/mcp-token-economics-and-tool-consolidation.md",
+   "src": "06-research-and-source-ledger/bestpractice/mcp-token-economics-and-tool-consolidation.md",
    "slug": "research/mcp-token-economics-and-tool-consolidation",
    "title": "MCP Token Economics",
    "topic": "Cost, performance and reliability",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/pillars/cost.md",
+   "src": "06-research-and-source-ledger/pillars/cost.md",
    "slug": "research/cost",
    "title": "The Total Cost of MCP",
    "topic": "Cost, performance and reliability",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/pillars/performance.md",
+   "src": "06-research-and-source-ledger/pillars/performance.md",
    "slug": "research/performance",
    "title": "MCP Latency and Throughput",
    "topic": "Cost, performance and reliability",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/pillars/reliability.md",
+   "src": "06-research-and-source-ledger/pillars/reliability.md",
    "slug": "research/reliability",
    "title": "MCP Reliability at Scale",
    "topic": "Cost, performance and reliability",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/components/inference-gateways.md",
+   "src": "06-research-and-source-ledger/components/inference-gateways.md",
    "slug": "research/inference-gateways",
    "title": "AI Gateways on the Inference Path",
    "topic": "The layers around MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/components/artifact-registries.md",
+   "src": "06-research-and-source-ledger/components/artifact-registries.md",
    "slug": "research/artifact-registries",
    "title": "Model, Prompt and Agent Registries",
    "topic": "The layers around MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/components/supporting-layers.md",
+   "src": "06-research-and-source-ledger/components/supporting-layers.md",
    "slug": "research/supporting-layers",
    "title": "Observability, Secrets and Sandboxing",
    "topic": "The layers around MCP",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/spec/mcp-specification-state-2026-09.md",
+   "src": "06-research-and-source-ledger/spec/mcp-specification-state-2026-09.md",
    "slug": "research/mcp-specification-state-2026-09",
    "title": "MCP Specification, September 2026",
    "topic": "The specification and the numbers",
    "history": [
     {
      "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
      "sha": "4061e7f",
      "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
   {
-   "src": "research/ecosystem/registry-count-verification.md",
+   "src": "06-research-and-source-ledger/ecosystem/registry-count-verification.md",
    "slug": "research/registry-count-verification",
    "title": "Counting the MCP Ecosystem",
    "topic": "The specification and the numbers",
    "history": [
     {
      "date": "2026-10-06",
-     "sha": "4061e7f",
-     "subject": "Publish the research behind the talk: eighteen documents"
-    }
-   ]
-  },
-  {
-   "src": "research/craft/ship-crews.md",
-   "slug": "research/ship-crews",
-   "title": "Starship Crew Sizes",
-   "topic": "The specification and the numbers",
-   "history": [
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
     {
      "date": "2026-10-06",
      "sha": "4061e7f",
@@ -313,13 +410,50 @@
    ]
   },
   {
-   "src": "articles/part-1-operational-excellence.md",
+   "src": "06-research-and-source-ledger/craft/ship-crews.md",
+   "slug": "research/ship-crews",
+   "title": "Starship Crew Sizes",
+   "topic": "The specification and the numbers",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "10-operating-mcp-at-scale-series/operating-mcp-checklist.md",
+   "slug": "articles/operating-mcp-checklist",
+   "title": "Operating MCP at Scale: the enterprise checklist for 2026-07-28",
+   "series": "Operating MCP at Scale, the companion checklist: start here",
+   "status": "draft, under review",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    }
+   ]
+  },
+  {
+   "src": "10-operating-mcp-at-scale-series/part-1-operational-excellence.md",
    "slug": "articles/part-1-operational-excellence",
    "title": "The Protocol Moved Under You and Nobody Migrates You",
    "series": "Operating MCP at Scale, part 1: operational excellence",
    "status": "draft, under review",
    "history": [
     {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
      "date": "2026-10-05",
      "sha": "e0387ea",
      "subject": "Correct the three articles against their figure, quote, prose and hostile reviews"
@@ -332,13 +466,18 @@
    ]
   },
   {
-   "src": "articles/part-2-security.md",
+   "src": "10-operating-mcp-at-scale-series/part-2-security.md",
    "slug": "articles/part-2-security",
    "title": "Nobody Vets MCP Servers, and Everyone Is Right About Why",
    "series": "Operating MCP at Scale, part 2: security",
    "status": "draft, under review",
    "history": [
     {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
+    {
      "date": "2026-10-05",
      "sha": "e0387ea",
      "subject": "Correct the three articles against their figure, quote, prose and hostile reviews"
@@ -351,12 +490,17 @@
    ]
   },
   {
-   "src": "articles/part-3-reliability.md",
+   "src": "10-operating-mcp-at-scale-series/part-3-reliability.md",
    "slug": "articles/part-3-reliability",
    "title": "Your Health Check Is Speaking a Different Protocol Version",
    "series": "Operating MCP at Scale, part 3: reliability",
    "status": "draft, under review",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    },
     {
      "date": "2026-10-05",
      "sha": "e0387ea",
@@ -366,6 +510,34 @@
      "date": "2026-10-05",
      "sha": "28a46a2",
      "subject": "Publish the first three parts of Operating MCP at Scale as drafts under review"
+    }
+   ]
+  },
+  {
+   "src": "10-operating-mcp-at-scale-series/part-4-performance.md",
+   "slug": "articles/part-4-performance",
+   "title": "Where an MCP Call Spends Its Time",
+   "series": "Operating MCP at Scale, part 4: performance",
+   "status": "draft, under review",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
+    }
+   ]
+  },
+  {
+   "src": "10-operating-mcp-at-scale-series/part-5-cost.md",
+   "slug": "articles/part-5-cost",
+   "title": "The MCP Bill Is Hiding in the Token Bill",
+   "series": "Operating MCP at Scale, part 5: cost",
+   "status": "draft, under review",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "7b70c17",
+     "subject": "Descriptive numbered folders, a README front door, and the full series"
     }
    ]
   }

@@ -1,5 +1,5 @@
 // ABOUTME: Prints the six gates as the Markdown checklist carried by the collateral repo.
-// ABOUTME: Run with `npx tsx scripts/export-gates.ts > ../mcp-for-a-city/gates/approval-gates.md`.
+// ABOUTME: Run with `npx tsx scripts/export-gates.ts > ../mcp-for-a-city/04-approval-gates-checklist/approval-gates.md`.
 
 import { GATES } from "../src/data/gates";
 
