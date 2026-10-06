@@ -4,7 +4,7 @@
 export interface Entry { title: string; url: string; kind: string; text: string }
 export interface Hit { entry: Entry; score: number; snippet: string }
 
-export const words = (s: string): string[] => s.toLowerCase().normalize("NFKD").match(/[a-z0-9][a-z0-9.\-]*[a-z0-9]|[a-z0-9]/g) ?? [];
+export const words = (s: string): string[] => s.toLowerCase().normalize("NFKD").match(/[a-z0-9][a-z0-9.-]*[a-z0-9]|[a-z0-9]/g) ?? [];
 
 /** Markdown to searchable text: drops front matter, comments, code fences, link targets and table rules. */
 export function plain(md: string): string {
