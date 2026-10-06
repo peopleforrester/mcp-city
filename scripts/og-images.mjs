@@ -6,9 +6,9 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const SITE = "https://mcp.michaelrishiforrester.com";
 const routes = JSON.parse(readFileSync("content/collateral/manifest.json", "utf8")).documents.map((d) => `resources/${d.slug}`);
-const PAGES = ["gates", "usb", "spec", "scale", "the-attack", "architecture", "film", "presentation", "presentation/video", "resources", "resources/art", "resources/changes", "search", ...routes];
+const PAGES = ["gates", "wrapping", "usb", "spec", "scale", "the-attack", "architecture", "film", "presentation", "presentation/video", "resources", "resources/art", "resources/changes", "search", ...routes];
 /** Pages served straight from public/, outside the Vite build. */
-const STATIC = ["wrapping"];
+const STATIC = [];
 
 const pick = (html, re) => (html.match(re)?.[1] ?? "").replace(/&amp;/g, "&").replace(/&quot;/g, '"');
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
