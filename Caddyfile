@@ -22,6 +22,10 @@
 
 	respond /health 200
 
+	# The closing slide's second QR code. A temporary redirect to the site until it points at Accenture's page; 302 so no browser caches it.
+	@toronto host toronto.mcp.michaelrishiforrester.com
+	redir @toronto https://mcp.michaelrishiforrester.com{uri} 302
+
 	header {
 		X-Content-Type-Options "nosniff"
 		-Server
