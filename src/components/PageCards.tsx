@@ -7,7 +7,7 @@ const CARDS = [
   { href: "/gates/", title: "MCP approval gates", text: "Six gates before an MCP server comes online. Walk a real server through them and take the checklist with you." },
   { href: "/architecture/", title: "The architecture", text: "The diagram, and the same architecture as a living map: say no and watch where the traffic goes." },
   { href: "/the-attack/", title: "The attack", text: "One line in a log file ends with the attacker holding a token for a cluster they could not reach." },
-  { href: "/usb/", title: "Eighteen years of USB", text: "MCP is the USB of AI tooling. It took USB eighteen years to get to one plug." },
+  { href: "/spec/", title: "How the MCP spec evolves", text: "Five revisions since launch, each one asking something of you. USB took eighteen years to get to one plug." },
   { href: "/wrapping/", title: "Wrapping MCP servers in MCP servers", text: "We thought it was unusual. Everybody does it. Six reasons, the tools, and the one test." },
   { href: "/scale/", title: "A workforce the size of a city", text: "The ship ladder that gives the headcount a shape, each crew with its source." },
   { href: "/presentation/", title: "The presentation", text: "Every slide with the words spoken over it, the PDF, and the recording when it posts." },

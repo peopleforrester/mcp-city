@@ -6,7 +6,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const SITE = "https://mcp.michaelrishiforrester.com";
 const routes = JSON.parse(readFileSync("content/collateral/manifest.json", "utf8")).documents.map((d) => `resources/${d.slug}`);
-const PAGES = ["usb", "scale", "the-attack", "architecture", "film", "presentation", "resources", "resources/art", "resources/changes", ...routes];
+const PAGES = ["usb", "spec", "scale", "the-attack", "architecture", "film", "presentation", "resources", "resources/art", "resources/changes", ...routes];
 /** Pages served straight from public/, outside the Vite build. */
 const STATIC = ["gates", "wrapping", "presentation/video"];
 

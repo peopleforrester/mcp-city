@@ -22,7 +22,7 @@ export const NAV: NavItem[] = [
       { href: "/the-attack/", label: "The attack" },
       { href: "/wrapping/", label: "Wrapping MCP servers in MCP servers" },
       { href: "/scale/", label: "A workforce the size of a city" },
-      { href: "/usb/", label: "Eighteen years of USB" },
+      { href: "/spec/", label: "How the MCP spec evolves" },
     ],
   },
   {

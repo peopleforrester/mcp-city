@@ -7,4 +7,4 @@ import { resolve } from "node:path";
 
 const manifest = JSON.parse(readFileSync(resolve(process.cwd(), "content/collateral/manifest.json"), "utf8")) as { documents: { slug: string }[] };
 
-export const PAGES: string[] = ["", "404", "usb", "scale", "the-attack", "architecture", "film", "presentation", "resources", "resources/art", "resources/changes", ...manifest.documents.map((d) => `resources/${d.slug}`)];
+export const PAGES: string[] = ["", "404", "usb", "spec", "scale", "the-attack", "architecture", "film", "presentation", "resources", "resources/art", "resources/changes", ...manifest.documents.map((d) => `resources/${d.slug}`)];

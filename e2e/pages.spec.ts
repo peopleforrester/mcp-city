@@ -5,6 +5,7 @@ import { expect, test } from "@playwright/test";
 
 const PAGES: [string, string][] = [
   ["/usb/", "Eighteen years of USB"],
+  ["/spec/", "How the MCP spec evolves"],
   ["/scale/", "A workforce the size of a city"],
   ["/the-attack/", "The attack"],
   ["/architecture/", "The architecture"],
@@ -36,7 +37,7 @@ test("the presentation shows every slide with its notes", async ({ page }) => {
 
 test("the home page carries a card for every page", async ({ page }) => {
   await page.goto("/");
-  for (const name of ["MCP approval gates", "The architecture", "Eighteen years of USB", "The presentation", "Resources"]) {
+  for (const name of ["MCP approval gates", "The architecture", "How the MCP spec evolves", "The presentation", "Resources"]) {
     await expect(page.getByRole("link", { name, exact: true }).first()).toBeVisible();
   }
 });
