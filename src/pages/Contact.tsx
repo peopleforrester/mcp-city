@@ -13,6 +13,7 @@ const BOOK = {
 };
 
 const COURSES = [
+  { label: "AWS Cloud Practitioner - A Prep Course: Learn AWS Cloud Fundamentals and Prepare for the AWS Cloud Practitioner Exam, with Sanjeev Thiyagarajan", where: "Packt video course", url: "https://www.packtpub.com/en-br/product/aws-cloud-practitioner-a-prep-course-9781806380510" },
   { label: "AWS Cloud Practitioner, with Sanjeev Thiyagarajan", where: "KodeKloud", url: "https://kodekloud.com/courses/aws-cloud-practitioner" },
   { label: "Talks, workshops and courseware", where: "michaelrishiforrester.com", url: "https://michaelrishiforrester.com/speaking/" },
 ];

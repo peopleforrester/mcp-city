@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "54e54aa",
+ "commit": "bc8e9d2",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -538,9 +538,13 @@
    "slug": "articles/part-2-security",
    "title": "Research: Something Peculiar in the Logs: How CVE-2026-47250 Turned an MCP Server Against Its Operator",
    "series": "Operating MCP at Scale, part 2: security",
-   "status": "draft, under review",
    "prefix": "Research",
    "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "bc8e9d2",
+     "subject": "Mark part two final, as approved"
+    },
     {
      "date": "2026-10-06",
      "sha": "54e54aa",
