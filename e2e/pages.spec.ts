@@ -197,3 +197,11 @@ test("the old premise line appears nowhere on the gates, the walk or the checkli
     await expect(page.getByRole("main")).not.toContainText("they build their own");
   }
 });
+
+test("the architecture page plays the walkthrough with captions", async ({ page }) => {
+  await page.goto("/architecture/");
+  const video = page.getByTestId("walkthrough");
+  await expect(video).toHaveAttribute("src", "/architecture/walkthrough-720.mp4");
+  await expect(video.locator('track[kind="captions"]')).toHaveAttribute("src", "/architecture/walkthrough.en.vtt");
+  for (const path of ["/architecture/walkthrough-720.mp4", "/architecture/walkthrough.en.vtt"]) expect((await page.request.get(path)).ok()).toBeTruthy();
+});

@@ -36,7 +36,7 @@
 	header @hashed Cache-Control "public, max-age=31536000, immutable"
 
 	# Art, slides, fonts and the film keep their names across deploys; a day is the trade between speed and a fix landing.
-	@media path /art/* /slides/* /fonts/* /film/* /og/* /architecture/*.png /architecture/*.webp /favicon* /apple-touch-icon.png /icon-512.png
+	@media path /art/* /slides/* /fonts/* /film/* /og/* /architecture/*.png /architecture/*.webp /architecture/*.mp4 /architecture/*.vtt /architecture/*.jpg /favicon* /apple-touch-icon.png /icon-512.png
 	header @media Cache-Control "public, max-age=86400"
 
 	# Pages always revalidate, so a deploy shows up on the next load.

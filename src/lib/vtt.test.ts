@@ -20,4 +20,9 @@ describe("vtt", () => {
       expect([...cues.map((c) => c.start)].sort((a, b) => a - b)).toEqual(cues.map((c) => c.start));
     }
   });
+  it("keeps the architecture walkthrough's captions inside its 209.5 seconds", () => {
+    const cues = parseVtt(readFileSync("public/architecture/walkthrough.en.vtt", "utf8"));
+    expect(cues).toHaveLength(48);
+    expect(cues.at(-1)!.end).toBeLessThanOrEqual(209.5);
+  });
 });

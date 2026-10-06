@@ -17,6 +17,8 @@ export const TALK = {
   siteSource: "https://github.com/peopleforrester/mcp-city",
   film: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.5",
   filmRepo: "https://github.com/peopleforrester/mcp-city-film",
+  /** The architecture walkthrough from mcp-city-film v0.6, measured with ffprobe on 2026-10-06: 209.50 seconds. */
+  architectureWalkthrough: { src: "/architecture/walkthrough-720.mp4", captions: "/architecture/walkthrough.en.vtt", poster: "/architecture/walkthrough-poster.jpg", runtime: "3 min 30 s", release: "https://github.com/peopleforrester/mcp-city-film/releases/tag/v0.6" },
   /** The served 720p file's length, measured with ffprobe on 2026-10-06: 386.17 seconds (v0.5). */
   filmRuntime: "6 min 26 s",
   /** The Linux Foundation's recording, as a YouTube video id, once it is posted; the video page embeds it as soon as this is set. */

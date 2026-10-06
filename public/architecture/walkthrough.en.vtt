@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.267
+The architecture.
+
+00:00:01.267 --> 00:00:07.100
+A person, a device, an agent, one gate every call goes through, and the tools.
+
+00:00:07.100 --> 00:00:12.333
+Four zones: the managed device, tool traffic through the tool gateway,
+
+00:00:12.333 --> 00:00:15.300
+model traffic through the model gateway,
+
+00:00:15.300 --> 00:00:20.433
+and the control plane of identity, registry, audit and device policy.
+
+00:00:20.433 --> 00:00:22.967
+Start on the managed device.
+
+00:00:22.967 --> 00:00:28.233
+The end user. Everything starts with a question they ask an agent.
+
+00:00:28.233 --> 00:00:32.633
+The AI application, the agent. It is the MCP client.
+
+00:00:32.633 --> 00:00:37.933
+It asks the model for a plan and calls tools through the proxy.
+
+00:00:37.933 --> 00:00:42.267
+Client policy: which MCP servers the client may load.
+
+00:00:42.267 --> 00:00:45.367
+The allow list, fed from the registry.
+
+00:00:45.367 --> 00:00:50.200
+OS and app policy. Device policy that closes the side doors:
+
+00:00:50.200 --> 00:00:56.533
+Outlook's automation guard set to deny, and the browser's remote debugging off.
+
+00:00:56.533 --> 00:01:01.667
+When the agent makes a tools call, it goes to the MCP proxy.
+
+00:01:01.667 --> 00:01:04.933
+How does the request reach the server?
+
+00:01:04.933 --> 00:01:09.900
+Routing, transport bridging, the first hop off the device.
+
+00:01:09.900 --> 00:01:14.333
+Then the MCP gateway. Should this caller be allowed?
+
+00:01:14.333 --> 00:01:18.433
+Identity, authorization, policy and rate limits,
+
+00:01:18.433 --> 00:01:21.533
+enforced once instead of per server.
+
+00:01:21.533 --> 00:01:25.300
+The service boundary. Can traffic reach this backend?
+
+00:01:25.300 --> 00:01:28.133
+The network edge in front of the server.
+
+00:01:28.133 --> 00:01:34.800
+The MCP server. Wrapped where needed, holding an exchanged token, never the user's.
+
+00:01:34.800 --> 00:01:40.400
+And the tool or enterprise data: the thing the tool call actually touches.
+
+00:01:40.400 --> 00:01:45.100
+One branch off the gateway: a third-party hosted MCP server.
+
+00:01:45.100 --> 00:01:50.667
+A vendor's server, where its own agent acts under the user's own grant,
+
+00:01:50.667 --> 00:01:53.167
+which your gateway never issued.
+
+00:01:53.167 --> 00:01:58.800
+Model traffic takes its own road. The agent's prompt goes to the AI gateway.
+
+00:01:58.800 --> 00:02:04.233
+Which model, which provider? Quotas and guardrails on the inference path.
+
+00:02:04.233 --> 00:02:07.433
+Behind it, the LLM providers.
+
+00:02:07.433 --> 00:02:10.467
+The control plane feeds all of it.
+
+00:02:10.467 --> 00:02:13.933
+The MCP registry: what exists, and who owns it.
+
+00:02:13.933 --> 00:02:19.533
+It is the source of the client's allow list and the gateway's routing table.
+
+00:02:19.533 --> 00:02:25.433
+The model registry: which models are approved, fed to the AI gateway.
+
+00:02:25.433 --> 00:02:28.967
+The identity provider: OIDC, OAuth, ID-JAG.
+
+00:02:28.967 --> 00:02:34.433
+Single sign-on for the agent, and token validation for the gateway.
+
+00:02:34.433 --> 00:02:37.233
+Workload identity: which agent is calling,
+
+00:02:37.233 --> 00:02:41.000
+so the gateway knows the workload and not just the user.
+
+00:02:41.000 --> 00:02:45.367
+GitOps and admission control. No unsanctioned server lands.
+
+00:02:45.367 --> 00:02:49.567
+Servers are deployed from the control plane, not by hand.
+
+00:02:49.567 --> 00:02:55.033
+Audit and traces. The gateway and the AI gateway send their audit logs here,
+
+00:02:55.033 --> 00:02:59.367
+and the client its traces, every call joined by traceparent.
+
+00:02:59.367 --> 00:03:05.067
+And the two red dashed lines. Outlook, reached by a script the agent wrote against
+
+00:03:05.067 --> 00:03:08.067
+the mail client's own automation interface.
+
+00:03:08.067 --> 00:03:12.867
+Teams, reached through the approved browser in remote-debugging mode.
+
+00:03:12.867 --> 00:03:14.733
+Both when the gate said no.
+
+00:03:14.733 --> 00:03:19.567
+Neither touches the gateway, and the audit log stays dark along both.
+
+00:03:19.567 --> 00:03:25.967
+A person, a device, an agent, one gate every call goes through, and the tools.
+
+00:03:25.967 --> 00:03:29.500
+Everything else is that gate done properly.
