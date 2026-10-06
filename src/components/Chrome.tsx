@@ -28,7 +28,15 @@ function NavList({ wide }: { wide: boolean }) {
   return (
     <ul className={wide ? "hidden md:flex items-center gap-x-6 text-sm" : "grid gap-1 text-base"}>
       {NAV.map((item) => (
-        <li key={item.label}>{isGroup(item) ? <Group item={item} wide={wide} /> : <a href={item.href} className={linkClass}>{item.label}</a>}</li>
+        <li key={item.label}>
+          {isGroup(item) ? (
+            <Group item={item} wide={wide} />
+          ) : (
+            <a href={item.href} className={linkClass} {...(item.href === "/search/" ? { "aria-keyshortcuts": "/", title: "Search (press /)" } : {})}>
+              {item.label}
+            </a>
+          )}
+        </li>
       ))}
     </ul>
   );
@@ -46,11 +54,23 @@ export function Header() {
       });
       if (e instanceof KeyboardEvent) setOpen(false);
     };
+    // "/" opens search from anywhere outside a text field, the common convention.
+    const slash = (e: KeyboardEvent) => {
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      const box = document.querySelector<HTMLInputElement>('input[type="search"]');
+      if (box) box.focus();
+      else window.location.href = "/search/";
+    };
     document.addEventListener("click", close);
     document.addEventListener("keydown", close);
+    document.addEventListener("keydown", slash);
     return () => {
       document.removeEventListener("click", close);
       document.removeEventListener("keydown", close);
+      document.removeEventListener("keydown", slash);
     };
   }, []);
   return (

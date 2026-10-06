@@ -148,3 +148,14 @@ test("the feed is served and every page points at it", async ({ page }) => {
   await page.goto("/resources/");
   await expect(page.locator('link[rel="alternate"][type="application/atom+xml"]')).toHaveAttribute("href", "/feed.xml");
 });
+
+test("pressing / opens search, but not while typing", async ({ page }) => {
+  test.skip((page.viewportSize()?.width ?? 0) < 768, "a keyboard shortcut is for keyboards");
+  await page.goto("/gates/");
+  await page.locator("main").click({ position: { x: 5, y: 5 } });
+  await page.keyboard.press("/");
+  await expect(page).toHaveURL(/\/search\/$/);
+  await page.getByRole("searchbox").fill("a/b");
+  await expect(page.getByRole("searchbox")).toHaveValue("a/b");
+  await expect(page.getByRole("link", { name: "Search" }).first()).toHaveAttribute("aria-keyshortcuts", "/");
+});
