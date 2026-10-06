@@ -21,9 +21,10 @@ function seeded(seed: number) {
 
 function Buildings() {
   const ref = useRef<THREE.InstancedMesh>(null);
-  const material = useMemo(silhouetteMaterial, []);
+  const material = useMemo(() => silhouetteMaterial(), []);
   useFrame(({ clock }) => {
-    material.uniforms.uTime.value = clock.getElapsedTime();
+    const m = ref.current?.material as THREE.ShaderMaterial | undefined;
+    if (m) m.uniforms.uTime.value = clock.getElapsedTime();
   });
   const matrices = useMemo(() => {
     const rand = seeded(20261006);

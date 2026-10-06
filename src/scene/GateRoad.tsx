@@ -119,6 +119,7 @@ function Vehicle({ walk }: { walk: Walk }) {
 
 function City({ admitted }: { admitted: boolean }) {
   const glow = useRef<THREE.Mesh>(null);
+  const towers = useRef<THREE.InstancedMesh>(null);
   const blocks = useMemo(() => {
     const out: [number, number, number, number][] = [];
     let seed = 7;
@@ -138,7 +139,8 @@ function City({ admitted }: { admitted: boolean }) {
     return m;
   }, []);
   useFrame(({ clock }) => {
-    material.uniforms.uTime.value = clock.getElapsedTime();
+    const tm = towers.current?.material as THREE.ShaderMaterial | undefined;
+    if (tm) tm.uniforms.uTime.value = clock.getElapsedTime();
     if (!glow.current) return;
     const m = glow.current.material as THREE.MeshBasicMaterial;
     const on = admitted ? 1 : 0;
@@ -150,6 +152,7 @@ function City({ admitted }: { admitted: boolean }) {
       <instancedMesh
         args={[undefined, material, blocks.length]}
         ref={(m) => {
+          towers.current = m;
           if (!m) return;
           const dummy = new THREE.Object3D();
           blocks.forEach(([x, z, w, h], i) => {

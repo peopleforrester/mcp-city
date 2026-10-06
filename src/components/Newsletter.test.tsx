@@ -3,7 +3,8 @@
 
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { CONSENT, Newsletter, subscribed } from "./Newsletter";
+import { CONSENT, subscribed } from "../lib/newsletter";
+import { Newsletter } from "./Newsletter";
 
 describe("newsletter", () => {
   it("posts the contract's fields to the main site", () => {

@@ -1,13 +1,7 @@
 // ABOUTME: The newsletter signup: a plain HTML form posting to michaelrishiforrester.com, per the contract in MRF-website#101.
 // ABOUTME: No script needed to submit; the reader returns to the home page with ?subscribed=1, which shows the thanks state.
 
-const ACTION = "https://michaelrishiforrester.com/api/newsletter/subscribe";
-/** Stored with the subscriber's row, so it must stay word for word what MRF-website#101 specifies. */
-export const CONSENT = "Yes, email me about these talks and future writing. One list, no sharing, and every email carries an unsubscribe link.";
-
-export function subscribed(search: string): boolean {
-  return new URLSearchParams(search).get("subscribed") === "1";
-}
+import { ACTION, CONSENT, subscribed } from "../lib/newsletter";
 
 export function Newsletter({ compact = false }: { compact?: boolean }) {
   if (typeof window !== "undefined" && subscribed(window.location.search)) {
