@@ -15,6 +15,8 @@ test("loads with the title and the talk's conclusion, and nothing above the even
 test("the first screen names its four destinations in order, the repo last", async ({ page }) => {
   await page.goto("/");
   const hero = page.getByRole("main").locator("section").first();
+  // allInnerTexts does not wait; let the hero render before reading its links.
+  await expect(hero.getByRole("link", { name: "The repo" })).toBeVisible();
   const labels = await hero.getByRole("link").allInnerTexts();
   const buttons = labels.filter((l) => /acceptance process|architecture|presentation|repo/i.test(l));
   expect(buttons).toEqual(["The MCP acceptance process", "The architecture", "The presentation", "The repo"]);
