@@ -36,6 +36,7 @@ export const NAV: NavItem[] = [
       { href: "/resources/changes/", label: "What changed" },
     ],
   },
+  { href: "/contact/", label: "Contact" },
   { href: "/search/", label: "Search" },
 ];
 

@@ -99,7 +99,7 @@ export function Footer() {
   return (
     <footer className="border-t border-[color:var(--color-rule)]">
       <div className="measure-wide flex flex-wrap items-center justify-between gap-4 py-8 text-sm text-[color:var(--color-ink-muted)]">
-        <span><a href="https://michaelrishiforrester.com/" className="hover:underline">Michael Rishi Forrester</a> · <a href="https://michaelrishiforrester.com/speaking/" className="hover:underline">Speaking</a> · <a href="https://michaelrishiforrester.com/contact/" className="hover:underline">Contact</a></span>
+        <span><a href="https://michaelrishiforrester.com/" className="hover:underline">Michael Rishi Forrester</a> · <a href="https://michaelrishiforrester.com/speaking/" className="hover:underline">Speaking</a> · <a href="/contact/" className="hover:underline">Contact</a></span>
         <span className="flex items-center gap-4">
           <button type="button" onClick={() => setOn(setHum(!on))} aria-pressed={on} className="hover:underline">
             Sound: {on ? "on" : "off"}

@@ -159,3 +159,12 @@ test("the film section invites, gives the runtime, and links the download and th
   await expect(page.getByRole("link", { name: "Download the 1080p cut" })).toHaveAttribute("href", /mcp-city-film\/releases\/tag\//);
   await expect(page.getByRole("link", { name: "The film's source on GitHub" })).toHaveAttribute("href", "https://github.com/peopleforrester/mcp-city-film");
 });
+
+test("contact lists both emails, the book, the course with Sanjeev, and the socials", async ({ page }) => {
+  await page.goto("/contact/");
+  await expect(page.getByRole("link", { name: "michaelrishiforrester@gmail.com" })).toHaveAttribute("href", "mailto:michaelrishiforrester@gmail.com");
+  await expect(page.getByRole("link", { name: "michael.r.forrester@accenture.com" })).toBeVisible();
+  await expect(page.getByText("Agentic DevOps with Claude Code")).toBeVisible();
+  await expect(page.getByRole("link", { name: /with Sanjeev Thiyagarajan/ })).toHaveAttribute("href", "https://kodekloud.com/courses/aws-cloud-practitioner");
+  for (const s of ["LinkedIn", "Bluesky", "GitHub"]) await expect(page.getByRole("main").getByRole("link", { name: s, exact: true })).toBeVisible();
+});
