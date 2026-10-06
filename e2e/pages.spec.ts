@@ -155,7 +155,7 @@ test("pressing / opens search, but not while typing", async ({ page }) => {
 
 test("the film section invites, gives the runtime, and links the download and the repo", async ({ page }) => {
   await page.goto("/film/");
-  await expect(page.getByText("Watch the short shadow-play version of the talk (5 min 17 s).")).toBeVisible();
+  await expect(page.getByText("Watch the short shadow-play version of the talk (6 min 26 s).")).toBeVisible();
   await expect(page.getByRole("link", { name: "Download the 1080p cut" })).toHaveAttribute("href", /mcp-city-film\/releases\/tag\//);
   await expect(page.getByRole("link", { name: "The film's source on GitHub" })).toHaveAttribute("href", "https://github.com/peopleforrester/mcp-city-film");
 });

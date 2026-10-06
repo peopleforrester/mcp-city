@@ -11,7 +11,7 @@ const CARDS = [
   { href: "/wrapping/", title: "Wrapping MCP servers in MCP servers", text: "We thought it was unusual. Everybody does it. Six reasons, the tools, and the one test." },
   { href: "/scale/", title: "A workforce the size of a city", text: "The ship ladder that gives the headcount a shape, each crew with its source." },
   { href: "/presentation/", title: "The presentation", text: "Every slide with the words spoken over it, the PDF, and the recording when it posts." },
-  { href: "/film/", title: "The film", text: "The short shadow-play version of the talk, five minutes." },
+  { href: "/film/", title: "The film", text: "The short shadow-play version of the talk, six and a half minutes." },
   { href: "/resources/", title: "Resources", text: "The research, the claim-by-claim source ledger, and the repos." },
 ];
 

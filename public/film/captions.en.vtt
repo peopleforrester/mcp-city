@@ -1,396 +1,529 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:03.189
+1
+00:00:00.000 --> 00:00:03.870
 Governing MCP for a
 workforce the size of a city.
 
-00:00:03.367 --> 00:00:07.281
-So how many people are using MCP in
-this workforce? Let me put it in ships.
+2
+00:00:04.067 --> 00:00:07.922
+So how many people are
+using MCP in this workforce?
 
-00:00:07.467 --> 00:00:09.773
+3
+00:00:07.922 --> 00:00:09.661
+Let me put it in ships.
+
+4
+00:00:09.833 --> 00:00:13.115
 An Enterprise's worth: four
 hundred and twenty-eight?
 
-00:00:09.967 --> 00:00:12.075
+5
+00:00:13.300 --> 00:00:15.949
 The Enterprise-D, about a thousand?
 
-00:00:12.267 --> 00:00:13.973
+6
+00:00:16.133 --> 00:00:19.017
 A Battlestar's worth,
 twenty-eight hundred?
 
-00:00:14.167 --> 00:00:17.011
+7
+00:00:19.200 --> 00:00:21.825
 A Halo's worth, seventeen thousand?
 
-00:00:17.200 --> 00:00:19.632
+8
+00:00:22.000 --> 00:00:25.685
 A Star Destroyer, thirty-seven thousand?
 
-00:00:19.800 --> 00:00:22.192
+9
+00:00:25.867 --> 00:00:29.907
 The Executor, two hundred
 and eighty thousand?
 
-00:00:22.367 --> 00:00:24.428
+10
+00:00:30.100 --> 00:00:32.964
 The Death Star, one point two million?
 
-00:00:24.600 --> 00:00:27.353
+11
+00:00:33.133 --> 00:00:36.543
 I am not supposed to say the exact number.
 
-00:00:27.353 --> 00:00:32.595
+12
+00:00:36.543 --> 00:00:42.981
 But it is about two-thirds of a Death
 Star, actively using MCP every single day.
 
-00:00:32.833 --> 00:00:36.049
+13
+00:00:43.233 --> 00:00:46.690
 You might think I am going
 to do a technical keynote.
 
-00:00:36.049 --> 00:00:40.660
-We are at a tech conference. But my
-message today is remarkably untechnical.
+14
+00:00:46.690 --> 00:00:48.854
+We are at a tech conference.
 
-00:00:40.833 --> 00:00:44.647
-You expect the number, the architecture,
-the process, the security issues,
+15
+00:00:48.854 --> 00:00:52.646
+But my message today is
+remarkably untechnical.
 
-00:00:44.647 --> 00:00:46.658
-and the things we thought were unusual.
+16
+00:00:52.833 --> 00:00:57.108
+You expect the number, the
+architecture, the process,
 
-00:00:46.833 --> 00:00:50.451
+17
+00:00:57.108 --> 00:01:00.830
+the security issues, and the
+things we thought were unusual.
+
+18
+00:01:01.000 --> 00:01:04.786
 People have covered those all
 week, and it is all on the website.
 
-00:00:50.633 --> 00:00:54.783
+19
+00:01:04.967 --> 00:01:08.132
 What I really want you to leave with is
+
+20
+00:01:08.132 --> 00:01:10.828
 the most effective lever for MCP adoption.
 
-00:00:54.783 --> 00:00:57.971
-It was not what I expected. Before
-that, the things you expect.
+21
+00:01:10.828 --> 00:01:13.494
+It was not what I expected.
 
-00:00:58.233 --> 00:01:01.958
+22
+00:01:13.494 --> 00:01:16.574
+Before that, the things you expect.
+
+23
+00:01:16.833 --> 00:01:20.639
 The architecture, the simple
 version. A person. A device.
 
-00:01:01.958 --> 00:01:04.049
+24
+00:01:20.639 --> 00:01:24.379
 An agent running on that device.
 
-00:01:04.049 --> 00:01:08.492
+25
+00:01:24.379 --> 00:01:29.500
 One gate, a proxy and a registry,
 that every tool call goes through.
 
-00:01:08.492 --> 00:01:10.060
+26
+00:01:29.500 --> 00:01:30.987
 And the tools behind it.
 
-00:01:10.233 --> 00:01:12.779
-Done properly: the managed
-device with its policies,
+27
+00:01:31.167 --> 00:01:35.021
+Done properly: the managed device
+with its policies, tool traffic
 
-00:01:12.779 --> 00:01:15.081
-tool traffic through the
-proxy and the gateway,
+28
+00:01:35.021 --> 00:01:38.950
+through the proxy and the
+gateway, model traffic through
 
-00:01:15.081 --> 00:01:18.949
-model traffic through its own gateway,
-and the control plane feeding all of it.
+29
+00:01:38.950 --> 00:01:42.647
+its own gateway, and the
+control plane feeding all of it.
 
-00:01:19.133 --> 00:01:21.801
+30
+00:01:42.833 --> 00:01:46.274
 Now look at the two red
 dashed lines at the bottom.
 
-00:01:21.801 --> 00:01:25.305
+31
+00:01:46.274 --> 00:01:49.932
 The shell and the browser never
 touch any of it. Hold that thought.
 
-00:01:25.567 --> 00:01:28.196
+32
+00:01:50.167 --> 00:01:53.376
 Our process for accepting
 a server: six gates.
 
-00:01:28.367 --> 00:01:29.926
+33
+00:01:53.567 --> 00:01:55.796
 Do we have a relationship with the vendor?
 
-00:01:30.100 --> 00:01:31.458
+34
+00:01:55.967 --> 00:01:57.594
 Is there a real business need?
 
-00:01:31.633 --> 00:01:33.978
+35
+00:01:57.767 --> 00:02:00.770
 Is it well built, and
 wrapped where it falls short?
 
-00:01:34.167 --> 00:01:35.250
+36
+00:02:00.967 --> 00:02:02.361
 Does it speak the current spec?
 
-00:01:35.433 --> 00:01:37.443
+37
+00:02:02.533 --> 00:02:04.450
 Does it meet our security standards?
 
-00:01:37.633 --> 00:01:39.104
+38
+00:02:04.633 --> 00:02:06.263
 And is the vendor certified?
 
-00:01:39.300 --> 00:01:42.152
+39
+00:02:06.433 --> 00:02:09.582
 The complete checklist, with
 every source, is on the site.
 
-00:01:42.400 --> 00:01:48.774
-One security tale that
-surprised us. CVE-2026-47250.
+40
+00:02:09.833 --> 00:02:14.356
+One security tale that surprised us.
 
-00:01:48.774 --> 00:01:51.594
-One line in a log file.
+41
+00:02:14.356 --> 00:02:19.130
+CVE-2026-47250. One line in a log file.
 
-00:01:51.767 --> 00:01:52.912
+42
+00:02:19.300 --> 00:02:20.785
 An attacker plants it.
 
-00:01:53.100 --> 00:01:55.128
-An operator asks the
-agent to read the logs,
+43
+00:02:20.967 --> 00:02:24.373
+An operator asks the agent to
+read the logs, and it feeds the
 
-00:01:55.128 --> 00:01:58.677
-and it feeds the planted instruction to
-the agent along with everything else.
+44
+00:02:24.373 --> 00:02:28.681
+planted instruction to the agent
+along with everything else.
 
-00:01:58.867 --> 00:02:01.533
+45
+00:02:28.867 --> 00:02:32.247
 The agent runs kubectl
-against the attacker's server,
+against the attacker's
 
-00:02:01.533 --> 00:02:03.294
-with TLS verification switched off.
+46
+00:02:32.247 --> 00:02:34.879
+server, with TLS
+verification switched off.
 
-00:02:03.467 --> 00:02:06.844
+47
+00:02:35.067 --> 00:02:38.675
 kubectl sends the operator's
 bearer token with the request.
 
-00:02:07.033 --> 00:02:10.349
+48
+00:02:38.867 --> 00:02:42.795
 The attacker now holds a token for
 a cluster they could not reach.
 
-00:02:10.533 --> 00:02:14.087
-A hacker's game is multi-dimensional
-chess: gather everything now,
+49
+00:02:42.967 --> 00:02:46.237
+A hacker's game is
+multi-dimensional chess:
 
-00:02:14.087 --> 00:02:17.426
-and the day that cluster is
-exposed, they have one more piece.
+50
+00:02:46.237 --> 00:02:47.872
+gather everything now, and the day that
 
-00:02:17.667 --> 00:02:19.329
+51
+00:02:47.872 --> 00:02:51.681
+cluster is exposed, they
+have one more piece.
+
+52
+00:02:51.933 --> 00:02:54.009
 And things we thought were unusual.
 
-00:02:19.329 --> 00:02:22.607
+53
+00:02:54.009 --> 00:02:58.540
 We wrapped MCP servers in MCP servers,
 and we thought that was weird.
 
-00:02:22.607 --> 00:02:24.175
+54
+00:02:58.540 --> 00:03:00.773
 Apparently everybody is doing it.
 
-00:02:24.367 --> 00:02:26.644
+55
+00:03:00.967 --> 00:03:03.780
 The server does not meet
 our security standards.
 
-00:02:26.833 --> 00:02:29.621
+56
+00:03:03.967 --> 00:03:07.113
 Credentials must not cross
 from client to server.
 
-00:02:29.800 --> 00:02:32.557
+57
+00:03:07.300 --> 00:03:10.048
 A hundred tools offered,
 and nine presented.
 
-00:02:32.733 --> 00:02:34.906
+58
+00:03:10.233 --> 00:03:12.828
 Reads and writes split
 into separate servers.
 
-00:02:35.100 --> 00:02:36.064
+59
+00:03:13.000 --> 00:03:14.797
 The wrong transport.
 
-00:02:36.233 --> 00:02:37.749
+60
+00:03:14.967 --> 00:03:16.817
 Or every call logged.
 
-00:02:37.933 --> 00:02:40.281
+61
+00:03:17.000 --> 00:03:19.426
 The full list, and the
 tools, are on the site.
 
-00:02:40.533 --> 00:02:44.952
+62
+00:03:19.667 --> 00:03:22.037
 But it is not the architecture or the
-gating process I really want to talk
 
-00:02:44.952 --> 00:02:48.653
-about. What if you gave your end
+63
+00:03:22.037 --> 00:03:24.007
+gating process I really
+want to talk about.
+
+64
+00:03:24.007 --> 00:03:28.316
+What if you gave your end
 users generative AI, and MCP,
 
-00:02:48.833 --> 00:02:50.506
-and said: plug them in like USB,
+65
+00:03:28.500 --> 00:03:29.095
+and said:
 
-00:02:50.506 --> 00:02:53.327
-sprinkle them everywhere
-like your favorite hot sauce,
+66
+00:03:29.095 --> 00:03:33.813
+plug them in like USB, sprinkle
+them everywhere like your favorite
 
-00:02:53.327 --> 00:02:56.045
-and relentlessly use AI,
-because that is how we win?
+67
+00:03:33.813 --> 00:03:37.681
+hot sauce, and relentlessly use
+AI, because that is how we win?
 
-00:02:56.233 --> 00:02:59.859
+68
+00:03:37.867 --> 00:03:42.011
 You handed everyone a relentless
 hacker, on your hardware,
 
-00:02:59.859 --> 00:03:03.922
+69
+00:03:42.011 --> 00:03:46.328
 inside your security zones, with
 your AI accounts and your tools.
 
-00:03:04.100 --> 00:03:07.863
+70
+00:03:46.500 --> 00:03:51.084
 And it runs on the end-user
 device, authenticated as that user.
 
-00:03:07.863 --> 00:03:10.253
+71
+00:03:51.084 --> 00:03:53.450
 People forget that a laptop is a server.
 
-00:03:10.433 --> 00:03:13.684
+72
+00:03:53.633 --> 00:03:58.479
 So what happens when you tell
 people with superpowers no?
 
-00:03:13.933 --> 00:03:18.285
+73
+00:03:58.733 --> 00:04:01.852
 Then the user made a reasonable request.
-I want a tool that reads my mail.
 
-00:03:18.285 --> 00:03:18.932
-No problem.
+74
+00:04:01.852 --> 00:04:05.120
+I want a tool that reads
+my mail. No problem.
 
-00:03:19.100 --> 00:03:22.950
+75
+00:04:05.300 --> 00:04:09.496
 Draft replies for me? Not
 entirely comfortable, but fine.
 
-00:03:23.133 --> 00:03:25.579
+76
+00:04:09.667 --> 00:04:12.837
 Send email as me? Whoa. Hold on.
 
-00:03:25.767 --> 00:03:28.379
+77
+00:04:13.033 --> 00:04:16.367
 These are human tools
 for human communication.
 
-00:03:28.379 --> 00:03:32.638
+78
+00:04:16.367 --> 00:04:21.910
 A bot has to be labeled as a bot,
 secured as a bot, given its own identity.
 
-00:03:32.638 --> 00:03:34.172
+79
+00:04:21.910 --> 00:04:23.463
 Nobody has solved that yet.
 
-00:03:34.367 --> 00:03:37.012
+80
+00:04:23.633 --> 00:04:26.631
 So we said no, and we
 offered alternatives.
 
-00:03:37.200 --> 00:03:40.831
+81
+00:04:26.800 --> 00:04:31.392
 And the user asked the agent: I do
 not see an MCP server for Outlook.
 
-00:03:40.831 --> 00:03:42.989
+82
+00:04:31.392 --> 00:04:34.087
 Is there some other way we might do this?
 
-00:03:43.233 --> 00:03:44.739
+83
+00:04:34.333 --> 00:04:36.264
 The agent wrote PowerShell.
 
-00:03:44.739 --> 00:03:49.090
-Classic Outlook has had an automation
-interface for decades, and on a healthy,
+84
+00:04:36.264 --> 00:04:40.222
+Classic Outlook has had an
+automation interface for decades,
 
-00:03:49.090 --> 00:03:51.767
-managed laptop the script
-went straight through.
+85
+00:04:40.222 --> 00:04:44.295
+and on a healthy, managed laptop
+the script went straight through.
 
-00:03:51.767 --> 00:03:53.663
+86
+00:04:44.295 --> 00:04:46.427
 It read and sent mail as the user.
 
-00:03:53.833 --> 00:03:56.345
+87
+00:04:46.600 --> 00:04:50.408
 Then they asked about
 Teams. We said no again.
 
-00:03:56.345 --> 00:03:59.511
+88
+00:04:50.408 --> 00:04:54.554
 So they put the approved browser
 in remote debugging mode,
 
-00:03:59.511 --> 00:04:02.951
+89
+00:04:54.554 --> 00:04:59.552
 and the agent walked the browser,
 and the browser walked Teams.
 
-00:04:02.951 --> 00:04:05.299
+90
+00:04:59.552 --> 00:05:02.573
 It never opened Teams.
 It opened a browser.
 
-00:04:05.467 --> 00:04:07.302
+91
+00:05:02.767 --> 00:05:05.281
 Remember the two red dashed lines?
 
-00:04:07.302 --> 00:04:09.839
+92
+00:05:05.281 --> 00:05:08.140
 The shell and the browser
 never touch the gate.
 
-00:04:10.100 --> 00:04:14.053
+93
+00:05:08.400 --> 00:05:12.680
 So what was the biggest lever?
 The policy? The architecture?
 
-00:04:14.053 --> 00:04:17.216
+94
+00:05:12.680 --> 00:05:16.227
 The proxies, the registries?
 None of that alone.
 
-00:04:17.400 --> 00:04:20.021
-We had to win the hearts
-and minds of users,
+95
+00:05:16.400 --> 00:05:21.436
+We had to win the hearts and minds of
+users, because for the first time an
 
-00:04:20.021 --> 00:04:23.715
-because for the first time an
-internal team is a SaaS company,
+96
+00:05:21.436 --> 00:05:26.418
+internal team is a SaaS company, and
+its biggest threat is its own end users.
 
-00:04:23.715 --> 00:04:26.337
-and its biggest threat
-is its own end users.
-
-00:04:26.337 --> 00:04:29.912
+97
+00:05:26.418 --> 00:05:30.561
 If you do not get their buy-in,
 they ask the agent to do it.
 
-00:04:29.912 --> 00:04:31.699
+98
+00:05:30.561 --> 00:05:32.801
 That is how you get shadow IT.
 
-00:04:31.867 --> 00:04:35.690
+99
+00:05:33.000 --> 00:05:37.736
 So love your users. Figure out what
 they need, and get them to yes.
 
-00:04:35.867 --> 00:04:38.191
+100
+00:05:37.933 --> 00:05:41.119
 Say no when you must, and explain why.
 
-00:04:38.191 --> 00:04:41.433
+101
+00:05:41.119 --> 00:05:44.817
 A no without a why is a
 workaround waiting to happen.
 
-00:04:41.600 --> 00:04:43.960
-Send the signals: let
-them vote, let them ask,
+102
+00:05:45.000 --> 00:05:46.177
+Send the signals:
 
-00:04:43.960 --> 00:04:46.063
-let them tell you where the openings are.
+103
+00:05:46.177 --> 00:05:50.581
+let them vote, let them ask, let
+them tell you where the openings are.
 
-00:04:46.233 --> 00:04:50.482
+104
+00:05:50.767 --> 00:05:52.847
 And run the service like a product:
-a self-service form, a feedback path,
 
-00:04:50.482 --> 00:04:53.857
-a leaderboard, communities of
-practice, done relentlessly.
+105
+00:05:52.847 --> 00:05:56.817
+a self-service form, a
+feedback path, a leaderboard,
 
-00:04:54.100 --> 00:04:55.282
+106
+00:05:56.817 --> 00:05:59.884
+communities of practice,
+done relentlessly.
+
+107
+00:06:00.133 --> 00:06:01.608
 Talk to your users.
 
-00:04:55.467 --> 00:04:59.119
+108
+00:06:01.800 --> 00:06:05.805
 The architecture, the policies,
 the process: yes, all of that.
 
-00:04:59.119 --> 00:05:03.536
+109
+00:06:05.805 --> 00:06:08.739
 But the biggest lever is a relationship
-with the users who consume your MCP
 
-00:05:03.536 --> 00:05:04.008
-servers.
+110
+00:06:08.739 --> 00:06:11.793
+with the users who
+consume your MCP servers.
 
-00:05:04.200 --> 00:05:07.491
+111
+00:06:11.967 --> 00:06:15.655
 Talk and listen. It is not
 just a technology problem.
 
-00:05:07.491 --> 00:05:11.837
+112
+00:06:15.655 --> 00:06:19.588
 More than ever it is a human problem,
 and humans can help us solve it.
 
-00:05:12.033 --> 00:05:16.291
-The details are at mcp dot michael
-rishi forrester dot com. Come find me.
+113
+00:06:19.767 --> 00:06:24.491
+The details are at mcp dot
+michael rishi forrester dot com.
+
+114
+00:06:24.491 --> 00:06:25.322
+Come find me.
 

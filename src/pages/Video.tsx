@@ -29,7 +29,7 @@ export function VideoPage() {
         )}
         {!id && !phone && (
           <p className="max-w-2xl rounded-lg bg-[color:var(--color-tile)] p-5 text-lg">
-            The recording will be here once the Linux Foundation posts it. Until then, every slide is on <a href="/presentation/" className="underline underline-offset-4">the presentation page</a> with the words spoken over it, and <a href="/film/" className="underline underline-offset-4">the film</a> tells the same story in five minutes.
+            The recording will be here once the Linux Foundation posts it. Until then, every slide is on <a href="/presentation/" className="underline underline-offset-4">the presentation page</a> with the words spoken over it, and <a href="/film/" className="underline underline-offset-4">the film</a> tells the same story in six and a half minutes.
           </p>
         )}
         <p className="mt-6 max-w-2xl text-[color:var(--color-ink-muted)]">Follow along with <a href="/presentation/" className="underline underline-offset-4">the slides and speaker notes</a>, or take <a href="/gates/" className="underline underline-offset-4">the approval checklist</a> with you.</p>
