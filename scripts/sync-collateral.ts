@@ -2,7 +2,7 @@
 // ABOUTME: Run with `node scripts/sync-collateral.ts [path-to-mcp-for-a-city]`; nothing outside the allowlist ever crosses.
 
 import { execSync } from "node:child_process";
-import { copyFileSync, mkdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 
 /** Every document the site renders from peopleforrester/mcp-for-a-city. A file not listed here is not published. */
@@ -14,6 +14,8 @@ export interface Collateral {
   status?: string;
   /** The research topic a document is listed under on the Resources page. */
   topic?: string;
+  /** A title prefix from the document's own front matter, such as "Research". */
+  prefix?: string;
 }
 
 export const COLLATERAL: Collateral[] = [
@@ -105,10 +107,23 @@ function historyOf(src: string): { date: string; sha: string; subject: string }[
   return out ? out.split("\n").map((line) => { const [date, sha, subject] = line.split("\t"); return { date, sha, subject }; }) : [];
 }
 
+/** One field from a document's YAML front matter, if it has one. */
+function frontMatter(md: string, key: string): string | undefined {
+  const head = md.match(/^---\n([\s\S]*?)\n---\n/)?.[1] ?? "";
+  return head.match(new RegExp(`^${key}:\\s*"?([^"\\n]*)"?\\s*$`, "m"))?.[1]?.trim() || undefined;
+}
+
+// The document is the authority on its own status and prefix: a draft shows the badge, a final does not.
 for (const c of COLLATERAL) {
   const dest = `content/collateral/${c.slug}.md`;
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(resolve(repo, c.src), dest);
+  const md = readFileSync(dest, "utf8");
+  const status = frontMatter(md, "status");
+  if (status) c.status = status === "draft" ? "draft, under review" : undefined;
+  const prefix = frontMatter(md, "prefix");
+  if (prefix && !c.title.startsWith(`${prefix}: `)) c.title = `${prefix}: ${c.title}`;
+  if (prefix) c.prefix = prefix;
   writeEntry(c);
 }
 writeFileSync("content/collateral/manifest.json", JSON.stringify({ repo: "peopleforrester/mcp-for-a-city", commit: sha, synced: new Date().toISOString().slice(0, 10), documents: COLLATERAL.map((c) => ({ ...c, history: historyOf(c.src) })) }, null, 1) + "\n");
