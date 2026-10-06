@@ -106,7 +106,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-gateway-and-registry-operations.md",
    "slug": "research/mcp-gateway-and-registry-operations",
-   "title": "Operating an MCP Gateway and an MCP Registry at Enterprise Scale",
+   "title": "Operating MCP Gateways and Registries",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -125,7 +125,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-server-deployment-and-migration.md",
    "slug": "research/mcp-server-deployment-and-migration",
-   "title": "Deploying and Operating MCP Servers: the 2026-07-28 Migration and What Best Practice Actually Says",
+   "title": "Deploying MCP After 2026-07-28",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -154,7 +154,7 @@
   {
    "src": "06-research-and-source-ledger/ops/mcp-operations-at-scale-2026-09.md",
    "slug": "research/mcp-operations-at-scale-2026-09",
-   "title": "MCP Operations at Scale: What Actually Breaks",
+   "title": "What Breaks at MCP Scale",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -173,7 +173,7 @@
   {
    "src": "06-research-and-source-ledger/scale/mcp-at-scale-architecture-2026-09.md",
    "slug": "research/mcp-at-scale-architecture-2026-09",
-   "title": "Running MCP at Enterprise Scale, Architecture and Tooling",
+   "title": "MCP Enterprise Architecture Survey",
    "topic": "Operating MCP",
    "status": "draft, under review",
    "history": [
@@ -192,7 +192,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/VERIFIED-transport-and-quote-audit.md",
    "slug": "research/VERIFIED-transport-and-quote-audit",
-   "title": "Parent session verification: transport headers, and one quote that did not survive",
+   "title": "MCP Routing Headers Verified",
    "topic": "Operating MCP",
    "history": [
     {
@@ -210,7 +210,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-server-vetting-and-supply-chain.md",
    "slug": "research/mcp-server-vetting-and-supply-chain",
-   "title": "Vetting and Approving MCP Servers: What Is Published, What Is Enforced, What Does Not Exist",
+   "title": "Vetting MCP Servers",
    "topic": "Security and vetting",
    "status": "draft, under review",
    "history": [
@@ -234,7 +234,7 @@
   {
    "src": "06-research-and-source-ledger/security/mcp-security-failures-2026-09.md",
    "slug": "research/mcp-security-failures-2026-09",
-   "title": "MCP Security Failures: Verified Catalogue",
+   "title": "MCP Security Failures Catalogue",
    "topic": "Security and vetting",
    "status": "draft, under review",
    "history": [
@@ -258,7 +258,7 @@
   {
    "src": "06-research-and-source-ledger/ecosystem/microsoft-mcp-control-plane.md",
    "slug": "research/microsoft-mcp-control-plane",
-   "title": "The Microsoft Stack for Governing MCP at Enterprise Scale",
+   "title": "Microsoft's MCP Governance Stack",
    "topic": "Security and vetting",
    "status": "draft, under review",
    "history": [
@@ -282,7 +282,7 @@
   {
    "src": "06-research-and-source-ledger/bestpractice/mcp-token-economics-and-tool-consolidation.md",
    "slug": "research/mcp-token-economics-and-tool-consolidation",
-   "title": "MCP Token Economics and the Arc to Fewer Tools",
+   "title": "MCP Token Economics",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -306,7 +306,7 @@
   {
    "src": "06-research-and-source-ledger/pillars/cost.md",
    "slug": "research/cost",
-   "title": "Cost: the total cost of operating MCP at enterprise scale",
+   "title": "The Total Cost of MCP",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -325,7 +325,7 @@
   {
    "src": "06-research-and-source-ledger/pillars/performance.md",
    "slug": "research/performance",
-   "title": "Performance of MCP at enterprise scale: the latency budget, the ceiling, and what 2026-07-28 actually bought",
+   "title": "MCP Latency and Throughput",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -344,7 +344,7 @@
   {
    "src": "06-research-and-source-ledger/pillars/reliability.md",
    "slug": "research/reliability",
-   "title": "Reliability of MCP at enterprise scale",
+   "title": "MCP Reliability at Scale",
    "topic": "Cost, performance and reliability",
    "status": "draft, under review",
    "history": [
@@ -363,7 +363,7 @@
   {
    "src": "06-research-and-source-ledger/components/inference-gateways.md",
    "slug": "research/inference-gateways",
-   "title": "The inference path: AI gateways as an enterprise control layer",
+   "title": "AI Gateways on the Inference Path",
    "topic": "The layers around MCP",
    "status": "draft, under review",
    "history": [
@@ -382,7 +382,7 @@
   {
    "src": "06-research-and-source-ledger/components/artifact-registries.md",
    "slug": "research/artifact-registries",
-   "title": "The artifact layers: model registries, prompt registries, and agent registries",
+   "title": "Model, Prompt and Agent Registries",
    "topic": "The layers around MCP",
    "status": "draft, under review",
    "history": [
@@ -401,7 +401,7 @@
   {
    "src": "06-research-and-source-ledger/components/supporting-layers.md",
    "slug": "research/supporting-layers",
-   "title": "The supporting layers: evaluation and observability, secrets brokering, execution sandboxing",
+   "title": "Observability, Secrets and Sandboxing",
    "topic": "The layers around MCP",
    "status": "draft, under review",
    "history": [
@@ -420,7 +420,7 @@
   {
    "src": "06-research-and-source-ledger/spec/mcp-specification-state-2026-09.md",
    "slug": "research/mcp-specification-state-2026-09",
-   "title": "State of the MCP Specification, September 2026",
+   "title": "MCP Specification, September 2026",
    "topic": "The specification and the numbers",
    "status": "draft, under review",
    "history": [
@@ -444,7 +444,7 @@
   {
    "src": "06-research-and-source-ledger/ecosystem/registry-count-verification.md",
    "slug": "research/registry-count-verification",
-   "title": "Registry count verification, three published MCP ecosystem counts",
+   "title": "Counting the MCP Ecosystem",
    "topic": "The specification and the numbers",
    "status": "draft, under review",
    "history": [

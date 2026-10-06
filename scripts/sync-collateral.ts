@@ -119,7 +119,8 @@ for (const c of COLLATERAL) {
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(resolve(repo, c.src), dest);
   const md = readFileSync(dest, "utf8");
-  const title = frontMatter(md, "title");
+  // Articles own their titles; research keeps the readable titles set in the allowlist, since its front matter carries working titles.
+  const title = c.slug.startsWith("articles/") ? frontMatter(md, "title") : undefined;
   if (title) c.title = title;
   const status = frontMatter(md, "status");
   if (status) c.status = status === "draft" ? "draft, under review" : undefined;
