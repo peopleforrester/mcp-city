@@ -9,7 +9,6 @@ import { NewsletterSection, PageCards } from "./components/PageCards";
 import { subscribed } from "./lib/newsletter";
 
 // Everything below the gates arrives after first paint; a phone on ballroom wifi gets the title and the walk first.
-const Map = lazy(() => import("./components/Map").then((m) => ({ default: m.Map })));
 const Film = lazy(() => import("./components/Film").then((m) => ({ default: m.Film })));
 const Spiders = lazy(() => import("./components/Spiders").then((m) => ({ default: m.Spiders })));
 
@@ -52,7 +51,6 @@ export default function App() {
         <PageCards />
         <Gates />
         <Suspense fallback={null}>
-          <Map />
           <Film />
         </Suspense>
         <NewsletterSection />
