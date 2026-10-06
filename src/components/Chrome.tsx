@@ -1,37 +1,75 @@
 // ABOUTME: Header and footer in the shape of michaelrishiforrester.com, pointing back to it.
 // ABOUTME: The city is a satellite of the main site, so the chrome says whose it is. The footer holds the sound switch.
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { isGroup, NAV, type NavItem } from "../data/nav";
 import { isHumming, setHum } from "../lib/sound";
 
-const NAV = [
-  { href: "/gates/", label: "MCP approval gates" },
-  { href: "/architecture/", label: "The architecture" },
-  { href: "/the-attack/", label: "The attack" },
-  { href: "/usb/", label: "Eighteen years of USB" },
-  { href: "/wrapping/", label: "Wrapping" },
-  { href: "/scale/", label: "A workforce the size of a city" },
-  { href: "/presentation/", label: "The presentation" },
-  { href: "/film/", label: "The film" },
-  { href: "/resources/", label: "Resources" },
-];
+
+const linkClass = "block py-1 text-[color:var(--color-link-muted)] hover:text-[color:var(--color-link)]";
+
+/** A group as a native disclosure: keyboard and screen reader support come with the element, and it works without script. */
+function Group({ item, wide }: { item: Extract<NavItem, { links: unknown }>; wide: boolean }) {
+  return (
+    <details className={wide ? "group relative" : "group"} data-nav-group={item.label}>
+      <summary className="cursor-pointer list-none py-1 text-[color:var(--color-link-muted)] hover:text-[color:var(--color-link)] [&::-webkit-details-marker]:hidden">
+        {item.label} <span aria-hidden="true" className="inline-block transition-transform group-open:rotate-180">▾</span>
+      </summary>
+      <ul className={wide ? "absolute left-0 top-full z-30 mt-2 min-w-64 rounded-md border border-[color:var(--color-rule)] bg-[color:var(--color-page)] p-3 shadow-lg" : "mb-2 ml-4 border-l border-[color:var(--color-rule)] pl-3"}>
+        {item.links.map((l) => (
+          <li key={l.href}><a href={l.href} className={linkClass}>{l.label}</a></li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
+function NavList({ wide }: { wide: boolean }) {
+  return (
+    <ul className={wide ? "hidden md:flex items-center gap-x-6 text-sm" : "grid gap-1 text-base"}>
+      {NAV.map((item) => (
+        <li key={item.label}>{isGroup(item) ? <Group item={item} wide={wide} /> : <a href={item.href} className={linkClass}>{item.label}</a>}</li>
+      ))}
+    </ul>
+  );
+}
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+  const bar = useRef<HTMLElement>(null);
+  // An open dropdown closes when the reader clicks anywhere else or presses Escape.
+  useEffect(() => {
+    const close = (e: Event) => {
+      if (e instanceof KeyboardEvent && e.key !== "Escape") return;
+      bar.current?.querySelectorAll("details[open]").forEach((d) => {
+        if (e instanceof KeyboardEvent || !d.contains(e.target as Node)) d.removeAttribute("open");
+      });
+      if (e instanceof KeyboardEvent) setOpen(false);
+    };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", close);
+    return () => {
+      document.removeEventListener("click", close);
+      document.removeEventListener("keydown", close);
+    };
+  }, []);
   return (
-    <header className="border-b border-[color:var(--color-rule)] bg-[color:var(--color-page)]/80 backdrop-blur sticky top-0 z-20">
+    <header ref={bar} className="border-b border-[color:var(--color-rule)] bg-[color:var(--color-page)]/90 backdrop-blur md:sticky md:top-0 z-20">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-white focus:text-black">
         Skip to content
       </a>
-      <div className="measure-wide flex flex-wrap items-center gap-x-6 gap-y-2 py-4">
+      <nav aria-label="Site" className="measure-wide flex items-center justify-between gap-x-6 py-4">
         <a href="/" className="font-semibold tracking-tight">Michael Rishi Forrester</a>
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          {NAV.map((item) => (
-            <a key={item.href} href={item.href} className="inline-block py-1 text-[color:var(--color-link-muted)] hover:text-[color:var(--color-link)]">
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+        <NavList wide />
+        <button type="button" className="md:hidden rounded-md border border-[color:var(--color-rule)] px-3 py-1 text-sm" aria-expanded={open} aria-controls="phone-menu" onClick={() => setOpen((v) => !v)}>
+          {open ? "Close" : "Menu"}
+        </button>
+      </nav>
+      {open && (
+        <div id="phone-menu" className="md:hidden measure-wide pb-4">
+          <NavList wide={false} />
+        </div>
+      )}
     </header>
   );
 }

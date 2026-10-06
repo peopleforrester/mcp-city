@@ -36,6 +36,14 @@ export default function App() {
     }, 100);
     return () => window.clearInterval(timer);
   }, []);
+  // The same redirect for an in-page jump to the old anchor, which changes the hash without reloading.
+  useEffect(() => {
+    const follow = () => {
+      if (window.location.hash === "#plugs") window.location.replace("/usb/");
+    };
+    window.addEventListener("hashchange", follow);
+    return () => window.removeEventListener("hashchange", follow);
+  }, []);
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
