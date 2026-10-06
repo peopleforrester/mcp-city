@@ -1,6 +1,6 @@
 # Project State: mcp-city
 
-Phase: 2.2 Implement (PRD 8 phases 1 to 3 in flight; phase 0 shipped)
+Phase: 3.3 Promote (PRD 8 done 2026-10-06; follow-up on #14)
 Approved: 2026-10-05 by Michael (PRD 8, prds/8-multi-page-collateral-site.md, issue #8)
 
 ## Lifecycle
@@ -59,9 +59,10 @@ beat-synced cut the site plays at 720p).
   film 94, search 96, presentation 99, architecture 100
 - Railway services this repo owns: `mcp-city` (the site) and `umami` with its own
   `Postgres-wmvi` (visit counts; credentials in ~/secrets/projects/mcp-city.env)
-- Open here: #2 (Railway IaC migration, deferred past the keynote, due 2026-12-01),
-  #6 (recording and AAIF session page, both not yet posted), #8 (this PRD: the two recordings
-  once shared, the Linux Foundation's and Michael's phone recording)
+- Open here: #14 (the phone recording when Michael sends it, and starting the
+  keynote livestream embed at the talk once the stream is a recording)
+- Railway config lives in .railway/railway.ts (migrated 2026-10-06); builder RAILPACK
+  on the service, verified on the c0b960c deploy
 
 ## Phase History
 - 2026-10-03 phase 0 (QR works) shipped; domain, certificate, collateral repo
@@ -73,3 +74,4 @@ beat-synced cut the site plays at 720p).
 - 2026-10-05 PRD 8 phase 0 shipped (nav, 10:15, gate titles, plain names, collateral refreshed); multi-page build live with usb, scale, the-attack, architecture, film, presentation (39 slides with notes), resources and five rendered documents; film v0.3 on the page
 - 2026-10-05 #7 and #9 closed (site matches the deck as presented; film v0.3 beat-synced cut); #3 closed (Caddyfile cache headers, React split from three.js, WebP diagram); articles corrected against their reviews
 - 2026-10-06 polish (change log, newsletter, silhouette shader), today fixes (phone header, social cards, sitemap, 404), value (18 research documents, spec evolution page, film captions and chapters, video page, search, Umami); #11, #12, #13 closed
+- 2026-10-06 review issues worked (#20, #22, #24, #26, #28, #29, #31, #32), the series rewrite synced (collateral #11), the keynote livestream embedded, Railway IaC migrated (#2); PRD 8 marked done
