@@ -1,53 +1,139 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "e0387ea",
- "synced": "2026-10-05",
+ "commit": "a79f556",
+ "synced": "2026-10-06",
  "documents": [
   {
    "src": "research/approval-process-criteria.md",
    "slug": "approval-process-criteria",
-   "title": "What an enterprise MCP approval process evaluates"
+   "title": "What an enterprise MCP approval process evaluates",
+   "history": [
+    {
+     "date": "2026-10-03",
+     "sha": "b5450c2",
+     "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
+    }
+   ]
   },
   {
    "src": "research/wrapping-mcp-servers.md",
    "slug": "wrapping-mcp-servers",
-   "title": "Wrapping an MCP server inside an MCP server"
+   "title": "Wrapping an MCP server inside an MCP server",
+   "history": [
+    {
+     "date": "2026-10-03",
+     "sha": "b5450c2",
+     "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
+    }
+   ]
   },
   {
    "src": "research/source-ledger.md",
    "slug": "source-ledger",
-   "title": "The claim-by-claim source ledger"
+   "title": "The claim-by-claim source ledger",
+   "history": [
+    {
+     "date": "2026-10-03",
+     "sha": "b5450c2",
+     "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
+    }
+   ]
   },
   {
    "src": "sources/sources.md",
    "slug": "sources",
-   "title": "The sources slide"
+   "title": "The sources slide",
+   "history": [
+    {
+     "date": "2026-10-04",
+     "sha": "048a658",
+     "subject": "Carry both columns of the sources slide, not only the first"
+    },
+    {
+     "date": "2026-10-04",
+     "sha": "48f4073",
+     "subject": "Add the three sources the spoken notes cite on the decision and ask slides"
+    },
+    {
+     "date": "2026-10-03",
+     "sha": "b5450c2",
+     "subject": "Publish the keynote collateral: slides, script, gates, diagrams, research, sources, art"
+    }
+   ]
   },
   {
    "src": "gates/approval-gates.md",
    "slug": "approval-gates",
-   "title": "The six approval gates as a checklist"
+   "title": "The six approval gates as a checklist",
+   "history": [
+    {
+     "date": "2026-10-05",
+     "sha": "eb525f7",
+     "subject": "Regenerate the gates checklist with the deck's wording"
+    },
+    {
+     "date": "2026-10-03",
+     "sha": "58572bf",
+     "subject": "Add the six approval gates as a checklist, generated from the site's gate data"
+    }
+   ]
   },
   {
    "src": "articles/part-1-operational-excellence.md",
    "slug": "articles/part-1-operational-excellence",
    "title": "The Protocol Moved Under You and Nobody Migrates You",
    "series": "Operating MCP at Scale, part 1: operational excellence",
-   "status": "draft, under review"
+   "status": "draft, under review",
+   "history": [
+    {
+     "date": "2026-10-05",
+     "sha": "e0387ea",
+     "subject": "Correct the three articles against their figure, quote, prose and hostile reviews"
+    },
+    {
+     "date": "2026-10-05",
+     "sha": "28a46a2",
+     "subject": "Publish the first three parts of Operating MCP at Scale as drafts under review"
+    }
+   ]
   },
   {
    "src": "articles/part-2-security.md",
    "slug": "articles/part-2-security",
    "title": "Nobody Vets MCP Servers, and Everyone Is Right About Why",
    "series": "Operating MCP at Scale, part 2: security",
-   "status": "draft, under review"
+   "status": "draft, under review",
+   "history": [
+    {
+     "date": "2026-10-05",
+     "sha": "e0387ea",
+     "subject": "Correct the three articles against their figure, quote, prose and hostile reviews"
+    },
+    {
+     "date": "2026-10-05",
+     "sha": "28a46a2",
+     "subject": "Publish the first three parts of Operating MCP at Scale as drafts under review"
+    }
+   ]
   },
   {
    "src": "articles/part-3-reliability.md",
    "slug": "articles/part-3-reliability",
    "title": "Your Health Check Is Speaking a Different Protocol Version",
    "series": "Operating MCP at Scale, part 3: reliability",
-   "status": "draft, under review"
+   "status": "draft, under review",
+   "history": [
+    {
+     "date": "2026-10-05",
+     "sha": "e0387ea",
+     "subject": "Correct the three articles against their figure, quote, prose and hostile reviews"
+    },
+    {
+     "date": "2026-10-05",
+     "sha": "28a46a2",
+     "subject": "Publish the first three parts of Operating MCP at Scale as drafts under review"
+    }
+   ]
   }
  ]
 }

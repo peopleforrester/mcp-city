@@ -74,11 +74,17 @@ mountPage(<DocumentPage slug="${c.slug}" markdown={markdown} />);
 const repo = resolve(process.argv[2] ?? "../../talks/mcp-for-a-city");
 const sha = execSync("git rev-parse --short HEAD", { cwd: repo }).toString().trim();
 mkdirSync("content/collateral", { recursive: true });
+/** Every commit that touched a document in the collateral repo, newest first: the public record of what changed and when. */
+function historyOf(src: string): { date: string; sha: string; subject: string }[] {
+  const out = execSync(`git log --follow --format=%as%x09%h%x09%s -- ${JSON.stringify(src)}`, { cwd: repo }).toString().trim();
+  return out ? out.split("\n").map((line) => { const [date, sha, subject] = line.split("\t"); return { date, sha, subject }; }) : [];
+}
+
 for (const c of COLLATERAL) {
   const dest = `content/collateral/${c.slug}.md`;
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(resolve(repo, c.src), dest);
   writeEntry(c);
 }
-writeFileSync("content/collateral/manifest.json", JSON.stringify({ repo: "peopleforrester/mcp-for-a-city", commit: sha, synced: new Date().toISOString().slice(0, 10), documents: COLLATERAL }, null, 1) + "\n");
+writeFileSync("content/collateral/manifest.json", JSON.stringify({ repo: "peopleforrester/mcp-for-a-city", commit: sha, synced: new Date().toISOString().slice(0, 10), documents: COLLATERAL.map((c) => ({ ...c, history: historyOf(c.src) })) }, null, 1) + "\n");
 console.log(`synced ${COLLATERAL.length} documents at ${sha}`);

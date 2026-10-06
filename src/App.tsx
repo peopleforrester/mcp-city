@@ -5,6 +5,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Footer, Header } from "./components/Chrome";
 import { Gates } from "./components/Gates";
 import { Hero } from "./components/Hero";
+import { subscribed } from "./components/Newsletter";
 import { PageCards } from "./components/PageCards";
 
 // Everything below the gates arrives after first paint; a phone on ballroom wifi gets the title and the walk first.
@@ -15,7 +16,8 @@ const Spiders = lazy(() => import("./components/Spiders").then((m) => ({ default
 export default function App() {
   // A share link or the QR deep link lands on an anchor that does not exist until React has rendered; scroll to it now.
   useEffect(() => {
-    const id = window.location.hash.slice(1);
+    // Back from the newsletter signup: the thanks state sits in the signup box, so take the reader to it.
+    const id = subscribed(window.location.search) ? "newsletter" : window.location.hash.slice(1);
     if (!id) return;
     // The USB history moved to its own page; old links to the home page section follow it there.
     if (id === "plugs") {

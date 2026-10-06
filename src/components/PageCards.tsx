@@ -1,5 +1,7 @@
 // ABOUTME: One card per page of the site, under the descent on the home page.
-// ABOUTME: Names match the nav; the order is the order of the talk.
+// ABOUTME: Names match the nav; the order is the order of the talk. The newsletter signup closes the section.
+
+import { Newsletter } from "./Newsletter";
 
 const CARDS = [
   { href: "/gates/", title: "MCP approval gates", text: "Six gates before an MCP server comes online. Walk a real server through them and take the checklist with you." },
@@ -26,6 +28,11 @@ export function PageCards() {
           </li>
         ))}
       </ul>
+      <div id="newsletter" className="mt-12 rounded-lg bg-[color:var(--color-tile)] p-6">
+        <h2 className="text-2xl font-semibold">Hear about the next one</h2>
+        <p className="mt-2 mb-4 max-w-2xl text-[color:var(--color-ink-muted)]">New articles in the series, corrections, and the next talk. One list, from michaelrishiforrester.com.</p>
+        <Newsletter />
+      </div>
     </section>
   );
 }

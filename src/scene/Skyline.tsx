@@ -1,10 +1,11 @@
-// ABOUTME: The city at night as instanced silhouettes under a drifting Death Star, in the deck's shadow-play look.
+// ABOUTME: The city at night as instanced silhouettes under a drifting Death Star, in the deck's shadow-play look, lit by the silhouette shader.
 // ABOUTME: Loaded lazily after first paint; nothing here is needed to read the page.
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { useMemo, useRef, type RefObject } from "react";
 import * as THREE from "three";
+import { silhouetteMaterial } from "./silhouette";
 import { SkyDome } from "./SkyDome";
 
 const COUNT = 2600;
@@ -20,6 +21,10 @@ function seeded(seed: number) {
 
 function Buildings() {
   const ref = useRef<THREE.InstancedMesh>(null);
+  const material = useMemo(silhouetteMaterial, []);
+  useFrame(({ clock }) => {
+    material.uniforms.uTime.value = clock.getElapsedTime();
+  });
   const matrices = useMemo(() => {
     const rand = seeded(20261006);
     const dummy = new THREE.Object3D();
@@ -45,34 +50,13 @@ function Buildings() {
         matrices.forEach((mat, i) => m.setMatrixAt(i, mat));
         m.instanceMatrix.needsUpdate = true;
       }}
-      args={[undefined, undefined, COUNT]}
+      args={[undefined, material, COUNT]}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial color="#03060f" />
     </instancedMesh>
   );
 }
 
-function Windows() {
-  const points = useMemo(() => {
-    const rand = seeded(500000);
-    const arr = new Float32Array(1800 * 3);
-    for (let i = 0; i < 1800; i++) {
-      arr[i * 3] = (rand() - 0.5) * SPREAD * 0.7;
-      arr[i * 3 + 1] = 1 + rand() * 18;
-      arr[i * 3 + 2] = (rand() - 0.5) * SPREAD * 0.7;
-    }
-    return arr;
-  }, []);
-  return (
-    <points>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[points, 3]} />
-      </bufferGeometry>
-      <pointsMaterial color="#04c0da" size={0.22} sizeAttenuation transparent opacity={0.9} blending={THREE.AdditiveBlending} depthWrite={false} />
-    </points>
-  );
-}
 
 function DeathStar({ progress }: { progress: RefObject<number> }) {
   const g = useRef<THREE.Group>(null);
@@ -121,7 +105,6 @@ export default function Skyline({ progress, active = true }: { progress: RefObje
       <fog attach="fog" args={["#07264a", 80, 420]} />
       <SkyDome />
       <Buildings />
-      <Windows />
       <DeathStar progress={progress} />
       <Rig progress={progress} />
       <EffectComposer multisampling={0}>

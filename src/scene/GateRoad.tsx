@@ -7,6 +7,7 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { GATE_COLORS, GATES } from "../data/gates";
 import type { Walk } from "../lib/walk";
+import { silhouetteMaterial } from "./silhouette";
 import { SkyDome } from "./SkyDome";
 
 const GATE_Z = (i: number) => -6 - i * 7;
@@ -129,7 +130,15 @@ function City({ admitted }: { admitted: boolean }) {
     }
     return out;
   }, []);
+  // The same backlit silhouette as the skyline, with this scene's closer fog.
+  const material = useMemo(() => {
+    const m = silhouetteMaterial();
+    m.uniforms.uFogNear.value = 30;
+    m.uniforms.uFogFar.value = 120;
+    return m;
+  }, []);
   useFrame(({ clock }) => {
+    material.uniforms.uTime.value = clock.getElapsedTime();
     if (!glow.current) return;
     const m = glow.current.material as THREE.MeshBasicMaterial;
     const on = admitted ? 1 : 0;
@@ -138,12 +147,22 @@ function City({ admitted }: { admitted: boolean }) {
   });
   return (
     <group>
-      {blocks.map(([x, z, w, h], i) => (
-        <mesh key={i} position={[x, h / 2, z]}>
-          <boxGeometry args={[w, h, w]} />
-          <meshBasicMaterial color="#02050c" />
-        </mesh>
-      ))}
+      <instancedMesh
+        args={[undefined, material, blocks.length]}
+        ref={(m) => {
+          if (!m) return;
+          const dummy = new THREE.Object3D();
+          blocks.forEach(([x, z, w, h], i) => {
+            dummy.position.set(x, h / 2, z);
+            dummy.scale.set(w, h, w);
+            dummy.updateMatrix();
+            m.setMatrixAt(i, dummy.matrix);
+          });
+          m.instanceMatrix.needsUpdate = true;
+        }}
+      >
+        <boxGeometry args={[1, 1, 1]} />
+      </instancedMesh>
       {/* The registry district's tower, lit when the server is admitted. */}
       <mesh position={[0, 7, CITY_Z - 6]}>
         <boxGeometry args={[2.4, 14, 2.4]} />
