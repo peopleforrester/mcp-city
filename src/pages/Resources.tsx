@@ -5,6 +5,8 @@ import manifest from "../../content/collateral/manifest.json";
 import { RESOURCES, TALK } from "../data/links";
 import { PageIntro } from "./Page";
 
+const TOPICS = [...new Set(manifest.documents.flatMap((d) => ("topic" in d && d.topic ? [d.topic] : [])))];
+
 export function ResourcesPage() {
   return (
     <>
@@ -16,13 +18,27 @@ export function ResourcesPage() {
             <a href="/resources/art/" className="font-semibold underline underline-offset-4">The art</a>
             <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">Every picture made for the talk, with captions.</p>
           </li>
-          {manifest.documents.filter((d) => !d.slug.startsWith("articles/")).map((d) => (
+          {manifest.documents.filter((d) => !d.slug.startsWith("articles/") && !("topic" in d)).map((d) => (
             <li key={d.slug} className="rounded-lg bg-[color:var(--color-tile)] p-5">
               <a href={`/resources/${d.slug}/`} className="font-semibold underline underline-offset-4">{d.title}</a>
               <p className="mt-1 text-sm text-[color:var(--color-ink-muted)]">{d.src}</p>
             </li>
           ))}
         </ul>
+      </section>
+      <section className="measure-wide pb-12" aria-labelledby="research-h">
+        <h2 id="research-h" className="text-2xl font-semibold">The research</h2>
+        <p className="mt-2 max-w-2xl text-[color:var(--color-ink-muted)]">What the talk stands on. Each document is dated; where a claim has moved since it was written, a note at the top says so.</p>
+        {TOPICS.map((topic) => (
+          <div key={topic} className="mt-6">
+            <h3 className="text-lg font-semibold">{topic}</h3>
+            <ul className="mt-2 grid gap-x-8 gap-y-1 sm:grid-cols-2">
+              {manifest.documents.filter((d) => "topic" in d && d.topic === topic).map((d) => (
+                <li key={d.slug}><a href={`/resources/${d.slug}/`} className="underline underline-offset-4">{d.title}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
       <section className="measure-wide pb-12" aria-labelledby="articles-h">
         <h2 id="articles-h" className="text-2xl font-semibold">Operating MCP at Scale, the articles</h2>

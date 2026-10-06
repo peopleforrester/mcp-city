@@ -12,6 +12,8 @@ export interface Collateral {
   title: string;
   series?: string;
   status?: string;
+  /** The research topic a document is listed under on the Resources page. */
+  topic?: string;
 }
 
 export const COLLATERAL: Collateral[] = [
@@ -20,6 +22,24 @@ export const COLLATERAL: Collateral[] = [
   { src: "research/source-ledger.md", slug: "source-ledger", title: "The claim-by-claim source ledger" },
   { src: "sources/sources.md", slug: "sources", title: "The sources slide" },
   { src: "gates/approval-gates.md", slug: "approval-gates", title: "The six approval gates as a checklist" },
+  { src: "research/bestpractice/mcp-gateway-and-registry-operations.md", slug: "research/mcp-gateway-and-registry-operations", title: "Operating MCP Gateways and Registries", topic: "Operating MCP" },
+  { src: "research/bestpractice/mcp-server-deployment-and-migration.md", slug: "research/mcp-server-deployment-and-migration", title: "Deploying MCP After 2026-07-28", topic: "Operating MCP" },
+  { src: "research/ops/mcp-operations-at-scale-2026-09.md", slug: "research/mcp-operations-at-scale-2026-09", title: "What Breaks at MCP Scale", topic: "Operating MCP" },
+  { src: "research/scale/mcp-at-scale-architecture-2026-09.md", slug: "research/mcp-at-scale-architecture-2026-09", title: "MCP Enterprise Architecture Survey", topic: "Operating MCP" },
+  { src: "research/bestpractice/VERIFIED-transport-and-quote-audit.md", slug: "research/VERIFIED-transport-and-quote-audit", title: "MCP Routing Headers Verified", topic: "Operating MCP" },
+  { src: "research/bestpractice/mcp-server-vetting-and-supply-chain.md", slug: "research/mcp-server-vetting-and-supply-chain", title: "Vetting MCP Servers", topic: "Security and vetting" },
+  { src: "research/security/mcp-security-failures-2026-09.md", slug: "research/mcp-security-failures-2026-09", title: "MCP Security Failures Catalogue", topic: "Security and vetting" },
+  { src: "research/ecosystem/microsoft-mcp-control-plane.md", slug: "research/microsoft-mcp-control-plane", title: "Microsoft's MCP Governance Stack", topic: "Security and vetting" },
+  { src: "research/bestpractice/mcp-token-economics-and-tool-consolidation.md", slug: "research/mcp-token-economics-and-tool-consolidation", title: "MCP Token Economics", topic: "Cost, performance and reliability" },
+  { src: "research/pillars/cost.md", slug: "research/cost", title: "The Total Cost of MCP", topic: "Cost, performance and reliability" },
+  { src: "research/pillars/performance.md", slug: "research/performance", title: "MCP Latency and Throughput", topic: "Cost, performance and reliability" },
+  { src: "research/pillars/reliability.md", slug: "research/reliability", title: "MCP Reliability at Scale", topic: "Cost, performance and reliability" },
+  { src: "research/components/inference-gateways.md", slug: "research/inference-gateways", title: "AI Gateways on the Inference Path", topic: "The layers around MCP" },
+  { src: "research/components/artifact-registries.md", slug: "research/artifact-registries", title: "Model, Prompt and Agent Registries", topic: "The layers around MCP" },
+  { src: "research/components/supporting-layers.md", slug: "research/supporting-layers", title: "Observability, Secrets and Sandboxing", topic: "The layers around MCP" },
+  { src: "research/spec/mcp-specification-state-2026-09.md", slug: "research/mcp-specification-state-2026-09", title: "MCP Specification, September 2026", topic: "The specification and the numbers" },
+  { src: "research/ecosystem/registry-count-verification.md", slug: "research/registry-count-verification", title: "Counting the MCP Ecosystem", topic: "The specification and the numbers" },
+  { src: "research/craft/ship-crews.md", slug: "research/ship-crews", title: "Starship Crew Sizes", topic: "The specification and the numbers" },
   { src: "articles/part-1-operational-excellence.md", slug: "articles/part-1-operational-excellence", title: "The Protocol Moved Under You and Nobody Migrates You", series: "Operating MCP at Scale, part 1: operational excellence", status: "draft, under review" },
   { src: "articles/part-2-security.md", slug: "articles/part-2-security", title: "Nobody Vets MCP Servers, and Everyone Is Right About Why", series: "Operating MCP at Scale, part 2: security", status: "draft, under review" },
   { src: "articles/part-3-reliability.md", slug: "articles/part-3-reliability", title: "Your Health Check Is Speaking a Different Protocol Version", series: "Operating MCP at Scale, part 3: reliability", status: "draft, under review" },

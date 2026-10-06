@@ -1,6 +1,6 @@
 {
  "repo": "peopleforrester/mcp-for-a-city",
- "commit": "a79f556",
+ "commit": "4061e7f",
  "synced": "2026-10-06",
  "documents": [
   {
@@ -75,6 +75,240 @@
      "date": "2026-10-03",
      "sha": "58572bf",
      "subject": "Add the six approval gates as a checklist, generated from the site's gate data"
+    }
+   ]
+  },
+  {
+   "src": "research/bestpractice/mcp-gateway-and-registry-operations.md",
+   "slug": "research/mcp-gateway-and-registry-operations",
+   "title": "Operating MCP Gateways and Registries",
+   "topic": "Operating MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/bestpractice/mcp-server-deployment-and-migration.md",
+   "slug": "research/mcp-server-deployment-and-migration",
+   "title": "Deploying MCP After 2026-07-28",
+   "topic": "Operating MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/ops/mcp-operations-at-scale-2026-09.md",
+   "slug": "research/mcp-operations-at-scale-2026-09",
+   "title": "What Breaks at MCP Scale",
+   "topic": "Operating MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/scale/mcp-at-scale-architecture-2026-09.md",
+   "slug": "research/mcp-at-scale-architecture-2026-09",
+   "title": "MCP Enterprise Architecture Survey",
+   "topic": "Operating MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/bestpractice/VERIFIED-transport-and-quote-audit.md",
+   "slug": "research/VERIFIED-transport-and-quote-audit",
+   "title": "MCP Routing Headers Verified",
+   "topic": "Operating MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/bestpractice/mcp-server-vetting-and-supply-chain.md",
+   "slug": "research/mcp-server-vetting-and-supply-chain",
+   "title": "Vetting MCP Servers",
+   "topic": "Security and vetting",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/security/mcp-security-failures-2026-09.md",
+   "slug": "research/mcp-security-failures-2026-09",
+   "title": "MCP Security Failures Catalogue",
+   "topic": "Security and vetting",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/ecosystem/microsoft-mcp-control-plane.md",
+   "slug": "research/microsoft-mcp-control-plane",
+   "title": "Microsoft's MCP Governance Stack",
+   "topic": "Security and vetting",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/bestpractice/mcp-token-economics-and-tool-consolidation.md",
+   "slug": "research/mcp-token-economics-and-tool-consolidation",
+   "title": "MCP Token Economics",
+   "topic": "Cost, performance and reliability",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/pillars/cost.md",
+   "slug": "research/cost",
+   "title": "The Total Cost of MCP",
+   "topic": "Cost, performance and reliability",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/pillars/performance.md",
+   "slug": "research/performance",
+   "title": "MCP Latency and Throughput",
+   "topic": "Cost, performance and reliability",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/pillars/reliability.md",
+   "slug": "research/reliability",
+   "title": "MCP Reliability at Scale",
+   "topic": "Cost, performance and reliability",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/components/inference-gateways.md",
+   "slug": "research/inference-gateways",
+   "title": "AI Gateways on the Inference Path",
+   "topic": "The layers around MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/components/artifact-registries.md",
+   "slug": "research/artifact-registries",
+   "title": "Model, Prompt and Agent Registries",
+   "topic": "The layers around MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/components/supporting-layers.md",
+   "slug": "research/supporting-layers",
+   "title": "Observability, Secrets and Sandboxing",
+   "topic": "The layers around MCP",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/spec/mcp-specification-state-2026-09.md",
+   "slug": "research/mcp-specification-state-2026-09",
+   "title": "MCP Specification, September 2026",
+   "topic": "The specification and the numbers",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/ecosystem/registry-count-verification.md",
+   "slug": "research/registry-count-verification",
+   "title": "Counting the MCP Ecosystem",
+   "topic": "The specification and the numbers",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
+    }
+   ]
+  },
+  {
+   "src": "research/craft/ship-crews.md",
+   "slug": "research/ship-crews",
+   "title": "Starship Crew Sizes",
+   "topic": "The specification and the numbers",
+   "history": [
+    {
+     "date": "2026-10-06",
+     "sha": "4061e7f",
+     "subject": "Publish the research behind the talk: eighteen documents"
     }
    ]
   },
