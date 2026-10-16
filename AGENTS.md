@@ -11,5 +11,5 @@ ABOUTME: The site renders the keynote's claims, so the keynote's accuracy bar ap
 - Prose style: no em-dashes, no hedging scaffolds, American English.
 - Work on `staging`; promote to `main` once tests pass. Railway deploys `main`.
 
-Test command: `npm run lint && npm test`
-E2E command: `npm run build && npm run test:e2e`
+Test command: `npm ci && npm run lint && npm test`
+E2E command: `npm ci && npm run build && npm run test:e2e`
