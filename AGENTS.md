@@ -10,3 +10,6 @@ ABOUTME: The site renders the keynote's claims, so the keynote's accuracy bar ap
 - Every 3D interaction has a DOM equivalent. The gate walk is a form first.
 - Prose style: no em-dashes, no hedging scaffolds, American English.
 - Work on `staging`; promote to `main` once tests pass. Railway deploys `main`.
+
+Test command: `npm ci && npm run lint && npm test`
+E2E command: `npm ci && npm run build && npm run test:e2e`
