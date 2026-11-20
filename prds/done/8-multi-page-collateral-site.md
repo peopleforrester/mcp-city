@@ -170,7 +170,7 @@ The talk itself, the film's content, the newsletter mechanics (MRF-website
 ## Sources
 
 - The live Slides deck, read 2026-10-05 through the Slides API: 59 slides, 39 shown, notes per slide.
-- `~/repos/talks/MCP_for_a_city`: `notes/dry-run-2026-10-04.md` (run order), `PROJECT_STATE.md` phase history through 2026-10-05, `decisions.md` PRD 12 entries, `prds/12-*.md`.
-- `~/repos/talks/mcp-for-a-city`: file list and `git log` dates, read 2026-10-05.
+- `~/repos/talks/mcp-for-a-city/mcp-for-a-city-talk`: `notes/dry-run-2026-10-04.md` (run order), `PROJECT_STATE.md` phase history through 2026-10-05, `decisions.md` PRD 12 entries, `prds/12-*.md`.
+- `~/repos/talks/mcp-for-a-city/mcp-for-a-city-resources`: file list and `git log` dates, read 2026-10-05.
 - Live site: `curl`, Playwright on desktop and Pixel 7 against https://mcp.michaelrishiforrester.com/, 2026-10-05.
 - Railway: `railway status`, `railway domain`, `railway deployment list`, 2026-10-05.
